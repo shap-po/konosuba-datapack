@@ -1,0 +1,13 @@
+{
+    "name": "Arch-explosion",
+	"description": "Invoke great magic within and destroy everything in your path! (hold primary action key to use)",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "execute positioned ^ ^ ^10 run summon creeper ~ ~ ~ {powered:1b,ExplosionRadius:50b,Fuse:1,ignited:1b}"
+    },
+    "cooldown": 100,
+    "hud_render": {
+        "should_render": true
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"powers": [
+		"konosuba-datapack:summon-cat",
+		"konosuba-datapack:test"
+	],
+	"icon": "minecraft:redstone",
+	"order": 10,
+	"impact": 1,
+	"name": "Megumin",
+	"description": "Embrace the power of arch-mage! (cute cat offcharge)"
+}
