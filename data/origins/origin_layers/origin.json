@@ -1,6 +1,4 @@
 {
-  "replace": false,
-  "origins": [
-    "konosuba-datapack:megumin"
-  ]
+    "replace": false,
+    "origins": ["konosuba:megumin"]
 }

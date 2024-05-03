@@ -1,0 +1,8 @@
+{
+    "powers": ["konosuba:megumin/chomusuke", "konosuba:megumin/explosion"],
+    "icon": "minecraft:fire_charge",
+    "order": 10,
+    "impact": 1,
+    "name": "Megumin",
+    "description": "Embrace the power of arch-mage! (cute cat offcharge)"
+}
