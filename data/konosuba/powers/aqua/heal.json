@@ -1,5 +1,5 @@
 {
-    "name": "Heal",
+    "name": "Divine rejuvination",
     "description": "Throw a healing potion",
 
     "type": "origins:fire_projectile",

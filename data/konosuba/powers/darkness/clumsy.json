@@ -1,0 +1,76 @@
+{
+    "name": "Extreme clumsiness",
+    "description": "For you, wielding a simple sword is something literaly as hard as getting a PHD. Makes combat harder.",
+    
+    "type": "origins:multiple",
+    "drop_items": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "element": {
+                            "type": "origins:drop_inventory",
+                            "throw_randomly": false,
+                            "slot": "weapon.mainhand"
+                        },
+                        "weight": 30
+                    },
+                    {
+                        "element": {
+                            "type": "origins:drop_inventory",
+                            "throw_randomly": true,
+                            "slot": "weapon.mainhand"
+                        },
+                        "weight": 9
+                    },
+                    {
+                        "element": {
+                            "type": "origins:drop_inventory",
+                            "throw_randomly": true
+                        },
+                        "weight": 1
+                    },
+                    {
+                        "element": {
+                            "type": "origins:nothing"
+                        },
+                        "weight": 360
+                    }
+                ]
+            }
+        }
+    },
+    "cancel_hit": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "element": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                        "effect": "minecraft:weakness",
+                                        "duration": 80,
+                                        "amplifier": 9,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    }
+                        },
+                        "weight": 30
+                    },
+                    {
+                        "element": {
+                            "type": "origins:nothing"
+                        },
+                        "weight": 70
+                    }
+                ]
+            }
+        }
+    }
+}

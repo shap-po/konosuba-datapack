@@ -24,6 +24,7 @@
             "condition": { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": ">", "compare_to": 0 }
         }
     },
+    
     "currently_casting": {
         "_": "Determines if the player is currently casting the ability. (0 - not casting, 1,2 - casting)",
         "type": "origins:resource",
