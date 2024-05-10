@@ -1,0 +1,64 @@
+{
+    "name": "Brace for attack",
+    "description": "Make yourself more resistant to any incoming damage at the cost of speed. Effect becomes weaker over time: with peak within first seconds, and its weakest at the end",
+    "type": "origins:active_self",
+    "cooldown": 600,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:resistance",
+                "duration": 100,
+                "amplifier": 9,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:resistance",
+                "duration": 600,
+                "amplifier": 1,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:resistance",
+                "duration": 1200,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:slowness",
+                "duration": 100,
+                "amplifier": 9,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:slowness",
+                "duration": 600,
+                "amplifier": 1,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:slowness",
+                "duration": 1200,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ]
+    }
+}

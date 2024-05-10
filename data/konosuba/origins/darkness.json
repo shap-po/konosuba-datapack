@@ -1,0 +1,14 @@
+{
+    "name": "Darkness",
+    "description": "Become a masohistic psyho, with more similiarities to a rock than a human being.",
+    "icon": "minecraft:anvil",
+
+    "powers": [
+        "konosuba:darkness/clumsy",
+        "konosuba:darkness/more_hp",
+        "konosuba:darkness/tank",
+        "konosuba:lives"
+    ],
+    "impact": 1,
+    "order": 2
+}
