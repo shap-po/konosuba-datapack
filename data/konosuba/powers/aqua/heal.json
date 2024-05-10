@@ -1,6 +1,6 @@
 {
     "name": "Divine rejuvination",
-    "description": "Throw a healing potion",
+    "description": "With your godly power, just by taking a look at others you can make them feel better.",
 
     "type": "origins:fire_projectile",
     "cooldown": 30,
