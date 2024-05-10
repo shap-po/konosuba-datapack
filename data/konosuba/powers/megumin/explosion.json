@@ -14,18 +14,18 @@
         }
     },
 
-    "explosion_charge": {
+    "charge": {
         "type": "origins:resource",
         "min": 0,
         "max": 40,
         "hud_render": {
             "should_render": true,
             "bar_index": 7,
-            "condition": { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": ">", "compare_to": 0 }
+            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">", "compare_to": 0 }
         }
     },
-    "currently_casting": {
-        "_": "Determines if the player is currently casting the ability. (0 - not casting, 1,2 - casting)",
+    "is_charging": {
+        "_": "Determines if the player is charging the ability. (0 - not charging, 1,2 - charging)",
         "type": "origins:resource",
         "min": 0,
         "max": 2,
@@ -33,7 +33,7 @@
     },
 
     "ability": {
-        "_": "Increase the explosion charge and currently casting resources if not on cooldown.",
+        "_": "Increase the explosion charge and is_charging resources if not on cooldown.",
         "type": "origins:active_self",
         "cooldown": 1,
         "entity_action": {
@@ -42,8 +42,8 @@
             "if_action": {
                 "type": "origins:and",
                 "actions": [
-                    { "type": "origins:change_resource", "resource": "*:*_explosion_charge", "change": 1 },
-                    { "type": "origins:change_resource", "resource": "*:*_currently_casting", "change": 2 }
+                    { "type": "origins:change_resource", "resource": "*:*_charge", "change": 1 },
+                    { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": 2 }
                 ]
             }
         },
@@ -55,20 +55,20 @@
         "_": "Decay the explosion charge over time if not fully charged",
         "type": "origins:action_over_time",
         "interval": 1,
-        "entity_action": { "type": "origins:change_resource", "resource": "*:*_explosion_charge", "change": -2 },
+        "entity_action": { "type": "origins:change_resource", "resource": "*:*_charge", "change": -2 },
         "condition": {
             "type": "origins:and",
             "conditions": [
-                { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": "<", "compare_to": 40 },
-                { "type": "origins:resource", "resource": "*:*_currently_casting", "comparison": "==", "compare_to": 0 }
+                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "<", "compare_to": 40 },
+                { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": "==", "compare_to": 0 }
             ]
         }
     },
-    "decay_casting": {
-        "_": "Decay the 'currently casting' resource",
+    "decay_is_charging": {
+        "_": "Decay the is_charging resource",
         "type": "origins:action_over_time",
         "interval": 1,
-        "entity_action": { "type": "origins:change_resource", "resource": "*:*_currently_casting", "change": -1 }
+        "entity_action": { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": -1 }
     },
 
     "animate": {
@@ -76,38 +76,54 @@
         "interval": 1,
         "entity_action": {
             "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": "==", "compare_to": 40 },
+            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
             "if_action": {
-                "type": "origins:execute_command",
-                "command": "say Ready to boom! #TODO"
+                "_": "TODO: Ready to boom"
             },
             "else_action": {
-                "type": "origins:execute_command",
-                "command": "say Primary key held/released! #TODO"
+                "_": "TODO: Primary key held/released"
             }
         },
-        "condition": { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": ">", "compare_to": 1 }
+        "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">", "compare_to": 1 }
     },
 
-    "explosion": {
-        "_": "Explode if the charge is full and the player stops casting.",
+    "explode": {
+        "_": "Explode if the charge is full and the player stops charging.",
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
             "type": "origins:and",
             "actions": [
-                { "type": "origins:change_resource", "resource": "*:*_explosion_charge", "change": 0, "operation": "set" },
+                { "type": "origins:change_resource", "resource": "*:*_charge", "change": 0, "operation": "set" },
                 { "type": "origins:trigger_cooldown", "power": "*:*_cooldown" },
                 { "type": "origins:execute_command", "command": "say Boom! #TODO" },
-                { "type": "origins:execute_command", "command": "summon minecraft:tnt ^ ^ ^10 {Fuse:0,ExplosionRadius:10b}" }
+                {
+                    "type": "origins:raycast",
+                    "distance": 64,
+                    "block": true,
+                    "entity": true,
+                    "shape_type": "visual",
+                    "fluid_handling": "any",
+                    "command_at_hit": "summon minecraft:tnt ~ ~ ~ {Fuse:0,ExplosionRadius:100b}"
+                }
             ]
         },
         "condition": {
             "type": "origins:and",
             "conditions": [
-                { "type": "origins:resource", "resource": "*:*_explosion_charge", "comparison": "==", "compare_to": 40 },
-                { "type": "origins:resource", "resource": "*:*_currently_casting", "comparison": "==", "compare_to": 0 }
+                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
+                { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": "==", "compare_to": 0 }
             ]
+        }
+    },
+
+    "shake": {
+        "type": "origins:shaking",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_charge",
+            "comparison": "==",
+            "compare_to": 40
         }
     }
 }
