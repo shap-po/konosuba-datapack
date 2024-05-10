@@ -3,4 +3,4 @@ execute as @a[scores={konosuba.death=1.., konosuba.lives=1..}] run scoreboard pl
 execute as @a[scores={konosuba.death=1..}] run scoreboard players remove @s konosuba.death 1
 
 # if the player has no lives left, tag them as a demon
-execute as @a[scores={konosuba.lives=0}] run team join konosuba.demon @s
+execute as @a[scores={konosuba.lives=0}] run power grant @s konosuba:demon
