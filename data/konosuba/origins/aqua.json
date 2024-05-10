@@ -1,0 +1,16 @@
+{
+    "name": "Aqua",
+    "description": "",
+    "icon": "minecraft:water_bucket",
+
+    "powers": [
+        "konosuba:aqua/heal",
+        "konosuba:aqua/revive",
+        "konosuba:aqua/walk_on_water",
+        "konosuba:aqua/fill_bottles",
+        "konosuba:god",
+        "konosuba:lives"
+    ],
+    "impact": 2,
+    "order": 1
+}

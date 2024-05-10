@@ -1,0 +1,21 @@
+{
+    "name": "Revive",
+    "description": "Restore one life of a selected player.",
+
+    "type": "origins:multiple",
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 10000
+    },
+
+    "revive": {
+        "type": "origins:active_self",
+        "key": { "key": "key.origins.secondary_active" },
+        "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "==", "compare_to": 0 },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "say revive"
+        }
+    }
+}

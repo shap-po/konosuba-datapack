@@ -1,0 +1,27 @@
+{
+    "hidden": true,
+
+    "type": "origins:multiple",
+    "bucket": {
+        "_": "action_on_item_pickup was added in 1.20.2. Tests are needed after the update.",
+
+        "type": "origins:action_on_item_pickup",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:bucket"
+            }
+        },
+        "item_action": {
+            "type": "origins:modify",
+            "modifier": "*:water_bucket"
+        },
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "say I picked up a bucket! #TODO"
+            }
+        }
+    }
+}

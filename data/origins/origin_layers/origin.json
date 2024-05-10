@@ -1,4 +1,7 @@
 {
     "replace": false,
-    "origins": ["konosuba:megumin"]
+    "origins": [
+        "konosuba:megumin", 
+        "konosuba:aqua"
+    ]
 }
