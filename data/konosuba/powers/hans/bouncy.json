@@ -1,0 +1,32 @@
+{
+    "name": "Slime inside",
+    "description" : "Despite your common look, you are actualy made out of slime! Makes jumping easier and reduces fall damage.",
+
+    "type": "origins:multiple",
+
+    "jump_height":
+    {
+        "type": "origins:modify_jump",
+        "modifier": 
+        {
+            "operation": "addition",
+            "value": 0.05
+        }
+    },
+
+    "fall_damage_resistance": 
+    {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": 
+        {
+            "type": "origins:name",
+            "name": "fall"
+
+        },
+        "modifier": {
+            "operation": "multiply_base_additive",
+            "value": -0.8
+        }
+    }
+
+}

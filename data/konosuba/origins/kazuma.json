@@ -6,8 +6,9 @@
     "powers": [
         "konosuba:kazuma/clairvoyance",
         "konosuba:kazuma/lucky",
+        "konosuba:no_netherite",
         "konosuba:lives"
     ],
     "impact": 1,
-    "order": 2
+    "order": 4
 }

@@ -1,0 +1,14 @@
+{
+    "name": "Hans",
+    "description": "goowey",
+    "icon": "minecraft:slime_ball",
+
+    "powers": [
+        "konosuba:no_netherite",
+        "konosuba:hans/bouncy",
+        "konosuba:hans/slimosis",
+        "konosuba:lives"
+    ],
+    "impact": 3,
+    "order": 5
+}
