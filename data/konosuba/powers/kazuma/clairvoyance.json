@@ -1,0 +1,115 @@
+{
+    "name": "Clairvoyance",
+    "description": "Focus on your senses and improve them for a shortwhile. Imroves vision and reveals hostiles, but slightly slows down.",
+
+    "type": "origins:multiple",
+
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+
+    "danger_sense": {
+        "type": "origins:entity_glow",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:power_active",
+                        "power": "*:*_toggle"
+                    }
+                },
+                {
+                    "type": "origins:distance",
+                    "comparison": "<=",
+                    "compare_to": 30
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "apugli:hostile"
+                    }
+                }
+            ]
+        },
+        "use_teams": false,
+        "red": 0.5,
+        "green": 0.0,
+        "blue": 0.1
+    },
+
+    "demon_sense": {
+        "type": "origins:entity_glow",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:power_active",
+                        "power": "*:*_toggle"
+                    }
+                },
+                {
+                    "type": "origins:distance",
+                    "comparison": "<=",
+                    "compare_to": 60
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:living"
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:power",
+                        "power": "konosuba:demon"
+                    }
+                }
+            ]
+        },
+        "use_teams": false,
+        "red": 1,
+        "green": 0.0,
+        "blue": 1
+    },
+
+    "night_vision": {
+        "type": "origins:night_vision",
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+
+    "slowness": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_base",
+            "value": -0.1
+        },
+        "tick_rate": 60,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+
+    "hungry": {
+        "type": "origins:exhaust",
+        "interval": 20,
+        "exhaustion": 0.812,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    }
+}

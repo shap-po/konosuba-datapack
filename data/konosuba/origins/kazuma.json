@@ -1,0 +1,13 @@
+{
+    "name": "Kazuma",
+    "description": "Even just a regular human with above avarage intelect has a few tricks up his sleve.",
+    "icon": "minecraft:iron_sword",
+
+    "powers": [
+        "konosuba:kazuma/clairvoyance",
+        "konosuba:kazuma/lucky",
+        "konosuba:lives"
+    ],
+    "impact": 1,
+    "order": 2
+}
