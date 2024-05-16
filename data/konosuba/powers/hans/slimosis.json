@@ -3,7 +3,7 @@
     "description" : "Allows you to manage your own mass. The more mass you have - the bigger, slower and stronger you are. (and vise-versa)",
 
     "type": "origins:multiple",
-    "hidden": true,
+    
     "slime":
     {
         "type": "origins:resource",
@@ -14,6 +14,29 @@
             "bar_index": 21
         }
     },
+
+    "actions_on_startup":
+    {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+    
+        "entity_action_chosen": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale persist set true"
+                },               
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_slime",
+                    "operation": "set",
+                    "change": 1875
+                }
+            ]
+        }
+    },
+    
 
     "slime_regeneration":
     {
@@ -246,9 +269,18 @@
 
     },
 
+    "change_check":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
     "size_matters":
     {
-
         "type": "origins:action_over_time",
         "entity_action": 
         {
@@ -272,17 +304,717 @@
                                 "resource": "*:*_slime",
                                 "comparison": "<=",
                                 "compare_to": 1250
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check",
+                                "comparison": "!=",
+                                "compare_to": 1
                             }
                         ]
                     },
                     "action": 
                     {
-                        "type": "origins:execute_command",
-                        "command": ""
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.max_health base set 8"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.movement_speed base set 0.16"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:block_reach 0.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:entity_reach 0.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:jump_height 0.76"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:step_height 0.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack 0.4"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack_speed 1.2"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check",
+                                "operation": "set",
+                                "change": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">=",
+                                "compare_to": 1250
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": "<=",
+                                "compare_to": 3750
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check",
+                                "comparison": "!=",
+                                "compare_to": 2
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.max_health base set 16"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.movement_speed base set 0.12"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.6"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.6"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:block_reach 0.8"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:entity_reach 0.8"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:jump_height 0.9"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:step_height 0.9"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack 0.7"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack_speed 1.1"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check",
+                                "operation": "set",
+                                "change": 2
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">=",
+                                "compare_to": 3750
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": "<=",
+                                "compare_to": 6250
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check",
+                                "comparison": "!=",
+                                "compare_to": 3
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.max_health base set 24"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.movement_speed base set 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:block_reach 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:entity_reach 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:jump_height 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:step_height 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack_speed 1"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check",
+                                "operation": "set",
+                                "change": 3
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">=",
+                                "compare_to": 6250
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": "<=",
+                                "compare_to": 8750
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check",
+                                "comparison": "!=",
+                                "compare_to": 4
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.max_health base set 32"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.movement_speed base set 0.08"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 1.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 1.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:block_reach 1.3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:entity_reach 1.3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:jump_height 1.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:step_height 2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack 1.4"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack_speed 0.9"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check",
+                                "operation": "set",
+                                "change": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">=",
+                                "compare_to": 8750
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": "<=",
+                                "compare_to": 10000
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check",
+                                "comparison": "!=",
+                                "compare_to": 5
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.max_health base set 40"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 0.1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "attribute @s minecraft:generic.movement_speed base set 0.06"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:block_reach 1.7"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:entity_reach 1.7"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:jump_height 2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:step_height 2.5"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack 1.9"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:attack_speed 0.8"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check",
+                                "operation": "set",
+                                "change": 5
+                            }
+                        ]
                     }
                 }
             ]
         },
-        "interval": 100
+        "interval": 20
+    },
+
+    "nimble_escape_cooldown":
+    {
+        "type": "origins:cooldown",
+        "cooldown": 1200,
+        "hud_render": 
+        {
+            "should_render": true,
+            "bar_index": 3
+        }
+    },
+
+    "nimble_escape":
+    {
+    "type": "origins:prevent_death",
+    "entity_action": 
+        {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:clear_effect"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:invisibility",
+                        "amplifier": 0,
+                        "duration": 60
+                    },
+                    {
+                        "effect": "minecraft:speed",
+                        "amplifier": 1,
+                        "duration": 80
+                    },
+                    {
+                        "effect": "minecraft:absorption",
+                        "amplifier": 1,
+                        "duration": 120
+                    }
+                ]
+            },
+            {    
+                "type": "origins:change_resource",
+                "resource": "*:*_slime",
+                "operation": "set",
+                "change": 0
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon slime ~ ~ ~ {CustomNameVisible:1b,Size:0,CustomName:'{\"color\":\"dark_green\",\"text\":\"Decoy\"}'}"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon slime ~ ~ ~ {CustomNameVisible:1b,Size:0,CustomName:'{\"color\":\"dark_green\",\"text\":\"Decoy\"}'}"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon slime ~ ~ ~ {CustomNameVisible:1b,Size:0,CustomName:'{\"color\":\"dark_green\",\"text\":\"Decoy\"}'}"
+            },
+            {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_nimble_escape_cooldown"
+            }
+        ]
+        },
+    "condition": 
+        {
+        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">",
+                                "compare_to": 3750
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_nimble_escape_cooldown",
+                                "comparison": "<=",
+                                "compare_to": 1
+                            }
+                        ]
+        }
+    
+    },
+    
+    "change_check_for_nimble":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "nible_escape_disable":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": 
+        {
+            "type": "origins:if_else_list",
+            "actions": 
+            [
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_nimble_escape_cooldown",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check_for_nimble",
+                                "comparison": "!=",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s konosuba:hans/slimosis_slime_removal_ball"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s konosuba:hans/slimosis_slime_addition_ball"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s konosuba:hans/slimosis_slime_addition_block"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check_for_nimble",
+                                "operation": "set",
+                                "change": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_nimble_escape_cooldown",
+                                "comparison": ">",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_change_check_for_nimble",
+                                "comparison": "!=",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power remove @s konosuba:hans/slimosis_slime_removal_ball"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power remove @s konosuba:hans/slimosis_slime_addition_ball"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power remove @s konosuba:hans/slimosis_slime_addition_block"
+                            },
+                            {    
+                                "type": "origins:change_resource",
+                                "resource": "*:*_change_check_for_nimble",
+                                "operation": "set",
+                                "change": 1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 20
+    },
+
+    "reset_on_death":
+    {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": false,
+        "entity_action_respawned": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_change_check",
+            "operation": "set",
+            "change": 0
+        }           
+    },
+
+
+
+    "water_dissolvant":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": 
+        {
+            "type": "origins:if_else_list",
+            "actions": 
+            [
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": ">=",
+                                "compare_to": 200
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_slime",
+                                "change": -200
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_slime",
+                                "comparison": "<",
+                                "compare_to": 200
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "damage @s 2"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "condition":
+        {
+            "type": "origins:block_collision",
+            "block_condition": 
+            {
+                "type": "origins:fluid",
+                "fluid_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:water"
+                }
+            }
+        },
+        "interval": 10
     }
+
 }
+

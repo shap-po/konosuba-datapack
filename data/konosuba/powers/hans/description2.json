@@ -1,0 +1,5 @@
+{
+    "type": "origins:simple",
+    "name": "Slime absorption/decapitation",
+    "description": "Allows you friely absorb slime balls and blocks with [secondary_action_button]: hold the desired item and press it to absorb slime, and hold nothing to decapitate yourself."
+}

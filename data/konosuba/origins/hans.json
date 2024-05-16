@@ -4,9 +4,14 @@
     "icon": "minecraft:slime_ball",
 
     "powers": [
-        "konosuba:no_netherite",
         "konosuba:hans/bouncy",
         "konosuba:hans/slimosis",
+        "konosuba:hans/description1",
+        "konosuba:hans/description2",
+        "konosuba:hans/description3",
+        "konosuba:hans/description4",
+        "konosuba:no_netherite",
+        "konosuba:undead",
         "konosuba:lives"
     ],
     "impact": 3,
