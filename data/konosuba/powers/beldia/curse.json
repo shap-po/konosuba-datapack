@@ -1,0 +1,18 @@
+{
+    "name": "Death Curse",
+    "description": "Your target will be cursed to die in §m3 days§r 30 seconds after the curse is cast.",
+
+    "type": "origins:active_self",
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "cooldown": 6000,
+    "entity_action": {
+        "type": "origins:raycast",
+        "distance": 20,
+        "block": false,
+        "entity": true,
+        "fluid_handling": "none",
+        "command_along_ray": "function konosuba:beldia/curse_step"
+    }
+}
