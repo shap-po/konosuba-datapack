@@ -1,15 +1,15 @@
 {
     "name": "Hans",
-    "description": "goowey",
+    "description": "Also known as Deadly Poison Slime or the fourth general of the Demon King's army.",
     "icon": "minecraft:slime_ball",
 
     "powers": [
+        "konosuba:hans/slime",
+        "konosuba:hans/slime_management",
+        "konosuba:hans/internal_balance",
         "konosuba:hans/bouncy",
-        "konosuba:hans/slimosis",
-        "konosuba:hans/description1",
-        "konosuba:hans/description2",
-        "konosuba:hans/description3",
-        "konosuba:hans/description4",
+        "konosuba:hans/nimble_escape",
+        "konosuba:hans/soluble",
         "konosuba:no_netherite",
         "konosuba:undead",
         "konosuba:lives"

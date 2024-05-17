@@ -1,0 +1,98 @@
+{
+    "name": "Soluble",
+    "description": "You rapidly dissolve in water. The only way to stop it is to be in a conduit's range.",
+
+    "type": "origins:multiple",
+
+    "water": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 100
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:hans/slime_count",
+                        "change": -100
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "damage @s 1 origins:hurt_by_water"
+                    }
+                ]
+            }
+        },
+        "condition": {
+            "type": "origins:block_collision",
+            "block_condition": {
+                "type": "origins:fluid",
+                "fluid_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:water"
+                }
+            }
+        }
+    },
+
+    "rain": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 50
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:hans/slime_count",
+                        "change": -50
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "damage @s 0.5 origins:hurt_by_water"
+                    }
+                ]
+            }
+        },
+        "condition": {
+            "type": "origins:in_rain"
+        }
+    },
+
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:conduit_power",
+                "inverted": true
+            }
+        ]
+    }
+}
