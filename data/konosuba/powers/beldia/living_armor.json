@@ -10,11 +10,11 @@
 
         "entity_action_gained": {
             "type": "origins:execute_command",
-            "command": "function konosuba:beldia/set_armor"
+            "command": "function konosuba:origins/beldia/set_armor"
         },
         "entity_action_respawned": {
             "type": "origins:execute_command",
-            "command": "function konosuba:beldia/set_armor"
+            "command": "function konosuba:origins/beldia/set_armor"
         }
     },
 
