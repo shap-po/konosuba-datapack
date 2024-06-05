@@ -16,7 +16,7 @@
             "type": "origins:and",
             "actions": [
                 { "type": "origins:damage", "amount": 10000, "damage_type": "konosuba:cursed" },
-                { "type": "origins:execute_command", "command": "function konosuba:beldia/curse/notify_death" },
+                { "type": "origins:execute_command", "command": "function konosuba:origins/beldia/curse/notify_death" },
                 { "type": "origins:execute_command", "command": "power remove @s konosuba:beldia/cursed" }
             ]
         }

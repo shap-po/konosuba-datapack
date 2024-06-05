@@ -7,6 +7,6 @@
 
     "entity_action_chosen": {
         "type": "origins:execute_command",
-        "command": "function konosuba:megumin/summon_cat"
+        "command": "function konosuba:origins/megumin/summon_cat"
     }
 }

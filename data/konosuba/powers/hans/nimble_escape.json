@@ -26,9 +26,9 @@
                         { "effect": "minecraft:absorption", "amplifier": 1, "duration": 120 }
                     ]
                 },
-                { "type": "origins:execute_command", "command": "function konosuba:hans/summon_decoy" },
-                { "type": "origins:execute_command", "command": "function konosuba:hans/summon_decoy" },
-                { "type": "origins:execute_command", "command": "function konosuba:hans/summon_decoy" }
+                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
+                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
+                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" }
             ]
         },
         "condition": {

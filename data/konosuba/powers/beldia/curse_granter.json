@@ -17,7 +17,7 @@
         "block": true,
         "entity": true,
         "fluid_handling": "none",
-        "command_along_ray": "function konosuba:beldia/curse/step",
+        "command_along_ray": "function konosuba:origins/beldia/curse/step",
 
         "bientity_action": {
             "type": "origins:if_else",
@@ -42,14 +42,14 @@
                         "type": "origins:target_action",
                         "action": {
                             "type": "origins:execute_command",
-                            "command": "function konosuba:beldia/curse/hit"
+                            "command": "function konosuba:origins/beldia/curse/hit"
                         }
                     },
                     {
                         "type": "origins:actor_action",
                         "action": {
                             "type": "origins:execute_command",
-                            "command": "function konosuba:beldia/curse/notify_hit"
+                            "command": "function konosuba:origins/beldia/curse/notify_hit"
                         }
                     }
                 ]
@@ -58,7 +58,7 @@
                 "type": "origins:actor_action",
                 "action": {
                     "type": "origins:execute_command",
-                    "command": "function konosuba:beldia/curse/notify_invalid_target"
+                    "command": "function konosuba:origins/beldia/curse/notify_invalid_target"
                 }
             }
         },
