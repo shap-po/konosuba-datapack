@@ -1,0 +1,23 @@
+{
+    "name": "Reforge",
+    "description": "You can upgrade your armor",
+
+    "type": "origins:multiple",
+
+    "chain2iron_helmet": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:chainmail_helmet" }
+        },
+        "on_item_action": {
+            "type": "origins:modify",
+            "modifier": "TODO (https://minecraft.wiki/w/Item_modifier)"
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": { "item": "minecraft:iron_block" }
+        },
+        "using_item_action": { "type": "origins:consume" }
+    }
+}

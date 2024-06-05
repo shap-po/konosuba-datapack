@@ -1,0 +1,67 @@
+{
+    "name": "Death Curse",
+    "description": "Your target will be cursed to die in §m3 days§r 30 seconds after the curse is cast.",
+
+    "type": "origins:active_self",
+    "key": { "key": "key.origins.primary_active" },
+    "cooldown": 10,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 17
+    },
+
+    "entity_action": {
+        "type": "origins:raycast",
+        "distance": 40,
+        "block": true,
+        "entity": true,
+        "fluid_handling": "none",
+        "command_along_ray": "function konosuba:beldia/curse/step",
+
+        "bientity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "_": "Check if the target can be cursed.",
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        { "type": "origins:gamemode", "gamemode": "creative" },
+                        { "type": "origins:gamemode", "gamemode": "spectator" },
+                        { "type": "origins:nbt", "nbt": "{Invulnerable:1b}" },
+                        { "type": "origins:in_tag", "tag": "konosuba:ignore_curse" }
+                    ],
+                    "inverted": true
+                }
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:beldia/curse/hit"
+                        }
+                    },
+                    {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:beldia/curse/notify_hit"
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "function konosuba:beldia/curse/notify_invalid_target"
+                }
+            }
+        },
+        "command_step": 1
+    }
+}
