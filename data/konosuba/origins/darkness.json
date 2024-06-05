@@ -1,7 +1,7 @@
 {
     "name": "Darkness",
-    "description": "Become a masohistic psyho, with more similiarities to a rock than a human being.",
-    "icon": "minecraft:anvil",
+    "description": "Become a masochistic psycho, with more similarities to a rock than a human being.",
+    "icon": "minecraft:netherite_chestplate",
 
     "powers": [
         "konosuba:darkness/clumsy",
