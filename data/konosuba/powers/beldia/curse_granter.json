@@ -16,6 +16,7 @@
         "distance": 40,
         "block": true,
         "entity": true,
+        "shape_type": "collider",
         "fluid_handling": "none",
         "command_along_ray": "function konosuba:origins/beldia/curse/step",
 

@@ -123,7 +123,8 @@
                                 "effect": "minecraft:speed",
                                 "duration": 40,
                                 "show_icon": false,
-                                "show_particles": false
+                                "show_particles": false,
+                                "amplifier": 1
                             }
                         ]
                     },
@@ -141,23 +142,67 @@
     "restriction": {
         "type": "origins:restrict_armor",
         "head": {
-            "type": "origins:nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b}}",
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "konosuba:beldia_can_wear"
+                    }
+                }
+            ],
             "inverted": true
         },
         "chest": {
-            "type": "origins:nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b}}",
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "konosuba:beldia_can_wear"
+                    }
+                }
+            ],
             "inverted": true
         },
         "legs": {
-            "type": "origins:nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b}}",
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "konosuba:beldia_can_wear"
+                    }
+                }
+            ],
             "inverted": true
         },
         "feet": {
-            "type": "origins:nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b}}",
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:nbt",
+                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "konosuba:beldia_can_wear"
+                    }
+                }
+            ],
             "inverted": true
         }
     }
