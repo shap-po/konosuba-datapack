@@ -25,16 +25,18 @@
         }
     },
     "is_charging": {
-        "_": "Determines if the player is charging the ability. (0 - not charging, 1,2 - charging)",
+        "_": "Determines if the player is charging the ability. (0 - not charging, 1..3 - charging)",
         "type": "origins:resource",
         "min": 0,
-        "max": 2,
+        "max": 3,
         "hud_render": { "should_render": false }
     },
 
     "ability": {
         "_": "Increase the explosion charge and is_charging resources if not on cooldown.",
         "type": "origins:active_self",
+        "key": { "key": "key.origins.primary_active", "continuous": true },
+        "hud_render": { "should_render": false },
         "cooldown": 1,
         "entity_action": {
             "type": "origins:if_else",
@@ -43,12 +45,10 @@
                 "type": "origins:and",
                 "actions": [
                     { "type": "origins:change_resource", "resource": "*:*_charge", "change": 1 },
-                    { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": 2 }
+                    { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": 3 }
                 ]
             }
-        },
-        "hud_render": { "should_render": false },
-        "key": { "key": "key.origins.primary_active", "continuous": true }
+        }
     },
 
     "decay_charge": {

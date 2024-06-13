@@ -1,0 +1,26 @@
+{
+    "values": [
+        "minecraft:barrier",
+        "minecraft:bedrock",
+        "minecraft:command_block",
+        "minecraft:chain_command_block",
+        "minecraft:repeating_command_block",
+        "minecraft:end_portal_frame",
+        "minecraft:jigsaw",
+        "minecraft:structure_block",
+        "minecraft:ancient_debris",
+        "minecraft:anvil",
+        "minecraft:netherite_block",
+        "minecraft:crying_obsidian",
+        "minecraft:respawn_anchor",
+        "minecraft:enchanting_table",
+        "minecraft:obsidian",
+        "minecraft:reinforced_deepslate",
+        "minecraft:ender_chest",
+        "minecraft:trial_spawner",
+        "minecraft:vault",
+        "minecraft:heavy_core",
+
+        "#konosuba:blast_resistant_modded"
+    ]
+}

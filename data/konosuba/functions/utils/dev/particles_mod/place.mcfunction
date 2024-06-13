@@ -1,0 +1,10 @@
+summon armor_stand ~0 ~ ~0 {Tags:["particle","explosiveenhancement_blank_fireball"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"blank_fireball"}',CustomNameVisible:1b}
+summon armor_stand ~0 ~ ~-10 {Tags:["particle","explosiveenhancement_blank_shockwave"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"blank_shockwave"}',CustomNameVisible:1b}
+summon armor_stand ~0 ~ ~-20 {Tags:["particle","explosiveenhancement_blastwave"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"blastwave"}',CustomNameVisible:1b}
+summon armor_stand ~-10 ~ ~0 {Tags:["particle","explosiveenhancement_bubble"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"bubble"}',CustomNameVisible:1b}
+summon armor_stand ~-10 ~ ~-10 {Tags:["particle","explosiveenhancement_fireball"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"fireball"}',CustomNameVisible:1b}
+summon armor_stand ~-10 ~ ~-20 {Tags:["particle","explosiveenhancement_shockwave"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"shockwave"}',CustomNameVisible:1b}
+summon armor_stand ~-20 ~ ~0 {Tags:["particle","explosiveenhancement_smoke"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"smoke"}',CustomNameVisible:1b}
+summon armor_stand ~-20 ~ ~-10 {Tags:["particle","explosiveenhancement_sparks"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"sparks"}',CustomNameVisible:1b}
+summon armor_stand ~-20 ~ ~-20 {Tags:["particle","explosiveenhancement_underwaterblastwave"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"underwaterblastwave"}',CustomNameVisible:1b}
+summon armor_stand ~-30 ~ ~0 {Tags:["particle","explosiveenhancement_underwatersparks"],NoGravity:1b,Invisible:1b,Marker:1b,CustomName:'{"text":"underwatersparks"}',CustomNameVisible:1b}
