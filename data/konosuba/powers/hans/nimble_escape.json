@@ -11,6 +11,13 @@
 
     "prevent_death": {
         "type": "origins:prevent_death",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">", "compare_to": 3750 },
+                { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "<=", "compare_to": 1 }
+            ]
+        },
         "entity_action": {
             "type": "origins:and",
             "actions": [
@@ -29,13 +36,6 @@
                 { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
                 { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
                 { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" }
-            ]
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">", "compare_to": 3750 },
-                { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "<=", "compare_to": 1 }
             ]
         }
     }

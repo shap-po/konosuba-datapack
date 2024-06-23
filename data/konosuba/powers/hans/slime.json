@@ -44,6 +44,7 @@
 
     "stage_change": {
         "type": "origins:action_over_time",
+        "interval": 20,
         "entity_action": {
             "type": "origins:if_else_list",
             "actions": [
@@ -183,8 +184,7 @@
                     }
                 }
             ]
-        },
-        "interval": 20
+        }
     },
 
     "on_death": {

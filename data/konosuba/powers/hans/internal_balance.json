@@ -2,53 +2,24 @@
     "name": "Internal balance",
     "description": "If you are small, you will slowly regenerate slime. On the other hand, it is hard to stay big for prolonged periods of time.",
 
-    "type": "origins:multiple",
+    "type": "origins:action_over_time",
+    "interval": 100,
 
-    "slime_regeneration": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:hans/slime_count",
-            "change": 10
-        },
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:hans/slime_count",
-            "comparison": "<=",
-            "compare_to": 1875
-        },
-        "interval": 100
-    },
-
-    "slime_drain": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:hans/slime_count",
-            "change": -20
-        },
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:hans/slime_count",
-            "comparison": ">=",
-            "compare_to": 6250
-        },
-        "interval": 100
-    },
-
-    "slime_hyperdrain": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:hans/slime_count",
-            "change": -50
-        },
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:hans/slime_count",
-            "comparison": ">=",
-            "compare_to": 8750
-        },
-        "interval": 100
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 1875 },
+                "action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 10 }
+            },
+            {
+                "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 8750 },
+                "action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -50 }
+            },
+            {
+                "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 6250 },
+                "action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -20 }
+            }
+        ]
     }
 }
