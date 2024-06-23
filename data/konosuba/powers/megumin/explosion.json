@@ -25,16 +25,18 @@
         }
     },
     "is_charging": {
-        "_": "Determines if the player is charging the ability. (0 - not charging, 1,2 - charging)",
+        "_": "Determines if the player is charging the ability. (0 - not charging, 1..3 - charging)",
         "type": "origins:resource",
         "min": 0,
-        "max": 2,
+        "max": 3,
         "hud_render": { "should_render": false }
     },
 
     "ability": {
         "_": "Increase the explosion charge and is_charging resources if not on cooldown.",
         "type": "origins:active_self",
+        "key": { "key": "key.origins.primary_active", "continuous": true },
+        "hud_render": { "should_render": false },
         "cooldown": 1,
         "entity_action": {
             "type": "origins:if_else",
@@ -43,12 +45,10 @@
                 "type": "origins:and",
                 "actions": [
                     { "type": "origins:change_resource", "resource": "*:*_charge", "change": 1 },
-                    { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": 2 }
+                    { "type": "origins:change_resource", "resource": "*:*_is_charging", "change": 3 }
                 ]
             }
-        },
-        "hud_render": { "should_render": false },
-        "key": { "key": "key.origins.primary_active", "continuous": true }
+        }
     },
 
     "decay_charge": {
@@ -76,12 +76,43 @@
         "interval": 1,
         "entity_action": {
             "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
+            "condition": { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": ">", "compare_to": 0 },
             "if_action": {
-                "_": "TODO: Ready to boom"
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:raycast",
+                        "distance": 120,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "visual",
+                        "fluid_handling": "any",
+                        "command_step": 10,
+                        "command_along_ray": "function konosuba:origins/megumin/explosion/animate/step",
+                        "command_at_hit": "function konosuba:origins/megumin/explosion/animate/hit",
+                        "miss_action": {
+                            "_": "If the raycast misses, target the end of the ray.",
+                            "type": "origins:execute_command",
+                            "command": "execute as @s at @s anchored eyes positioned ^ ^ ^120 run function konosuba:origins/megumin/explosion/animate/hit"
+                        }
+                    },
+                    {
+                        "type": "origins:if_else",
+                        "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/megumin/explosion/animate/ready"
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/megumin/explosion/animate/charging"
+                        }
+                    }
+                ]
             },
             "else_action": {
-                "_": "TODO: Primary key held/released"
+                "type": "origins:execute_command",
+                "command": "function konosuba:origins/megumin/explosion/animate/releasing"
             }
         },
         "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">", "compare_to": 1 }
@@ -96,15 +127,20 @@
             "actions": [
                 { "type": "origins:change_resource", "resource": "*:*_charge", "change": 0, "operation": "set" },
                 { "type": "origins:trigger_cooldown", "power": "*:*_cooldown" },
-                { "type": "origins:execute_command", "command": "say Boom! #TODO" },
                 {
                     "type": "origins:raycast",
-                    "distance": 64,
+                    "distance": 120,
                     "block": true,
                     "entity": true,
                     "shape_type": "visual",
                     "fluid_handling": "any",
-                    "command_at_hit": "summon minecraft:tnt ~ ~ ~ {Fuse:0,ExplosionRadius:100b}"
+                    "command_step": 1,
+                    "command_at_hit": "function konosuba:origins/megumin/explosion/explode",
+                    "miss_action": {
+                        "_": "If the raycast misses, explode at the end of the ray.",
+                        "type": "origins:execute_command",
+                        "command": "execute as @s at @s anchored eyes positioned ^ ^ ^120 run function konosuba:origins/megumin/explosion/explode"
+                    }
                 }
             ]
         },

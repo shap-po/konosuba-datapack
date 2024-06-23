@@ -1,11 +1,12 @@
 {
     "replace": false,
     "origins": [
-        "konosuba:megumin", 
+        "konosuba:megumin",
         "konosuba:aqua",
         "konosuba:darkness",
         "konosuba:hans",
         "konosuba:kazuma",
+        "konosuba:beldia",
         "konosuba:wis"
     ]
 }

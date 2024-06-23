@@ -7,6 +7,10 @@
 
     "entity_action_chosen": {
         "type": "origins:execute_command",
-        "command": "function konosuba:megumin/summon_cat"
+        "command": "function konosuba:origins/megumin/chomusuke/summon_conditional"
+    },
+    "entity_action_lost": {
+        "type": "origins:execute_command",
+        "command": "function konosuba:origins/megumin/chomusuke/kill"
     }
 }

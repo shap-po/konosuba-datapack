@@ -1,8 +1,9 @@
 {
     "name": "Extreme clumsiness",
-    "description": "For you, wielding a simple sword is something literaly as hard as getting a PHD. Makes combat harder.",
-    
+    "description": "For you, wielding a simple sword is as hard as getting a PHD.",
+
     "type": "origins:multiple",
+
     "drop_items": {
         "type": "origins:action_on_hit",
         "bientity_action": {
@@ -43,7 +44,8 @@
             }
         }
     },
-    "cancel_hit": {
+
+    "miss": {
         "type": "origins:action_on_hit",
         "bientity_action": {
             "type": "origins:actor_action",
@@ -54,12 +56,12 @@
                         "element": {
                             "type": "origins:apply_effect",
                             "effect": {
-                                        "effect": "minecraft:weakness",
-                                        "duration": 80,
-                                        "amplifier": 9,
-                                        "show_particles": false,
-                                        "show_icon": false
-                                    }
+                                "effect": "minecraft:weakness",
+                                "duration": 10,
+                                "amplifier": 9,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
                         },
                         "weight": 30
                     },

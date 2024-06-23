@@ -1,0 +1,14 @@
+{
+    "name": "Beldia",
+    "description": "Hero slayer Dullahan",
+    "icon": "minecraft:skeleton_skull",
+
+    "powers": [
+        "konosuba:beldia/living_armor",
+        "konosuba:beldia/curse_granter",
+        "konosuba:undead",
+        "konosuba:lives"
+    ],
+    "impact": 2,
+    "order": 2
+}

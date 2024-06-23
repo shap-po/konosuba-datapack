@@ -3,7 +3,14 @@
     "description": "Embrace the power of arch-mage! (cute cat offcharge)",
     "icon": "minecraft:fire_charge",
 
-    "powers": ["konosuba:megumin/chomusuke", "konosuba:megumin/explosion", "konosuba:no_netherite", "konosuba:lives"],
+    "powers": [
+        "konosuba:megumin/explosion",
+        "konosuba:megumin/chomusuke",
+        "konosuba:megumin/blast_resistance",
+        "konosuba:megumin/short",
+        "konosuba:no_netherite",
+        "konosuba:lives"
+    ],
     "impact": 1,
     "order": 3
 }

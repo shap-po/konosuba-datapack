@@ -9,5 +9,9 @@
             "type": "origins:execute_command",
             "command": "scoreboard players remove @s konosuba.lives 1"
         }
+    },
+
+    "invert_instant_effects": {
+        "type": "apugli:invert_instant_effects"
     }
 }

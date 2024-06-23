@@ -1,15 +1,16 @@
 {
     "name": "Brace for attack",
-    "description": "Make yourself more resistant to any incoming damage at the cost of speed. Effect becomes weaker over time: with peak within first seconds, and its weakest at the end",
+    "description": "Make yourself more resistant to any incoming damage at the cost of speed. This effect weakens over time.",
+
     "type": "origins:active_self",
+
     "cooldown": 600,
     "hud_render": {
         "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
         "bar_index": 0
     },
-    "key": {
-        "key": "key.origins.primary_active"
-    },
+    "key": { "key": "key.origins.primary_active" },
+
     "entity_action": {
         "type": "origins:apply_effect",
         "effects": [
