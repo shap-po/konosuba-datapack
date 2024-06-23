@@ -1,0 +1,14 @@
+{
+    "name": "Wis",
+    "description": "You are a powerfull lich, centered around teleportation and frost magic.",
+    "icon": "minecraft:redstone",
+
+    "powers": [
+        "konosuba:magic",
+        "konosuba:no_netherite",
+        "konosuba:lives",
+        "konosuba:undead"
+    ],
+    "impact": 1,
+    "order": 7
+}

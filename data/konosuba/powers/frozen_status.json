@@ -1,0 +1,132 @@
+{
+    "type": "origins:multiple",
+
+    "blue_shader":
+    {
+        "type": "origins:model_color",
+        "red": 0,
+        "green": 0,
+        "blue": 1,
+        "alpha": 1
+    },
+
+    "shaking":
+    {
+        "type": "origins:shaking"
+    },
+
+    "frosen_time":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2000
+    },
+
+    "action_loop":
+    {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": 
+            [
+                {
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_frosen_time",
+                                "comparison": ">=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_frosen_time",
+                                "comparison": "<",
+                                "compare_to": 1000
+                            }
+                        ]
+                    },
+                    "action": 
+                    {
+                        "type": "origins:and",
+                        "actions":
+                        [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_frosen_time",
+                                "operation": "add",
+                                "change": 50
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effects": 
+                                [
+                                    {
+                                        "effect": "minecraft:slowness",
+                                        "duration": 40,
+                                        "amplifier": 9,
+                                        "is_ambient": true,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    },
+                                    {
+                                        "effect": "minecraft:blindness",
+                                        "duration": 40,
+                                        "is_ambient": true,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    },
+                                    {
+                                        "effect": "minecraft:resistance",
+                                        "duration": 40,
+                                        "is_ambient": true,
+                                        "show_particles": false,
+                                        "show_icon": false
+                                    }
+
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_frosen_time",
+                        "comparison": ">=",
+                        "compare_to": 1000
+                    },
+                    "action": 
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/power remove @s konosuba:frozen_status"
+                    }
+                }
+            ]
+        }
+    
+    },
+
+    "subtract_resource_on_hit":
+    {
+        "type": "origins:action_on_hit",
+        "bientity_action": 
+        {
+            "type": "origins:target_action",
+            "action":  
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/power remove @s konosuba:frozen_status"
+                    }
+
+        }
+    }
+
+
+}
+
