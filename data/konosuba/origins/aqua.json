@@ -1,6 +1,6 @@
 {
     "name": "Aqua",
-    "description": "Some say you are useless and only good for healing, but deep within you is a power of god.",
+    "description": "Some say you are useless and only good for healing, but deep within you is a power of the goddess.",
     "icon": "minecraft:water_bucket",
 
     "powers": [
@@ -10,7 +10,7 @@
         "konosuba:aqua/fill_bottles",
         "konosuba:aqua/weakness_to_alligator",
         "konosuba:no_netherite",
-        "konosuba:god",
+        "konosuba:goddess",
         "konosuba:lives"
     ],
     "impact": 2,

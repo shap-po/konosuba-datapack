@@ -8,7 +8,7 @@
         "type": "origins:actor_condition",
         "condition": {
             "type": "origins:power",
-            "power": "konosuba:god"
+            "power": "konosuba:goddess"
         }
     },
 

@@ -24,8 +24,8 @@ execute unless score $defaultLives konosuba.gamerule matches 0.. run scoreboard 
 #define score_holder $undeadLives [0..] - Number of additional lives an undead player starts with
 execute unless score $undeadLives konosuba.gamerule matches 0.. run scoreboard players set $undeadLives konosuba.gamerule -1
 
-#define score_holder $godLives [0..] - Number of additional lives a god player starts with
-execute unless score $godLives konosuba.gamerule matches 0.. run scoreboard players set $godLives konosuba.gamerule 1
+#define score_holder $goddessLives [0..] - Number of additional lives a goddess player starts with
+execute unless score $goddessLives konosuba.gamerule matches 0.. run scoreboard players set $goddessLives konosuba.gamerule 1
 
 #define score_holder $maxLives [0..] - Maximum number of lives a player can have
 execute unless score $maxLives konosuba.gamerule matches 0.. run scoreboard players set $maxLives konosuba.gamerule 6
