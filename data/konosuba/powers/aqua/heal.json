@@ -1,19 +1,100 @@
 {
-    "name": "Divine rejuvination",
+    "name": "Divine rejuvenation",
     "description": "With your godly power, just by taking a look at others you can make them feel better.",
 
-    "type": "origins:fire_projectile",
-    "cooldown": 30,
-    "hud_render": {
-        "sprite_location": "origins:textures/gui/resource_bar.png",
-        "bar_index": 6
+    "type": "origins:multiple",
+
+    "mana": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 140,
+        "start_value": 140,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 4,
+            "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+        }
     },
-    "entity_type": "origins:enderian_pearl",
-    "sound": "minecraft:entity.ender_pearl.throw",
-    "speed": 1.5,
-    "divergence": 1,
-    "key": {
-        "key": "key.origins.primary_active",
-        "continuous": false
+    "regen_cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 200,
+        "hud_render": { "should_render": false }
+    },
+    "mana_regen": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_mana",
+            "operation": "add",
+            "change": 1
+        },
+        "condition": { "type": "origins:resource", "resource": "*:*_regen_cooldown", "comparison": "==", "compare_to": 0 }
+    },
+
+    "activate": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        },
+        "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": ">=", "compare_to": 20 },
+        "cooldown": 20,
+
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 4,
+            "block": false,
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        { "type": "origins:living" }, 
+                        { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 }
+                    ]
+                }
+            },
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_mana",
+                                    "operation": "add",
+                                    "change": -20
+                                },
+                                {
+                                    "type": "origins:trigger_cooldown",
+                                    "power": "*:*_regen_cooldown"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:heal",
+                                    "amount": 2
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "function konosuba:origins/aqua/heal"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
     }
 }

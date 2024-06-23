@@ -17,7 +17,7 @@
             "actions": [
                 { "type": "origins:damage", "amount": 10000, "damage_type": "konosuba:cursed" },
                 { "type": "origins:execute_command", "command": "function konosuba:origins/beldia/curse/notify_death" },
-                { "type": "origins:execute_command", "command": "power remove @s konosuba:beldia/cursed" }
+                { "type": "origins:execute_command", "command": "function konosuba:origins/beldia/curse/remove" }
             ]
         }
     },
@@ -37,7 +37,7 @@
         },
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "power remove @s konosuba:beldia/cursed"
+            "command": "function konosuba:origins/beldia/curse/remove"
         }
     },
     "heal_by_other": {
@@ -53,18 +53,7 @@
             "type": "origins:target_action",
             "action": {
                 "type": "origins:execute_command",
-                "command": "power remove @s konosuba:beldia/cursed"
-            }
-        }
-    },
-
-    "remove_on_death": {
-        "type": "origins:action_on_death",
-        "bientity_action": {
-            "type": "origins:actor_action",
-            "action": {
-                "type": "origins:execute_command",
-                "command": "power remove @s konosuba:beldia/cursed"
+                "command": "function konosuba:origins/beldia/curse/remove"
             }
         }
     },

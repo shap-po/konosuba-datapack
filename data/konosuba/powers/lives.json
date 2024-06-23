@@ -5,10 +5,10 @@
     "execute_chosen_when_orb": true,
     "entity_action_chosen": {
         "type": "origins:execute_command",
-        "command": "scoreboard players add @s konosuba.lives 5"
+        "command": "function konosuba:lives/add/default"
     },
     "entity_action_lost": {
         "type": "origins:execute_command",
-        "command": "scoreboard players reset @s konosuba.lives"
+        "command": "function konosuba:lives/reset"
     }
 }
