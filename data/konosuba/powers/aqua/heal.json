@@ -13,7 +13,32 @@
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
             "bar_index": 4,
-            "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
+                    { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+                ]
+            }
+        }
+    },
+    "mana_dark": {
+        "_": "Copy of mana resource, but with a different texture",
+        "type": "origins:resource",
+        "min": 0,
+        "max": 140,
+        "start_value": 140,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 14,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    { "type": "origins:power", "power": "konosuba:demon" },
+                    { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+                ]
+            }
         }
     },
     "regen_cooldown": {
@@ -25,10 +50,15 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_mana",
-            "operation": "add",
-            "change": 1
+            "type": "origins:and",
+            "actions": [
+                { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": 1 },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_mana_dark",
+                    "modifier": { "operation": "set_total", "resource": "*:*_mana", "value": 0 }
+                }
+            ]
         },
         "condition": { "type": "origins:resource", "resource": "*:*_regen_cooldown", "comparison": "==", "compare_to": 0 }
     },
@@ -44,16 +74,13 @@
 
         "entity_action": {
             "type": "origins:raycast",
-            "distance": 4,
+            "distance": 8,
             "block": false,
             "bientity_condition": {
                 "type": "origins:target_condition",
                 "condition": {
                     "type": "origins:and",
-                    "conditions": [
-                        { "type": "origins:living" }, 
-                        { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 }
-                    ]
+                    "conditions": [{ "type": "origins:living" }, { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 }]
                 }
             },
             "bientity_action": {
@@ -71,6 +98,11 @@
                                     "change": -20
                                 },
                                 {
+                                    "type": "origins:modify_resource",
+                                    "resource": "*:*_mana_dark",
+                                    "modifier": { "operation": "set_total", "resource": "*:*_mana", "value": 0 }
+                                },
+                                {
                                     "type": "origins:trigger_cooldown",
                                     "power": "*:*_regen_cooldown"
                                 }
@@ -78,19 +110,43 @@
                         }
                     },
                     {
-                        "type": "origins:target_action",
-                        "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:actor_condition",
+                            "condition": { "type": "origins:power", "power": "konosuba:demon" }
+                        },
+                        "if_action": {
                             "type": "origins:and",
                             "actions": [
                                 {
-                                    "type": "origins:heal",
-                                    "amount": 2
+                                    "type": "origins:damage",
+                                    "amount": 2,
+                                    "damage_type": "minecraft:magic"
                                 },
                                 {
-                                    "type": "origins:execute_command",
-                                    "command": "function konosuba:origins/aqua/heal"
+                                    "type": "origins:target_action",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "function konosuba:origins/aqua/heal/damage"
+                                    }
                                 }
                             ]
+                        },
+                        "else_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:heal",
+                                        "amount": 2
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "function konosuba:origins/aqua/heal/heal"
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]
