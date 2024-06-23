@@ -2,6 +2,14 @@
     "name": "Divine rejuvenation",
     "description": "With your godly power, just by taking a look at others you can make them feel better.",
 
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Will hurt others if you are a demon."
+        }
+    ],
+
     "type": "origins:multiple",
 
     "mana": {
@@ -80,7 +88,16 @@
                 "type": "origins:target_condition",
                 "condition": {
                     "type": "origins:and",
-                    "conditions": [{ "type": "origins:living" }, { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 }]
+                    "conditions": [
+                        { "type": "origins:living" },
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 },
+                                { "type": "origins:power", "power": "konosuba:beldia/cursed" }
+                            ]
+                        }
+                    ]
                 }
             },
             "bientity_action": {
@@ -109,6 +126,7 @@
                             ]
                         }
                     },
+
                     {
                         "type": "origins:if_else",
                         "condition": {
@@ -144,6 +162,17 @@
                                     {
                                         "type": "origins:execute_command",
                                         "command": "function konosuba:origins/aqua/heal/heal"
+                                    },
+                                    {
+                                        "type": "origins:if_else",
+                                        "condition": {
+                                            "type": "origins:power",
+                                            "power": "konosuba:beldia/cursed"
+                                        },
+                                        "if_action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/beldia/curse/remove"
+                                        }
                                     }
                                 ]
                             }
