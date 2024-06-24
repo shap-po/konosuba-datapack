@@ -1,17 +1,36 @@
 {
     "name": "Slime management",
     "description": "Allows you to absorb or extract slime from your body. The more slime you have - the bigger, slower and stronger you are.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Hold %s with a piece of slime in your hand to absorb it."
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Hold %s with an empty hand to extract slime. Sneak to extract blocks of slime."
+        }
+    ],
 
     "type": "origins:active_self",
+
     "key": {
-        "key": "key.origins.secondary_active",
+        "key": "key.origins.primary_active",
         "continuous": true
     },
     "cooldown": 2,
+
     "entity_action": {
         "type": "origins:if_else_list",
         "actions": [
             {
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:slime_ball" } }
+                },
                 "action": {
                     "type": "origins:if_else",
                     "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9950 },
@@ -19,20 +38,16 @@
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
                         "item_action": { "type": "origins:consume" },
-                        "entity_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:hans/slime_count",
-                            "change": 50
-                        }
+                        "entity_action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 50 }
                     }
-                },
-                "condition": {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:slime_ball" } }
                 }
             },
             {
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:slime_block" } }
+                },
                 "action": {
                     "type": "origins:if_else",
                     "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9600 },
@@ -40,39 +55,60 @@
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
                         "item_action": { "type": "origins:consume" },
-                        "entity_action": {
-                            "type": "origins:change_resource",
-                            "resource": "*:hans/slime_count",
-                            "change": 400
-                        }
+                        "entity_action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 400 }
                     }
-                },
-                "condition": {
-                    "type": "origins:equipped_item",
-                    "equipment_slot": "mainhand",
-                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:slime_block" } }
                 }
             },
             {
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:magma_cream" } }
+                },
+                "action": {
+                    "type": "origins:if_else",
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9930 },
+                    "if_action": {
+                        "type": "origins:modify_inventory",
+                        "slot": "weapon.mainhand",
+                        "item_action": { "type": "origins:consume" },
+                        "entity_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 20 },
+                                { "type": "origins:set_on_fire", "duration": 2 }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "condition": { "type": "origins:sneaking" },
+                "action": {
+                    "type": "origins:if_else",
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 400 },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -400 },
+                            { "type": "origins:give", "stack": { "item": "minecraft:slime_block", "amount": 1 } }
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": { "type": "origins:constant", "value": true },
                 "action": {
                     "type": "origins:if_else",
                     "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 50 },
                     "if_action": {
                         "type": "origins:and",
                         "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "*:hans/slime_count",
-                                "change": -50
-                            },
-                            {
-                                "type": "origins:give",
-                                "stack": { "item": "minecraft:slime_ball", "amount": 1 }
-                            }
+                            { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -50 },
+                            { "type": "origins:give", "stack": { "item": "minecraft:slime_ball", "amount": 1 } }
                         ]
                     }
-                },
-                "condition": { "type": "origins:constant", "value": true }
+                }
             }
         ]
     },

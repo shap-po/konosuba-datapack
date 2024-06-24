@@ -1,21 +1,107 @@
 {
     "name": "§mSecond§r Another chance",
-    "description": "As god you may give people as many chances as you see fit.",
+    "description": "As the goddess you may give people as many chances as you see fit.",
 
     "type": "origins:multiple",
 
-    "cooldown": {
-        "type": "origins:cooldown",
-        "cooldown": 10000
+    "on_cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": { "should_render": false }
+    },
+
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": { "should_render": true }
     },
 
     "revive": {
         "type": "origins:active_self",
-        "key": { "key": "key.origins.secondary_active" },
-        "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "==", "compare_to": 0 },
+        "key": { "key": "key.origins.primary_active" },
+        "condition": { "type": "origins:resource", "resource": "*:*_on_cooldown", "comparison": "==", "compare_to": 0 },
         "entity_action": {
-            "type": "origins:execute_command",
-            "command": "say revive"
+            "type": "origins:if_else",
+            "condition": { "type": "origins:resource", "resource": "*:*_active", "comparison": "==", "compare_to": 0 },
+            "if_action": {
+                "type": "origins:modify_resource",
+                "resource": "*:*_active",
+                "modifier": { "operation": "set_total", "value": 1 }
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    { "type": "origins:modify_resource", "resource": "*:*_active", "modifier": { "operation": "set_total", "value": 0 } },
+                    {
+                        "_": "Remove target",
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/aqua/revive/revive"
+                    }
+                ]
+            }
+        }
+    },
+
+    "select_target": {
+        "type": "origins:action_over_time",
+        "condition": { "type": "origins:resource", "resource": "*:*_active", "comparison": "==", "compare_to": 1 },
+        "interval": 2,
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": { "type": "origins:sneaking", "inverted": true },
+            "if_action": {
+                "type": "origins:raycast",
+                "distance": 4,
+                "block": false,
+                "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:target_action",
+                            "action": {
+                                "_": "Add a tag to the target",
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/aqua/revive/select_target"
+                            }
+                        },
+                        {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "_": "Link the target",
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/aqua/revive/add_target"
+                            }
+                        }
+                    ]
+                },
+                "miss_action": {
+                    "type": "origins:execute_command",
+                    "command": "function konosuba:origins/aqua/revive/cleanup"
+                },
+                "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        { "type": "origins:can_see" },
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    { "type": "origins:entity_type", "entity_type": "minecraft:player" },
+                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function konosuba:origins/aqua/revive/select_self"
+            }
         }
     }
 }

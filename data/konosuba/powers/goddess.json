@@ -1,13 +1,15 @@
 {
-    "type": "origins:multiple",
+    "name": "Goddess",
     "hidden": true,
+
+    "type": "origins:multiple",
 
     "lives": {
         "type": "origins:action_on_callback",
         "execute_chosen_when_orb": true,
         "entity_action_chosen": {
             "type": "origins:execute_command",
-            "command": "scoreboard players add @s konosuba.lives 1"
+            "command": "function konosuba:lives/add/goddess"
         }
     }
 }

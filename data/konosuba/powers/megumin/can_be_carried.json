@@ -1,0 +1,40 @@
+{
+    "name": "Can be carried",
+    "description": "You can be carried by other players.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Sneak + Right-click to be carried."
+        }
+    ],
+
+    "type": "origins:action_on_being_used",
+
+    "item_condition": { "type": "origins:empty" },
+    "bientity_condition": {
+        "type": "origins:actor_condition",
+        "condition": {
+            "type": "origins:sneaking"
+        }
+    },
+
+    "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:invert",
+                "action": {
+                    "type": "origins:mount"
+                }
+            },
+            {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "function konosuba:origins/megumin/carry/mount"
+                }
+            }
+        ]
+    }
+}

@@ -8,34 +8,6 @@
         "type": "origins:action_over_time",
         "interval": 10,
 
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:hans/slime_count",
-                "comparison": ">=",
-                "compare_to": 100
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:hans/slime_count",
-                        "change": -100
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:execute_command",
-                        "command": "damage @s 1 origins:hurt_by_water"
-                    }
-                ]
-            }
-        },
         "condition": {
             "type": "origins:block_collision",
             "block_condition": {
@@ -45,12 +17,33 @@
                     "tag": "minecraft:water"
                 }
             }
+        },
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 100
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:hans/slime_count",
+                "change": -100
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "damage @s 1 origins:hurt_by_water"
+            }
         }
     },
 
     "rain": {
         "type": "origins:action_over_time",
         "interval": 10,
+
+        "condition": { "type": "origins:in_rain" },
 
         "entity_action": {
             "type": "origins:if_else",
@@ -61,32 +54,19 @@
                 "compare_to": 50
             },
             "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:hans/slime_count",
-                        "change": -50
-                    }
-                ]
+                "type": "origins:change_resource",
+                "resource": "*:hans/slime_count",
+                "change": -50
             },
             "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:execute_command",
-                        "command": "damage @s 0.5 origins:hurt_by_water"
-                    }
-                ]
+                "type": "origins:execute_command",
+                "command": "damage @s 0.5 origins:hurt_by_water"
             }
-        },
-        "condition": {
-            "type": "origins:in_rain"
         }
     },
 
     "condition": {
-        "type": "origins:and",
+        "type": "origins:or",
         "conditions": [
             {
                 "type": "origins:status_effect",

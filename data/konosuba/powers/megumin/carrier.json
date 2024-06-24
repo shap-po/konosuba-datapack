@@ -1,0 +1,22 @@
+{
+    "name": "Megumin Carrier",
+
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "condition": { "type": "origins:sneaking", "inverted": true },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:passenger_action",
+                "action": {
+                    "type": "origins:dismount"
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function konosuba:origins/megumin/carry/dismount"
+            }
+        ]
+    }
+}

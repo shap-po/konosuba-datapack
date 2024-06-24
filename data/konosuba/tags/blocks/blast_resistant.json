@@ -8,6 +8,7 @@
         "minecraft:end_portal_frame",
         "minecraft:jigsaw",
         "minecraft:structure_block",
+
         "minecraft:ancient_debris",
         "minecraft:anvil",
         "minecraft:netherite_block",
@@ -17,9 +18,6 @@
         "minecraft:obsidian",
         "minecraft:reinforced_deepslate",
         "minecraft:ender_chest",
-        "minecraft:trial_spawner",
-        "minecraft:vault",
-        "minecraft:heavy_core",
 
         "#konosuba:blast_resistant_modded"
     ]

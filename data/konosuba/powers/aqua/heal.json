@@ -1,19 +1,172 @@
 {
-    "name": "Divine rejuvination",
+    "name": "Divine rejuvenation",
     "description": "With your godly power, just by taking a look at others you can make them feel better.",
 
-    "type": "origins:fire_projectile",
-    "cooldown": 30,
-    "hud_render": {
-        "sprite_location": "origins:textures/gui/resource_bar.png",
-        "bar_index": 6
+    "badges": [
+        "origins:active",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Will hurt others if you are a demon."
+        }
+    ],
+
+    "type": "origins:multiple",
+
+    "mana": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 140,
+        "start_value": 140,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 4,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
+                    { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+                ]
+            }
+        }
     },
-    "entity_type": "origins:enderian_pearl",
-    "sound": "minecraft:entity.ender_pearl.throw",
-    "speed": 1.5,
-    "divergence": 1,
-    "key": {
-        "key": "key.origins.primary_active",
-        "continuous": false
+    "mana_dark": {
+        "_": "Copy of mana resource, but with a different texture",
+        "type": "origins:resource",
+        "min": 0,
+        "max": 140,
+        "start_value": 140,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 14,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    { "type": "origins:power", "power": "konosuba:demon" },
+                    { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 140 }
+                ]
+            }
+        }
+    },
+    "regen_cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 200,
+        "hud_render": { "should_render": false }
+    },
+    "mana_regen": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": 1 },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_mana_dark",
+                    "modifier": { "operation": "set_total", "resource": "*:*_mana", "value": 0 }
+                }
+            ]
+        },
+        "condition": { "type": "origins:resource", "resource": "*:*_regen_cooldown", "comparison": "==", "compare_to": 0 }
+    },
+
+    "activate": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": true
+        },
+        "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": ">=", "compare_to": 20 },
+        "cooldown": 20,
+
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 8,
+            "block": false,
+
+            "bientity_condition": {
+                "_": "Only allow living targets; target must not have full health or be cursed by Beldia OR Aqua must be a demon",
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:target_condition",
+                        "condition": { "type": "origins:living" }
+                    },
+                    {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:actor_condition",
+                                "condition": { "type": "origins:power", "power": "konosuba:demon" }
+                            },
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 },
+                                        { "type": "origins:power", "power": "konosuba:beldia/cursed" }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "_": "Remove mana, update dark mana, and trigger cooldown",
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": -20 },
+                                {
+                                    "type": "origins:modify_resource",
+                                    "resource": "*:*_mana_dark",
+                                    "modifier": { "operation": "set_total", "resource": "*:*_mana", "value": 0 }
+                                },
+                                { "type": "origins:trigger_cooldown", "power": "*:*_regen_cooldown" }
+                            ]
+                        }
+                    },
+
+                    {
+                        "_": "Heal or damage the target, depending on whether Aqua is a demon",
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:actor_condition",
+                            "condition": { "type": "origins:power", "power": "konosuba:demon" }
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                { "type": "origins:damage", "amount": 2, "damage_type": "minecraft:magic" },
+                                {
+                                    "type": "origins:target_action",
+                                    "action": { "type": "origins:execute_command", "command": "function konosuba:origins/aqua/heal/damage" }
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    { "type": "origins:heal", "amount": 4 },
+                                    { "type": "origins:execute_command", "command": "function konosuba:origins/aqua/heal/heal" },
+                                    { "type": "origins:execute_command", "command": "function konosuba:origins/beldia/curse/remove" }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
     }
 }

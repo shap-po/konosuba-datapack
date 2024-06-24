@@ -1,0 +1,19 @@
+{
+    "name": "Target Glow",
+    "description": "Glow the target you are reviving.",
+    "hidden": true,
+
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:actor_condition",
+        "condition": {
+            "type": "origins:power",
+            "power": "konosuba:goddess"
+        }
+    },
+
+    "use_teams": false,
+    "red": 0,
+    "green": 1,
+    "blue": 1
+}

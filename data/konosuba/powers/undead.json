@@ -7,11 +7,23 @@
         "execute_chosen_when_orb": true,
         "entity_action_chosen": {
             "type": "origins:execute_command",
-            "command": "scoreboard players remove @s konosuba.lives 1"
+            "command": "function konosuba:lives/add/undead"
         }
     },
 
     "invert_instant_effects": {
         "type": "apugli:invert_instant_effects"
+    },
+
+    "magic_resistance": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "minecraft:magic"
+        },
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -0.5
+        }
     }
 }

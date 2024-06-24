@@ -7,25 +7,25 @@
     "head": {
         "type": "origins:ingredient",
         "ingredient": {
-            "item": "minecraft:netherite_helmet"
+            "tag": "konosuba:netherite"
         }
     },
     "chest": {
         "type": "origins:ingredient",
         "ingredient": {
-            "item": "minecraft:netherite_chestplate"
+            "tag": "konosuba:netherite"
         }
     },
     "legs": {
         "type": "origins:ingredient",
         "ingredient": {
-            "item": "minecraft:netherite_leggings"
+            "tag": "konosuba:netherite"
         }
     },
     "feet": {
         "type": "origins:ingredient",
         "ingredient": {
-            "item": "minecraft:netherite_boots"
+            "tag": "konosuba:netherite"
         }
     }
 }
