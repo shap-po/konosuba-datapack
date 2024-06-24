@@ -17,7 +17,7 @@
     "charge": {
         "type": "origins:resource",
         "min": 0,
-        "max": 40,
+        "max": 200,
         "hud_render": {
             "should_render": true,
             "bar_index": 7,
@@ -55,11 +55,11 @@
         "_": "Decay the explosion charge over time if not fully charged",
         "type": "origins:action_over_time",
         "interval": 1,
-        "entity_action": { "type": "origins:change_resource", "resource": "*:*_charge", "change": -2 },
+        "entity_action": { "type": "origins:change_resource", "resource": "*:*_charge", "change": -4 },
         "condition": {
             "type": "origins:and",
             "conditions": [
-                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "<", "compare_to": 40 },
+                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "<", "compare_to": 200 },
                 { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": "==", "compare_to": 0 }
             ]
         }
@@ -75,12 +75,53 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "entity_action": {
-            "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": ">", "compare_to": 0 },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "_": "Animate charging stages based on the charge amount",
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 200 },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/megumin/explosion/animate/stages/ready"
+                            }
+                        },
+                        {
+                            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">=", "compare_to": 160 },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/megumin/explosion/animate/stages/3"
+                            }
+                        },
+                        {
+                            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">=", "compare_to": 70 },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/megumin/explosion/animate/stages/2"
+                            }
+                        },
+                        {
+                            "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">=", "compare_to": 10 },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/megumin/explosion/animate/stages/1"
+                            }
+                        },
+                        {
+                            "condition": { "type": "origins:constant", "value": true },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/megumin/explosion/animate/stages/0"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": ">", "compare_to": 0 },
+                    "if_action": {
                         "type": "origins:raycast",
                         "distance": 120,
                         "block": true,
@@ -88,32 +129,20 @@
                         "shape_type": "visual",
                         "fluid_handling": "any",
                         "command_step": 10,
-                        "command_along_ray": "function konosuba:origins/megumin/explosion/animate/step",
-                        "command_at_hit": "function konosuba:origins/megumin/explosion/animate/hit",
+                        "command_along_ray": "function konosuba:origins/megumin/explosion/animate/raycast/step",
+                        "command_at_hit": "function konosuba:origins/megumin/explosion/animate/raycast/hit",
                         "miss_action": {
                             "_": "If the raycast misses, target the end of the ray.",
                             "type": "origins:execute_command",
-                            "command": "execute as @s at @s anchored eyes positioned ^ ^ ^120 run function konosuba:origins/megumin/explosion/animate/hit"
+                            "command": "execute as @s at @s anchored eyes positioned ^ ^ ^120 run function konosuba:origins/megumin/explosion/animate/raycast/hit"
                         }
                     },
-                    {
-                        "type": "origins:if_else",
-                        "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
-                        "if_action": {
-                            "type": "origins:execute_command",
-                            "command": "function konosuba:origins/megumin/explosion/animate/ready"
-                        },
-                        "else_action": {
-                            "type": "origins:execute_command",
-                            "command": "function konosuba:origins/megumin/explosion/animate/charging"
-                        }
+                    "else_action": {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/megumin/explosion/animate/stages/releasing"
                     }
-                ]
-            },
-            "else_action": {
-                "type": "origins:execute_command",
-                "command": "function konosuba:origins/megumin/explosion/animate/releasing"
-            }
+                }
+            ]
         },
         "condition": { "type": "origins:resource", "resource": "*:*_charge", "comparison": ">", "compare_to": 1 }
     },
@@ -147,7 +176,7 @@
         "condition": {
             "type": "origins:and",
             "conditions": [
-                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 40 },
+                { "type": "origins:resource", "resource": "*:*_charge", "comparison": "==", "compare_to": 200 },
                 { "type": "origins:resource", "resource": "*:*_is_charging", "comparison": "==", "compare_to": 0 }
             ]
         }
@@ -159,7 +188,39 @@
             "type": "origins:resource",
             "resource": "*:*_charge",
             "comparison": "==",
-            "compare_to": 40
+            "compare_to": 200
+        }
+    },
+
+    "weakness": {
+        "_": "Effects after using the ability",
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": ">", "compare_to": 100 },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effects": [
+                            {
+                                "effect": "minecraft:weakness",
+                                "duration": 20,
+                                "amplifier": 1,
+                                "particles": false,
+                                "show_icon": false
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     }
 }
