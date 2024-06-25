@@ -1,10 +1,11 @@
 {
     "name": "Kazuma",
-    "description": "Even just a regular human with above avarage intelect has a few tricks up his sleve.",
+    "description": "Even just a regular human with above average intellect has a few tricks up his sleeve.",
     "icon": "minecraft:iron_sword",
 
     "powers": [
         "konosuba:kazuma/clairvoyance",
+        "konosuba:kazuma/steal",
         "konosuba:kazuma/lucky",
         "konosuba:no_netherite",
         "konosuba:lives"
