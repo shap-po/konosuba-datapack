@@ -1,0 +1,64 @@
+{
+    "type": "origins:active_self",
+    "name": "Paralysis",
+    "description": "-",
+    "entity_action": {
+        "type": "origins:raycast",
+        "block": false,
+        "distance": 15,
+        "bientity_action" : {
+            "type": "origins:and",
+            "actions":
+            [
+                { 
+                "type": "origins:target_action",
+                "action": 
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/power grant @s konosuba:wis/paralysis_status"
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:magic_magic",
+                        "operation": "add",
+                        "change": -300
+
+                    }
+                }
+                
+            ]
+           
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": 
+            {
+                "type": "origins:and",
+                "conditions": 
+                [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:magic_magic",
+                        "comparison": ">",
+                        "compare_to": 300
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:wis/spellchanger_spell",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": "key.origins.primary_active"
+}

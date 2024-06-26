@@ -7,9 +7,12 @@
     {
         "type": "origins:resource",
         "min": 0,
-        "max": 1000,
+        "max": 2000,
+        "start_value": 1800,
         "hud_render": {
-            "should_render": true
+            "should_render": true,
+            "bar_index": 23,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
         },
         "max_action": {
             "type": "origins:and",
@@ -41,12 +44,19 @@
 
     "magic_regeneration_passive":{
         "type": "apoli:action_over_time",
-        "interval": 20,
-        "entity_action": {
+        "interval": 200,
+        "entity_action": 
+        {
             "type": "origins:change_resource",
             "resource": "*:*_magic",
             "operation": "add",
-            "change": 5
+            "change": 50
+        },
+        "condition": {
+            "type": "origins:resource",
+            "compare_to": 250,
+            "comparison": ">=",
+            "resource": "*:wis/meat_craving_flesh"
         }
     },
 
@@ -57,7 +67,7 @@
             "type": "origins:change_resource",
             "resource": "*:*_magic",
             "operation": "add",
-            "change": 100
+            "change": 50
         },
         "item_condition": {
             "type": "origins:ingredient",
@@ -91,7 +101,7 @@
             "type": "origins:change_resource",
             "resource": "*:*_magic",
             "operation": "set",
-            "change": 999
+            "change": 1999
         },
         "item_condition": {
             "type": "origins:ingredient",

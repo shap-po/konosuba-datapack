@@ -4,15 +4,10 @@
     "blue_shader":
     {
         "type": "origins:model_color",
-        "red": 0,
-        "green": 0,
-        "blue": 1,
+        "red": 0.5,
+        "green": 0.5,
+        "blue": 0.5,
         "alpha": 1
-    },
-
-    "shaking":
-    {
-        "type": "origins:shaking"
     },
 
     "frosen_time":
@@ -66,29 +61,52 @@
                                 "effects": 
                                 [
                                     {
-                                        "effect": "minecraft:slowness",
-                                        "duration": 40,
-                                        "amplifier": 9,
-                                        "is_ambient": true,
+                                        "effect": "minecraft:weakness",
+                                        "amplifier": 1,
+                                        "duration": 80,
+                                        "is_ambient": false,
                                         "show_particles": false,
                                         "show_icon": false
                                     },
                                     {
+                                        "effect": "minecraft:slowness",
+                                        "amplifier": 9,
+                                        "duration": 80,
+                                        "is_ambient": false,
+                                        "show_particles": false,
+                                        "show_icon": true
+                                    },
+                                    {
                                         "effect": "minecraft:blindness",
                                         "duration": 40,
-                                        "is_ambient": true,
+                                        "is_ambient": false,
                                         "show_particles": false,
                                         "show_icon": false
                                     },
                                     {
                                         "effect": "minecraft:resistance",
-                                        "duration": 40,
-                                        "is_ambient": true,
+                                        "duration": 80,
+                                        "is_ambient": false,
                                         "show_particles": false,
                                         "show_icon": false
                                     }
 
                                 ]
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": {
+                                    "type": "minecraft:dust",
+                                    "params": "0.5 0.5 0.5 2"
+                                },
+                                "count": 16,
+                                "speed": 100.0,
+                                "force": false,
+                                "spread": {
+                                    "x": 3.0,
+                                    "y": 3.0,
+                                    "z": 3.0
+                                }
                             }
                         ]
                     }
@@ -104,7 +122,7 @@
                     "action": 
                     {
                         "type": "origins:execute_command",
-                        "command": "/power remove @s konosuba:frozen_status"
+                        "command": "/power remove @s konosuba:wis/paralysis_status"
                     }
                 }
             ]
@@ -114,16 +132,14 @@
 
     "subtract_resource_on_hit":
     {
-        "type": "origins:action_on_hit",
-        "bientity_action": 
+        "type": "origins:action_when_damage_taken",
+        "cooldown": 1,
+        "entity_action": 
         {
-            "type": "origins:target_action",
-            "action":  
-                    {
-                        "type": "origins:execute_command",
-                        "command": "/power remove @s konosuba:frozen_status"
-                    }
-
+            "type": "origins:change_resource",
+            "resource": "*:*_frosen_time",
+            "operation": "add",
+            "change": 400
         }
     }
 

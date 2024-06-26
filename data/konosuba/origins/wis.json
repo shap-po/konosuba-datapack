@@ -5,10 +5,16 @@
 
     "powers": [
         "konosuba:magic",
+        "konosuba:wis/spells/paralysis",
+        "konosuba:wis/spells/random_teleport",
+        "konosuba:wis/spells/drain_touch",
+        "konosuba:wis/spells/skaters",
+        "konosuba:wis/meat_craving",
+        "konosuba:wis/spellchanger",
         "konosuba:no_netherite",
         "konosuba:lives",
         "konosuba:undead"
     ],
-    "impact": 1,
+    "impact": 2,
     "order": 7
 }

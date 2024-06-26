@@ -1,0 +1,327 @@
+{
+    "type": "apoli:multiple",
+    "name" : "Flesh craving",
+    "description": "As lich you cannot regenerate living tissue by yourself. As far as it goes, you need to reguraly injest some meat. Preferably raw.",
+    "badges": 
+    [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Cooked meat and rotten flesh can stave off your hunger for just little bit"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Pro100-Tip: Sun isnt good for your skin"
+        }
+    ],
+
+    "flesh":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10000,
+        "start_value": 8000,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 18
+        }
+    },
+
+    "flesh_drain_on_damage":
+    {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_flesh",
+            "change": -200
+        },
+        "damage_condition": 
+        {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 2
+        },
+        "cooldown": 20
+    },
+
+    "flesh_drain_over_time":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": 
+        {
+            "type": "origins:if_else_list",
+            "actions": 
+            [
+                {
+                    "action": 
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_flesh",
+                        "change": -6
+                    },
+                    "condition": 
+                    {
+                        "type": "origins:exposed_to_sun"
+                    }
+                },
+                {
+                    "action": 
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_flesh",
+                        "change": -2
+                    },
+                    "condition": 
+                    {
+                        "type": "origins:exposed_to_sun",
+                        "inverted": true
+                    }
+                }
+                
+
+            ]
+        },
+        "interval": 20
+    },
+
+    "flesh_restoration_tier_4":
+    {
+        "type": "origins:action_on_item_use",
+        "trigger": "finish",
+        "entity_action": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_flesh",
+            "change": 800
+        },
+        "item_condition": 
+        {
+            "type": "origins:ingredient",
+            "ingredient": 
+            [
+                {
+                    "item": "minecraft:porkchop"
+                },
+                {
+                    "item": "minecraft:beef"
+                },
+                {
+                    "item": "minecraft:mutton"
+                }
+            ]
+        }
+    },
+
+    "flesh_restoration_tier_3":
+    {
+        "type": "origins:action_on_item_use",
+        "trigger": "finish",
+        "entity_action": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_flesh",
+            "change": 500
+        },
+        "item_condition": 
+        {
+            "type": "origins:ingredient",
+            "ingredient": 
+            [
+                {
+                    "item": "minecraft:chicken"
+                },
+                {
+                    "item": "minecraft:rabbit"
+                },
+                {
+                    "item": "minecraft:cod"
+                },
+                {
+                    "item": "minecraft:salmon"
+                }
+            ]
+        }
+    },
+
+    "flesh_restoration_tier_2":
+    {
+        "type": "origins:action_on_item_use",
+        "trigger": "finish",
+        "entity_action": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_flesh",
+            "change": 200
+        },
+        "item_condition": 
+        {
+            "type": "origins:ingredient",
+            "ingredient": 
+            [
+                {
+                    "item": "minecraft:cooked_beef"
+                },
+                {
+                    "item": "minecraft:cooked_porkchop"
+                },
+                {
+                    "item": "minecraft:cooked_mutton"
+                },
+                {
+                    "item": "minecraft:cooked_chicken"
+                },
+                {
+                    "item": "minecraft:cooked_rabbit"
+                },
+                {
+                    "item": "minecraft:rabbit_stew"
+                }
+            ]
+        }
+    },
+
+    "flesh_restoration_tier_1":
+    {
+        "type": "origins:action_on_item_use",
+        "trigger": "finish",
+        "entity_action": 
+        {
+            "type": "origins:change_resource",
+            "resource": "*:*_flesh",
+            "change": 50
+        },
+        "item_condition": 
+        {
+            "type": "origins:ingredient",
+            "ingredient": 
+            [
+                {
+                    "item": "minecraft:rotten_flesh"
+                },
+                {
+                    "item": "minecraft:cooked_salmon"
+                },
+                {
+                    "item": "minecraft:cooked_cod"
+                },
+                {
+                    "item": "minecraft:spider_eye"
+                },
+                {
+                    "item": "minecraft:tropical_fish"
+                },
+                {
+                    "item": "minecraft:mushroom_stew"
+                },
+                {
+                    "item": "minecraft:suspicious_stew"
+                },
+                {
+                    "item": "minecraft:pufferfish"
+                }
+            ]
+        }
+    },
+
+    "overlay_low":
+    {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/item/beef.png",
+        "strength": 0.07,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                        "type": "origins:resource",
+                        "resource": "*:*_flesh",
+                        "comparison": "<=",
+                        "compare_to": 1000
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_flesh",
+                    "comparison": ">",
+                    "compare_to": 500
+                }
+            ]
+        }
+    },
+
+    "overlay_medium":
+    {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/item/beef.png",
+        "strength": 0.15,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                        "type": "origins:resource",
+                        "resource": "*:*_flesh",
+                        "comparison": "<=",
+                        "compare_to": 500
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_flesh",
+                    "comparison": ">",
+                    "compare_to": 100
+                }
+            ]
+        }
+    },
+
+    "overlay_high":
+    {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/item/beef.png",
+        "strength": 0.4,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                        "type": "origins:resource",
+                        "resource": "*:*_flesh",
+                        "comparison": "<=",
+                        "compare_to": 100
+                }
+            ]
+        }
+    },
+
+    "disable_regen": {
+
+        "type": "origins:disable_regen",
+        "condition": 
+        {
+            "type": "origins:resource",
+            "resource": "*:*_flesh",
+            "comparison": "<=",
+            "compare_to": 100
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "type": "origins:active_self",
+    "name": "Random teleportation",
+    "description": "-",
+    "entity_action": 
+        {
+        "type": "origins:and",
+        "actions": 
+        [
+            {
+                "type": "origins:if_else",
+                "condition": { "type": "origins:sneaking", "inverted": true },
+                "if_action": {
+                    "type": "origins:raycast",
+                    "distance": 4,
+                    "block": false,
+                    "bientity_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:target_action",
+                                "action": 
+                                {   
+                                    "type": "origins:execute_command",
+                                    "command": "/function konosuba:origins/wis/rtp"
+                                }
+                            },
+                            {
+                                "type": "origins:actor_action",
+                                "action":  
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:magic_magic",
+                                    "operation": "add",
+                                    "change": -700
+                    
+                                }
+                            }
+                        ]
+                    },
+                    "bientity_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            { "type": "origins:can_see" },
+                            {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        { "type": "origins:living" }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "else_action": 
+                {   
+                    "type": "origins:and",
+                    "actions":
+                    [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "/function konosuba:origins/wis/rtp"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "*:magic_magic",
+                            "operation": "add",
+                            "change": -500
+            
+                        }
+                    ]
+                    
+                }
+            }      
+        ]
+
+        },
+        "condition": 
+        {
+            "type": "origins:and",
+                "conditions": 
+                [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:magic_magic",
+                        "comparison": ">",
+                        "compare_to": 700
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:wis/spellchanger_spell",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                ]
+        },
+    "cooldown": 100,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": "key.origins.primary_active"
+}
