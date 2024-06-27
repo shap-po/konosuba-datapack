@@ -11,42 +11,55 @@
         "hud_render": { "should_render": false }
     },
 
-    "active": {
+    "is_active": {
         "type": "origins:resource",
         "min": 0,
         "max": 1,
-        "hud_render": { "should_render": true }
+        "hud_render": { "should_render": false }
     },
 
-    "revive": {
+    "activate": {
         "type": "origins:active_self",
         "key": { "key": "key.origins.primary_active" },
-        "condition": { "type": "origins:resource", "resource": "*:*_on_cooldown", "comparison": "==", "compare_to": 0 },
         "entity_action": {
             "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_active", "comparison": "==", "compare_to": 0 },
+            "condition": { "type": "origins:resource", "resource": "*:*_on_cooldown", "comparison": "==", "compare_to": 1 },
+
             "if_action": {
-                "type": "origins:modify_resource",
-                "resource": "*:*_active",
-                "modifier": { "operation": "set_total", "value": 1 }
+                "type": "origins:execute_command",
+                "command": "function konosuba:origins/aqua/revive/notify/cooldown"
             },
+
             "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    { "type": "origins:modify_resource", "resource": "*:*_active", "modifier": { "operation": "set_total", "value": 0 } },
-                    {
-                        "_": "Remove target",
-                        "type": "origins:execute_command",
-                        "command": "function konosuba:origins/aqua/revive/revive"
-                    }
-                ]
+                "type": "origins:if_else",
+                "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 0 },
+                "if_action": {
+                    "type": "origins:modify_resource",
+                    "resource": "*:*_is_active",
+                    "modifier": { "operation": "set_total", "value": 1 }
+                },
+                "else_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:modify_resource",
+                            "resource": "*:*_is_active",
+                            "modifier": { "operation": "set_total", "value": 0 }
+                        },
+                        {
+                            "_": "Remove target",
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/aqua/revive/revive"
+                        }
+                    ]
+                }
             }
         }
     },
 
     "select_target": {
         "type": "origins:action_over_time",
-        "condition": { "type": "origins:resource", "resource": "*:*_active", "comparison": "==", "compare_to": 1 },
+        "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 },
         "interval": 2,
 
         "entity_action": {
@@ -102,6 +115,16 @@
                 "type": "origins:execute_command",
                 "command": "function konosuba:origins/aqua/revive/select_self"
             }
+        }
+    },
+
+    "show_target": {
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/aqua/revive/notify/target"
         }
     }
 }

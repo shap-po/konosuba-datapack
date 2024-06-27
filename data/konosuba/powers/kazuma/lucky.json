@@ -1,28 +1,21 @@
 {
     "name": "Extreme luck",
-    "description": "Sometimes things just turn in your favor. ",
+    "description": "Sometimes things just turn in your favor.",
 
-    
     "type": "origins:replace_loot_table",
+
     "replace": {
         ".*:blocks/.*_ore": "konosuba:double_drops",
         ".*:entities/.*": "konosuba:double_drops"
     },
     "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-            "type": "origins:equipped_item",
-            "equipment_slot": "mainhand",
-            "item_condition": {
-                "type": "origins:enchantment",
-                "enchantment": "minecraft:silk_touch",
-                "comparison": "!=",
-                "compare_to": 1
-                }
-            }
-        ]
-       
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:silk_touch",
+            "comparison": "<",
+            "compare_to": 1
+        }
     }
-
 }
