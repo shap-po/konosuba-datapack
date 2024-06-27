@@ -11,8 +11,8 @@
         "konosuba:wiz/spells/drain_touch",
         "konosuba:wiz/spells/skaters",
         "konosuba:wiz/meat_craving",
-        "konosuba:no_netherite",
         "konosuba:undead",
+        "konosuba:no_netherite",
         "konosuba:lives"
     ],
     "impact": 2,
