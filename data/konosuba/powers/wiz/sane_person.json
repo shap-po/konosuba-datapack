@@ -1,0 +1,12 @@
+{
+    "name": "Sane person",
+    "description": "Prevents you from seeing Wiz's hallucinations.",
+    "hidden": true,
+
+    "type": "origins:prevent_entity_render",
+
+    "entity_condition": {
+        "type": "origins:power",
+        "power": "*:wiz/imaginary_meat"
+    }
+}
