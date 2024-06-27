@@ -1,2 +1,2 @@
-execute unless data entity @a[tag=konosuba.kazuma_steal,limit=1,sort=nearest] Inventory.[{Slot:6b}] run function konosuba:origins/kazuma/steal/fail/empty
-execute if data entity @a[tag=konosuba.kazuma_steal,limit=1,sort=nearest] Inventory.[{Slot:6b}] run function konosuba:origins/kazuma/steal/execute/hotbar_6_success
+execute unless data entity @p[tag=konosuba.kazuma_steal] Inventory.[{Slot:6b}] run function konosuba:origins/kazuma/steal/fail/empty
+execute if data entity @p[tag=konosuba.kazuma_steal] Inventory.[{Slot:6b}] run function konosuba:origins/kazuma/steal/execute/hotbar_6_success
