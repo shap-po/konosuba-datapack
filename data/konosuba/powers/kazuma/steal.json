@@ -31,29 +31,22 @@
         "key": {
             "key": "key.origins.secondary_active"
         },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "==", "compare_to": 0 },
+                { "type": "origins:inventory", "slot": "weapon.mainhand", "comparison": "==", "compare_to": 0 },
+                { "type": "origins:sneaking" }
+            ]
+        },
 
         "entity_action": {
             "type": "origins:raycast",
 
             "distance": 6,
             "bientity_condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:target_condition",
-                        "condition": { "type": "origins:entity_type", "entity_type": "minecraft:player" }
-                    },
-                    {
-                        "type": "origins:actor_condition",
-                        "condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                { "type": "origins:inventory", "slot": "weapon.mainhand", "comparison": "==", "compare_to": 0 },
-                                { "type": "origins:sneaking" }
-                            ]
-                        }
-                    }
-                ]
+                "type": "origins:target_condition",
+                "condition": { "type": "origins:entity_type", "entity_type": "minecraft:player" }
             },
 
             "bientity_action": {
