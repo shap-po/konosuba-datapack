@@ -7,8 +7,14 @@
     "bientity_condition": {
         "type": "origins:actor_condition",
         "condition": {
-            "type": "origins:power",
-            "power": "konosuba:goddess"
+            "type": "origins:and",
+            "conditions": [
+                { "type": "origins:living" },
+                {
+                    "type": "origins:power",
+                    "power": "konosuba:goddess"
+                }
+            ]
         }
     },
 
