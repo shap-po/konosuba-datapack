@@ -80,14 +80,14 @@
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 4 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: NULL 4\",\"color\":\"blue\"}"
+                                "command": "title @s actionbar {\"text\":\"Current spell: NULL 4\",\"color\":\"red\"}"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 5 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: NULL 5\",\"color\":\"blue\"}"
+                                "command": "title @s actionbar {\"text\":\"Current spell: NULL 5\",\"color\":\"red\"}"
                             }
                         }
                     ]

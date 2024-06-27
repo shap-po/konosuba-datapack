@@ -2,5 +2,201 @@
     "name": "Draining touch",
     "description": "-",
 
-    "type": "origins:simple"
+    "type": "origins:multiple",
+    
+
+    "toggle":
+    {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": "key.origins.primary_active",
+        "retain_state": false,
+        "condition": 
+        {
+            "type": "origins:resource",
+            "resource": "*:wiz/spellchanger_spell",
+            "comparison": "==",
+            "compare_to": 2        
+        }
+    },
+
+
+
+    "lifesteal_empty_hand":
+    {
+        "type": "origins:action_on_hit",
+        "cooldown": 4,
+        "bientity_action": 
+        {
+            "type": "origins:and",
+            "actions": 
+            [
+                {
+                    "type": "origins:actor_action",
+                    "action": 
+                    {
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:heal",
+                                "amount": 1
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:magic_magic",
+                                "operation": "add",
+                                "change": -50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": 
+                    {
+                        "type": "origins:damage",
+                        "damage_type": "minecraft:magic",
+                        "amount": 1
+                    }
+                }
+            ]
+        },
+        "bientity_condition": 
+        {
+            "type": "origins:and",
+            "conditions": 
+            [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:magic_magic",
+                                "comparison": ">",
+                                "compare_to": 50
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:wiz/spellchanger_spell",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            { 
+                                "type": "origins:inventory", 
+                                "slot": "weapon.mainhand", 
+                                "comparison": "==", 
+                                "compare_to": 0 
+                            },
+                            {
+                                "type": "origins:power_active",
+                                "power": "*:*_toggle"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:living"
+                    }
+                }
+            ]
+        }
+    },
+
+
+
+    "lifesteal_full_hand":
+    {
+        "type": "origins:action_on_hit",
+        "cooldown": 4,
+        "bientity_action": 
+        {
+            "type": "origins:and",
+            "actions": 
+            [
+                {
+                    "type": "origins:actor_action",
+                    "action": 
+                    {
+                        "type": "origins:and",
+                        "actions": 
+                        [
+                            {
+                                "type": "origins:heal",
+                                "amount": 0.25
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:magic_magic",
+                                "operation": "add",
+                                "change": -50
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": 
+                    {
+                        "type": "origins:damage",
+                        "damage_type": "minecraft:magic",
+                        "amount": 0.25
+                    }
+                }
+            ]
+        },
+        "bientity_condition": 
+        {
+            "type": "origins:and",
+            "conditions": 
+            [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": 
+                    {
+                        "type": "origins:and",
+                        "conditions": 
+                        [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:magic_magic",
+                                "comparison": ">",
+                                "compare_to": 50
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:wiz/spellchanger_spell",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            { 
+                                "type": "origins:inventory", 
+                                "slot": "weapon.mainhand", 
+                                "comparison": "==", 
+                                "compare_to": 0 ,
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:power_active",
+                                "power": "*:*_toggle"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:living"
+                    }
+                }
+            ]
+        }
+    }
+    
 }
