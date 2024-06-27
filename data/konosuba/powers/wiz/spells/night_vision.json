@@ -1,5 +1,5 @@
 {
-    "name": "Random teleportation",
+    "name": "Night vision",
     "description": "-",
 
     "type": "origins:active_self",
@@ -26,8 +26,12 @@
                             {
                                 "type": "origins:target_action",
                                 "action": {
-                                    "type": "origins:execute_command",
-                                    "command": "/function konosuba:origins/wiz/rtp"
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:night_vision",
+                                        "duration": 6000
+                                    }
+                                    
                                 }
                             },
                             {
@@ -36,7 +40,7 @@
                                     "type": "origins:change_resource",
                                     "resource": "*:magic_magic",
                                     "operation": "add",
-                                    "change": -700
+                                    "change": -900
                                 }
                             }
                         ]
@@ -59,14 +63,18 @@
                     "type": "origins:and",
                     "actions": [
                         {
-                            "type": "origins:execute_command",
-                            "command": "/function konosuba:origins/wiz/rtp"
+                            "type": "origins:apply_effect",
+                            "effect": 
+                            {
+                                "effect": "minecraft:night_vision",
+                                "duration": 6000
+                            }
                         },
                         {
                             "type": "origins:change_resource",
                             "resource": "*:magic_magic",
                             "operation": "add",
-                            "change": -500
+                            "change": -900
                         }
                     ]
                 }
@@ -81,13 +89,13 @@
                 "type": "origins:resource",
                 "resource": "*:magic_magic",
                 "comparison": ">",
-                "compare_to": 700
+                "compare_to": 900
             },
             {
                 "type": "origins:resource",
                 "resource": "*:wiz/spellchanger_spell",
                 "comparison": "==",
-                "compare_to": 1
+                "compare_to": 4
             }
         ]
     }

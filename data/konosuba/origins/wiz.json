@@ -5,11 +5,13 @@
 
     "powers": [
         "konosuba:magic",
+        "konosuba:wiz/hunger_immunity",
         "konosuba:wiz/spellchanger",
         "konosuba:wiz/spells/paralysis",
         "konosuba:wiz/spells/random_teleport",
         "konosuba:wiz/spells/drain_touch",
         "konosuba:wiz/spells/skaters",
+        "konosuba:wiz/spells/night_vision",
         "konosuba:wiz/meat_craving",
         "konosuba:undead",
         "konosuba:no_netherite",
