@@ -1,0 +1,20 @@
+{
+    "name": "Wiz",
+    "description": "You are a powerful lich, centered around teleportation and frost magic.",
+    "icon": "minecraft:redstone",
+
+    "powers": [
+        "konosuba:magic",
+        "konosuba:wiz/spellchanger",
+        "konosuba:wiz/spells/paralysis",
+        "konosuba:wiz/spells/random_teleport",
+        "konosuba:wiz/spells/drain_touch",
+        "konosuba:wiz/spells/skaters",
+        "konosuba:wiz/meat_craving",
+        "konosuba:no_netherite",
+        "konosuba:undead",
+        "konosuba:lives"
+    ],
+    "impact": 2,
+    "order": 7
+}

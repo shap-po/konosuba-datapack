@@ -1,61 +1,53 @@
 {
+    "name": "Skaters",
+    "description": "-",
+
     "type": "origins:multiple",
 
-
-    "toggle":
-    {
+    "toggle": {
         "type": "origins:toggle",
         "active_by_default": false,
-        "retain_state":false,
+        "retain_state": false,
         "key": {
             "key": "key.origins.primary_active"
         },
-        "condition": 
-        {
+        "condition": {
             "type": "origins:resource",
-            "resource": "*:wis/spellchanger_spell",
+            "resource": "*:wiz/spellchanger_spell",
             "comparison": "==",
             "compare_to": 3
         }
     },
 
-    
-
-
-    "frostwalker":
-    {
+    "frostwalker": {
         "type": "origins:action_over_time",
         "name": "Ice skaters",
         "description": "-",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "/fill ~-3 ~-0.2 ~-3 ~3 ~-0.2 ~3 minecraft:frosted_ice replace minecraft:water"
+                    "command": "fill ~-3 ~-0.2 ~-3 ~3 ~-0.2 ~3 minecraft:frosted_ice replace minecraft:water"
                 },
                 {
                     "type": "origins:change_resource",
                     "resource": "*:magic_magic",
                     "operation": "add",
                     "change": -3
-    
                 }
-
             ]
         },
-        "condition": 
-        {
+        "condition": {
             "type": "origins:and",
-            "conditions":[
+            "conditions": [
                 {
                     "type": "origins:power_active",
                     "power": "*:*_toggle"
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:wis/spellchanger_spell",
+                    "resource": "*:wiz/spellchanger_spell",
                     "comparison": "==",
                     "compare_to": 3
                 },
@@ -81,8 +73,7 @@
         "interval": 5
     },
 
-    "faster_on_ice":
-    {
+    "faster_on_ice": {
         "type": "origins:conditioned_attribute",
         "modifier": {
             "attribute": "minecraft:generic.movement_speed",
@@ -94,56 +85,24 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:or",
-                    "conditions": 
-                    [
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:ice"
-                            }
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:frosted_ice"
-                            }
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:blue_ice"
-                            }
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:packed_ice"
-                            }
-                        },
-                        {
-                            "type": "origins:on_block",
-                            "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:snow_block"
-                            }
-                        }
-                    ]
-                },
-                {
                     "type": "origins:power_active",
                     "power": "*:*_toggle"
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            { "type": "origins:in_tag", "tag": "minecraft:ice" },
+                            { "type": "origins:in_tag", "tag": "minecraft:snow" }
+                        ]
+                    }
                 }
             ]
         }
     },
 
-    "faster_everywhere":
-    {
+    "faster_everywhere": {
         "type": "origins:conditioned_attribute",
         "modifier": {
             "attribute": "minecraft:generic.movement_speed",
@@ -152,14 +111,8 @@
         },
         "tick_rate": 20,
         "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_toggle"
-                }
-            ]
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
         }
     }
-   
 }

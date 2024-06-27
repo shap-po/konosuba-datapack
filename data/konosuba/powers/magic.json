@@ -1,10 +1,10 @@
 {
-    "type": "origins:multiple",
     "name": "Magic expert",
     "description": "You are profound user of magic, allowing you to bend it to your will. \n Magica will regenerate slowly with time... \n ...or very fast by eating \"golden\" food.",
 
-    "magic":
-    {
+    "type": "origins:multiple",
+
+    "magic": {
         "type": "origins:resource",
         "min": 0,
         "max": 2000,
@@ -16,7 +16,7 @@
         },
         "max_action": {
             "type": "origins:and",
-            "actions":[
+            "actions": [
                 {
                     "type": "origins:play_sound",
                     "sound": "minecraft:block.amethyst_block.hit",
@@ -38,15 +38,13 @@
                     }
                 }
             ]
-            
         }
     },
 
-    "magic_regeneration_passive":{
-        "type": "apoli:action_over_time",
+    "magic_regeneration_passive": {
+        "type": "origins:action_over_time",
         "interval": 200,
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_magic",
             "operation": "add",
@@ -56,11 +54,11 @@
             "type": "origins:resource",
             "compare_to": 250,
             "comparison": ">=",
-            "resource": "*:wis/meat_craving_flesh"
+            "resource": "*:wiz/meat_craving_flesh"
         }
     },
 
-    "magic_regeneration_active_carrot":{
+    "magic_regeneration_active_carrot": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
         "entity_action": {
@@ -77,7 +75,7 @@
         }
     },
 
-    "magic_regeneration_active_apple":{
+    "magic_regeneration_active_apple": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
         "entity_action": {
@@ -94,7 +92,7 @@
         }
     },
 
-    "magic_regeneration_active_apple_plus":{
+    "magic_regeneration_active_apple_plus": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
         "entity_action": {

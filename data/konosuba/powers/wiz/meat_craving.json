@@ -1,9 +1,7 @@
 {
-    "type": "apoli:multiple",
-    "name" : "Flesh craving",
-    "description": "As lich you cannot regenerate living tissue by yourself. As far as it goes, you need to reguraly injest some meat. Preferably raw.",
-    "badges": 
-    [
+    "name": "Flesh craving",
+    "description": "As lich you cannot regenerate living tissue by yourself. As far as it goes, you need to regularly ingest some meat. Preferably raw.",
+    "badges": [
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/info.png",
@@ -12,12 +10,13 @@
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Pro100-Tip: Sun isnt good for your skin"
+            "text": "Pro-Tip: Sun isn't good for your skin"
         }
     ],
 
-    "flesh":
-    {
+    "type": "origins:multiple",
+
+    "flesh": {
         "type": "origins:resource",
         "min": 0,
         "max": 10000,
@@ -29,17 +28,14 @@
         }
     },
 
-    "flesh_drain_on_damage":
-    {
+    "flesh_drain_on_damage": {
         "type": "origins:action_when_damage_taken",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_flesh",
             "change": -200
         },
-        "damage_condition": 
-        {
+        "damage_condition": {
             "type": "origins:amount",
             "comparison": ">=",
             "compare_to": 2
@@ -47,61 +43,48 @@
         "cooldown": 20
     },
 
-    "flesh_drain_over_time":
-    {
+    "flesh_drain_over_time": {
         "type": "origins:action_over_time",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:if_else_list",
-            "actions": 
-            [
+            "actions": [
                 {
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_flesh",
                         "change": -6
                     },
-                    "condition": 
-                    {
+                    "condition": {
                         "type": "origins:exposed_to_sun"
                     }
                 },
                 {
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_flesh",
                         "change": -2
                     },
-                    "condition": 
-                    {
+                    "condition": {
                         "type": "origins:exposed_to_sun",
                         "inverted": true
                     }
                 }
-                
-
             ]
         },
         "interval": 20
     },
 
-    "flesh_restoration_tier_4":
-    {
+    "flesh_restoration_tier_4": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_flesh",
             "change": 800
         },
-        "item_condition": 
-        {
+        "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": 
-            [
+            "ingredient": [
                 {
                     "item": "minecraft:porkchop"
                 },
@@ -115,21 +98,17 @@
         }
     },
 
-    "flesh_restoration_tier_3":
-    {
+    "flesh_restoration_tier_3": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_flesh",
             "change": 500
         },
-        "item_condition": 
-        {
+        "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": 
-            [
+            "ingredient": [
                 {
                     "item": "minecraft:chicken"
                 },
@@ -146,21 +125,17 @@
         }
     },
 
-    "flesh_restoration_tier_2":
-    {
+    "flesh_restoration_tier_2": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_flesh",
             "change": 200
         },
-        "item_condition": 
-        {
+        "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": 
-            [
+            "ingredient": [
                 {
                     "item": "minecraft:cooked_beef"
                 },
@@ -183,21 +158,17 @@
         }
     },
 
-    "flesh_restoration_tier_1":
-    {
+    "flesh_restoration_tier_1": {
         "type": "origins:action_on_item_use",
         "trigger": "finish",
-        "entity_action": 
-        {
+        "entity_action": {
             "type": "origins:change_resource",
             "resource": "*:*_flesh",
             "change": 50
         },
-        "item_condition": 
-        {
+        "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": 
-            [
+            "ingredient": [
                 {
                     "item": "minecraft:rotten_flesh"
                 },
@@ -226,8 +197,7 @@
         }
     },
 
-    "overlay_low":
-    {
+    "overlay_low": {
         "type": "origins:overlay",
         "texture": "minecraft:textures/item/beef.png",
         "strength": 0.07,
@@ -242,10 +212,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                        "type": "origins:resource",
-                        "resource": "*:*_flesh",
-                        "comparison": "<=",
-                        "compare_to": 1000
+                    "type": "origins:resource",
+                    "resource": "*:*_flesh",
+                    "comparison": "<=",
+                    "compare_to": 1000
                 },
                 {
                     "type": "origins:resource",
@@ -257,8 +227,7 @@
         }
     },
 
-    "overlay_medium":
-    {
+    "overlay_medium": {
         "type": "origins:overlay",
         "texture": "minecraft:textures/item/beef.png",
         "strength": 0.15,
@@ -273,10 +242,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                        "type": "origins:resource",
-                        "resource": "*:*_flesh",
-                        "comparison": "<=",
-                        "compare_to": 500
+                    "type": "origins:resource",
+                    "resource": "*:*_flesh",
+                    "comparison": "<=",
+                    "compare_to": 500
                 },
                 {
                     "type": "origins:resource",
@@ -288,8 +257,7 @@
         }
     },
 
-    "overlay_high":
-    {
+    "overlay_high": {
         "type": "origins:overlay",
         "texture": "minecraft:textures/item/beef.png",
         "strength": 0.4,
@@ -304,20 +272,18 @@
             "type": "origins:and",
             "conditions": [
                 {
-                        "type": "origins:resource",
-                        "resource": "*:*_flesh",
-                        "comparison": "<=",
-                        "compare_to": 100
+                    "type": "origins:resource",
+                    "resource": "*:*_flesh",
+                    "comparison": "<=",
+                    "compare_to": 100
                 }
             ]
         }
     },
 
     "disable_regen": {
-
         "type": "origins:disable_regen",
-        "condition": 
-        {
+        "condition": {
             "type": "origins:resource",
             "resource": "*:*_flesh",
             "comparison": "<=",

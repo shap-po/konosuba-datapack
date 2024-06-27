@@ -1,21 +1,27 @@
 {
-    "type": "origins:active_self",
     "name": "Paralysis",
     "description": "-",
+
+    "type": "origins:active_self",
+
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": "key.origins.primary_active",
+
     "entity_action": {
         "type": "origins:raycast",
         "block": false,
         "distance": 15,
-        "bientity_action" : {
+        "bientity_action": {
             "type": "origins:and",
-            "actions":
-            [
-                { 
-                "type": "origins:target_action",
-                "action": 
-                    {
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
                         "type": "origins:execute_command",
-                        "command": "/power grant @s konosuba:wis/paralysis_status"
+                        "command": "function konosuba:origins/wiz/paralysis/add"
                     }
                 },
                 {
@@ -25,20 +31,15 @@
                         "resource": "*:magic_magic",
                         "operation": "add",
                         "change": -300
-
                     }
                 }
-                
             ]
-           
         },
         "bientity_condition": {
             "type": "origins:actor_condition",
-            "condition": 
-            {
+            "condition": {
                 "type": "origins:and",
-                "conditions": 
-                [
+                "conditions": [
                     {
                         "type": "origins:resource",
                         "resource": "*:magic_magic",
@@ -47,18 +48,12 @@
                     },
                     {
                         "type": "origins:resource",
-                        "resource": "*:wis/spellchanger_spell",
+                        "resource": "*:wiz/spellchanger_spell",
                         "comparison": "==",
                         "compare_to": 0
                     }
                 ]
             }
         }
-
-    },
-    "cooldown": 20,
-    "hud_render": {
-        "should_render": true
-    },
-    "key": "key.origins.primary_active"
+    }
 }

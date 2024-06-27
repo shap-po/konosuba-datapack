@@ -1,12 +1,18 @@
 {
-    "type": "origins:active_self",
     "name": "Random teleportation",
     "description": "-",
-    "entity_action": 
-        {
+
+    "type": "origins:active_self",
+
+    "cooldown": 100,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": "key.origins.primary_active",
+
+    "entity_action": {
         "type": "origins:and",
-        "actions": 
-        [
+        "actions": [
             {
                 "type": "origins:if_else",
                 "condition": { "type": "origins:sneaking", "inverted": true },
@@ -19,21 +25,18 @@
                         "actions": [
                             {
                                 "type": "origins:target_action",
-                                "action": 
-                                {   
+                                "action": {
                                     "type": "origins:execute_command",
-                                    "command": "/function konosuba:origins/wis/rtp"
+                                    "command": "/function konosuba:origins/wiz/rtp"
                                 }
                             },
                             {
                                 "type": "origins:actor_action",
-                                "action":  
-                                {
+                                "action": {
                                     "type": "origins:change_resource",
                                     "resource": "*:magic_magic",
                                     "operation": "add",
                                     "change": -700
-                    
                                 }
                             }
                         ]
@@ -46,59 +49,46 @@
                                 "type": "origins:target_condition",
                                 "condition": {
                                     "type": "origins:and",
-                                    "conditions": [
-                                        { "type": "origins:living" }
-                                    ]
+                                    "conditions": [{ "type": "origins:living" }]
                                 }
                             }
                         ]
                     }
                 },
-                "else_action": 
-                {   
+                "else_action": {
                     "type": "origins:and",
-                    "actions":
-                    [
+                    "actions": [
                         {
                             "type": "origins:execute_command",
-                            "command": "/function konosuba:origins/wis/rtp"
+                            "command": "/function konosuba:origins/wiz/rtp"
                         },
                         {
                             "type": "origins:change_resource",
                             "resource": "*:magic_magic",
                             "operation": "add",
                             "change": -500
-            
                         }
                     ]
-                    
                 }
-            }      
+            }
         ]
-
-        },
-        "condition": 
-        {
-            "type": "origins:and",
-                "conditions": 
-                [
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:magic_magic",
-                        "comparison": ">",
-                        "compare_to": 700
-                    },
-                    {
-                        "type": "origins:resource",
-                        "resource": "*:wis/spellchanger_spell",
-                        "comparison": "==",
-                        "compare_to": 1
-                    }
-                ]
-        },
-    "cooldown": 100,
-    "hud_render": {
-        "should_render": true
     },
-    "key": "key.origins.primary_active"
+
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:magic_magic",
+                "comparison": ">",
+                "compare_to": 700
+            },
+            {
+                "type": "origins:resource",
+                "resource": "*:wiz/spellchanger_spell",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        ]
+    }
 }
