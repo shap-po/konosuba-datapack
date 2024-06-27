@@ -1,9 +1,8 @@
 {
     "name": "Paralysis",
-    "description": "-",
+    "description": "Stagger target for a few seconds.",
 
     "type": "origins:active_self",
-
     "cooldown": 20,
     "hud_render": {
         "should_render": false

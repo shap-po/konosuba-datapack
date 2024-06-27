@@ -1,8 +1,17 @@
 {
     "name": "Random teleportation",
-    "description": "-",
+    "description": "Abduct creature to semi-random location.",
 
     "type": "origins:active_self",
+
+    "badges": [
+        "origins:active",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Use shift to a target yourself and others otherwise."
+        }
+    ],
 
     "cooldown": 100,
     "hud_render": {

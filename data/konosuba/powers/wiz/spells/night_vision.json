@@ -1,6 +1,14 @@
 {
     "name": "Night vision",
-    "description": "-",
+    "description": "Attune sensetivity of eyes for prologed period of time.",
+    "badges": [
+        "origins:active",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Use shift to a target yourself and others otherwise."
+        }
+    ],
 
     "type": "origins:active_self",
 

@@ -1,9 +1,17 @@
 {
     "name": "Draining touch",
-    "description": "-",
+    "description": "Siphon life force from hit living creature.",
 
     "type": "origins:multiple",
     
+    "badges": [
+        "origins:toggle",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "More effective with bare hands."
+        }
+    ],
 
     "toggle":
     {
@@ -46,7 +54,7 @@
                                 "type": "origins:change_resource",
                                 "resource": "*:magic_magic",
                                 "operation": "add",
-                                "change": -50
+                                "change": -40
                             }
                         ]
                     }
@@ -167,7 +175,7 @@
                                 "type": "origins:resource",
                                 "resource": "*:magic_magic",
                                 "comparison": ">",
-                                "compare_to": 50
+                                "compare_to": 25
                             },
                             {
                                 "type": "origins:resource",

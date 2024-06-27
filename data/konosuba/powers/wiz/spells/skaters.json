@@ -1,8 +1,17 @@
 {
     "name": "Skaters",
-    "description": "-",
+    "description": "Create cryo-stream under your feet.",
 
     "type": "origins:multiple",
+
+    "badges": [
+        "origins:toggle",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Freezes water under you."
+        }
+    ],
 
     "toggle": {
         "type": "origins:toggle",
