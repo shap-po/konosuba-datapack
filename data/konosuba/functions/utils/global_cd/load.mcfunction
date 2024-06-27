@@ -3,3 +3,6 @@ scoreboard objectives add konosuba.global_cd dummy "Global Cooldown"
 
 # set global cooldown to 0 if it's not set
 scoreboard players add $globalCooldown konosuba.global_cd 0
+
+# schedule cooldown update
+function konosuba:utils/global_cd/schedule

@@ -17,6 +17,9 @@ execute unless score $itemInvulnerability konosuba.gamerule matches 0..1 run sco
 #define score_holder $meguminExplosionRadius [0..] - Explosion radius for Megumin's explosion
 execute unless score $meguminExplosionRadius konosuba.gamerule matches 0.. run scoreboard players set $meguminExplosionRadius konosuba.gamerule 5
 
+#define score_holder $scheduleCooldownUpdates [0/1] - Whether global cooldown updates are scheduled using /schedule or not. Requires /reload to take effect
+execute unless score $scheduleCooldownUpdates konosuba.gamerule matches 0..1 run scoreboard players set $scheduleCooldownUpdates konosuba.gamerule 1
+
 # lives-related gamerules
 #define score_holder $defaultLives [0..] - Number of lives a regular player starts with
 execute unless score $defaultLives konosuba.gamerule matches 0.. run scoreboard players set $defaultLives konosuba.gamerule 5
