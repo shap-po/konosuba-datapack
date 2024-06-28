@@ -38,23 +38,17 @@
             ]
         },
         "use_teams": false,
-        "red": 0.5,
+        "red": 0.6,
         "green": 0.0,
-        "blue": 0.1
+        "blue": 0.2
     },
 
     "demon_sense": {
         "type": "origins:entity_glow",
+        "condition": { "type": "origins:power_active", "power": "*:*_toggle" },
         "bientity_condition": {
             "type": "origins:and",
             "conditions": [
-                {
-                    "type": "origins:actor_condition",
-                    "condition": {
-                        "type": "origins:power_active",
-                        "power": "*:*_toggle"
-                    }
-                },
                 {
                     "type": "origins:distance",
                     "comparison": "<=",
@@ -62,12 +56,10 @@
                 },
                 {
                     "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:living"
-                    }
+                    "condition": { "type": "origins:living" }
                 },
                 {
-                    "type": "origins:target_condition",
+                    "type": "origins:either",
                     "condition": {
                         "type": "origins:power",
                         "power": "konosuba:demon"
@@ -76,9 +68,9 @@
             ]
         },
         "use_teams": false,
-        "red": 1,
-        "green": 0.0,
-        "blue": 1
+        "red": 0.6,
+        "green": 0,
+        "blue": 0.1
     },
 
     "night_vision": {
@@ -94,7 +86,7 @@
         "modifier": {
             "attribute": "minecraft:generic.movement_speed",
             "operation": "multiply_base",
-            "value": -0.1
+            "value": -0.15
         },
         "tick_rate": 60,
         "condition": {
