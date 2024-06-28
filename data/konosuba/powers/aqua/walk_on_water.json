@@ -88,21 +88,10 @@
             "operation": "add"
         },
         "condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:block_collision",
-                    "block_condition": {
-                        "type": "origins:fluid",
-                        "fluid_condition": {
-                            "type": "origins:in_tag",
-                            "tag": "minecraft:water"
-                        }
-                    },
-                    "offset_y": -0.2,
-                    "inverted": true
-                }
-            ]
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": "<=",
+            "compare_to": 0.0
         }
     }
 }

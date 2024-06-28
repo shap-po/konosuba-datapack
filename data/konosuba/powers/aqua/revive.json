@@ -18,6 +18,11 @@
         "hud_render": { "should_render": false }
     },
 
+    "target": {
+        "_": "Set that should hold only one entity",
+        "type": "origins:entity_set"
+    },
+
     "activate": {
         "type": "origins:active_self",
         "key": { "key": "key.origins.primary_active" },
@@ -47,9 +52,33 @@
                             "modifier": { "operation": "set_total", "value": 0 }
                         },
                         {
-                            "_": "Remove target",
-                            "type": "origins:execute_command",
-                            "command": "function konosuba:origins/aqua/revive/revive"
+                            "type": "origins:action_on_set",
+                            "set": "*:*_target",
+                            "bientity_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_on_cooldown",
+                                            "operation": "set",
+                                            "change": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/aqua/revive/revive"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target"
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -65,35 +94,12 @@
         "entity_action": {
             "type": "origins:if_else",
             "condition": { "type": "origins:sneaking", "inverted": true },
+
             "if_action": {
                 "type": "origins:raycast",
                 "distance": 4,
                 "block": false,
-                "bientity_action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:target_action",
-                            "action": {
-                                "_": "Add a tag to the target",
-                                "type": "origins:execute_command",
-                                "command": "function konosuba:origins/aqua/revive/select_target"
-                            }
-                        },
-                        {
-                            "type": "origins:actor_action",
-                            "action": {
-                                "_": "Link the target",
-                                "type": "origins:execute_command",
-                                "command": "function konosuba:origins/aqua/revive/add_target"
-                            }
-                        }
-                    ]
-                },
-                "miss_action": {
-                    "type": "origins:execute_command",
-                    "command": "function konosuba:origins/aqua/revive/cleanup"
-                },
+
                 "bientity_condition": {
                     "type": "origins:and",
                     "conditions": [
@@ -109,13 +115,90 @@
                             }
                         }
                     ]
+                },
+
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
+                        "set": "*:*_target",
+                        "inverted": true
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target"
+                                    }
+                                }
+                            },
+                            {
+                                "_": "Add to set",
+                                "type": "origins:add_to_set",
+                                "set": "*:*_target"
+                            }
+                        ]
+                    }
+                },
+
+                "miss_action": {
+                    "_": "Clear set",
+                    "type": "origins:action_on_set",
+                    "set": "*:*_target",
+                    "bientity_action": {
+                        "type": "origins:remove_from_set",
+                        "set": "*:*_target"
+                    }
                 }
             },
+
             "else_action": {
-                "type": "origins:execute_command",
-                "command": "function konosuba:origins/aqua/revive/select_self"
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "_": "Clear set",
+                        "type": "origins:action_on_set",
+                        "set": "*:*_target",
+                        "bientity_action": {
+                            "type": "origins:remove_from_set",
+                            "set": "*:*_target"
+                        }
+                    },
+                    {
+                        "type": "origins:selector_action",
+                        "selector": "@s",
+                        "bientity_action": {
+                            "type": "origins:add_to_set",
+                            "set": "*:*_target"
+                        }
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/aqua/revive/notify/target_self"
+                    }
+                ]
             }
         }
+    },
+
+    "glow_target": {
+        "type": "origins:entity_glow",
+        "bientity_condition": {
+            "type": "origins:in_set",
+            "set": "*:*_target"
+        },
+
+        "use_teams": false,
+        "red": 0,
+        "green": 1,
+        "blue": 1
     },
 
     "show_target": {
