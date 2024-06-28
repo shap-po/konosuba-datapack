@@ -10,8 +10,14 @@
         "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
-                "type": "origins:power",
-                "power": "*:wiz/meat_craving",
+                "type": "origins:and",
+                "conditions": [
+                    { "type": "origins:living" },
+                    {
+                        "type": "origins:power",
+                        "power": "*:wiz/meat_craving"
+                    }
+                ],
                 "inverted": true
             }
         }

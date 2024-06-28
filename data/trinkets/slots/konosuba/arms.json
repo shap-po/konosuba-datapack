@@ -1,0 +1,6 @@
+{
+    "icon": "trinkets:gui/slots/glove",
+    "order": 2,
+    "validator_predicates": ["trinkets:tag"],
+    "drop_rule": "keep"
+}

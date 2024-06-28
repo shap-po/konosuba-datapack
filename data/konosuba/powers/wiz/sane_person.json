@@ -6,7 +6,13 @@
     "type": "origins:prevent_entity_render",
 
     "entity_condition": {
-        "type": "origins:power",
-        "power": "*:wiz/imaginary_meat"
+        "type": "origins:and",
+        "conditions": [
+            { "type": "origins:living" },
+            {
+                "type": "origins:power",
+                "power": "*:wiz/imaginary_meat"
+            }
+        ]
     }
 }
