@@ -55,7 +55,7 @@
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
                         "item_action": { "type": "origins:consume" },
-                        "entity_action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 400 }
+                        "entity_action": { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 450 }
                     }
                 }
             },
@@ -90,7 +90,7 @@
                     "if_action": {
                         "type": "origins:and",
                         "actions": [
-                            { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -400 },
+                            { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": -450 },
                             { "type": "origins:give", "stack": { "item": "minecraft:slime_block", "amount": 1 } }
                         ]
                     }
