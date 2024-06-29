@@ -6,7 +6,7 @@
 
     "cooldown": {
         "type": "origins:cooldown",
-        "cooldown": 200,
+        "cooldown": 24000,
         "hud_render": {
             "should_render": true,
             "bar_index": 13,
