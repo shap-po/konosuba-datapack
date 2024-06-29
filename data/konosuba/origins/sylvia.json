@@ -4,6 +4,8 @@
     "icon": "minecraft:tadpole_bucket",
 
     "powers": [
+        "konosuba:sylvia/body_modifications",
+
         "konosuba:sylvia/recipes/adrenalin_gland",
         "konosuba:sylvia/recipes/axolotl_axilary-gills",
         "konosuba:sylvia/recipes/cactus_hair",
