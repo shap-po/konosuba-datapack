@@ -1,0 +1,31 @@
+{
+    "name": "Sylvia",
+    "description": "A powerfull chimera that is able to modify her own body.",
+    "icon": "minecraft:tadpole_bucket",
+
+    "powers": [
+        "konosuba:sylvia/recipes/adrenalin_gland",
+        "konosuba:sylvia/recipes/axolotl_axilary-gills",
+        "konosuba:sylvia/recipes/cactus_hair",
+        "konosuba:sylvia/recipes/elephant_skin",
+        "konosuba:sylvia/recipes/feline_paws",
+        "konosuba:sylvia/recipes/fireproof_hide",
+        "konosuba:sylvia/recipes/fish_tails",
+        "konosuba:sylvia/recipes/gerridae_gliders",
+        "konosuba:sylvia/recipes/insect_mandibles",
+        "konosuba:sylvia/recipes/mega_palms",
+        "konosuba:sylvia/recipes/mole_arms",
+        "konosuba:sylvia/recipes/owl_eyes",
+        "konosuba:sylvia/recipes/rabbit_muscles",
+        "konosuba:sylvia/recipes/slime_secretion",
+        "konosuba:sylvia/recipes/villager_nose",
+        "konosuba:sylvia/recipes/viper_metabolism",
+
+        "konosuba:no_netherite",
+        "konosuba:wiz/sane_person",
+        "konosuba:beldia/unique_armor",
+        "konosuba:lives"
+    ],
+    "impact": 1,
+    "order": 3
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Viper metabolism",
+    "description": "Cuts the duration of bad effects in half. I dont have a pun for this one.",
+    "type": "origins:recipe",
+    "recipe": 
+    {
+        "id": "konosuba:sylvia/viper_metabolism",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            " # ",
+            " # ",
+            "SNS"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:fermented_spider_eye"
+            },
+            "S": {
+                "item": "minecraft:sugar"
+            },
+            "N": {
+                "item": "minecraft:nether_wart"
+            }
+        },
+        "result": {
+            "item": "artifacts:antidote_vessel",
+            "count": 1
+        }
+    }
+}
+    

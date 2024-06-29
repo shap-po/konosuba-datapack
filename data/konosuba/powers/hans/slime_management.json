@@ -33,7 +33,7 @@
                 },
                 "action": {
                     "type": "origins:if_else",
-                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9950 },
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 9950 },
                     "if_action": {
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
@@ -50,7 +50,7 @@
                 },
                 "action": {
                     "type": "origins:if_else",
-                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9600 },
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 9550 },
                     "if_action": {
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
@@ -67,7 +67,7 @@
                 },
                 "action": {
                     "type": "origins:if_else",
-                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<", "compare_to": 9930 },
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 9980 },
                     "if_action": {
                         "type": "origins:modify_inventory",
                         "slot": "weapon.mainhand",
@@ -83,10 +83,55 @@
                 }
             },
             {
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:honey_bottle" } }
+                },
+                "action": {
+                    "type": "origins:if_else",
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 9970 },
+                    "if_action": {
+                        "type": "origins:modify_inventory",
+                        "slot": "weapon.mainhand",
+                        "item_action": { "type": "origins:consume" },
+                        "entity_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 30 },
+                                { "type": "origins:give", "stack": { "item": "minecraft:glass_bottle", "amount": 1 } }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": { "type": "origins:ingredient", "ingredient": { "item": "minecraft:honey_block" } }
+                },
+                "action": {
+                    "type": "origins:if_else",
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 9880 },
+                    "if_action": {
+                        "type": "origins:modify_inventory",
+                        "slot": "weapon.mainhand",
+                        "item_action": { "type": "origins:consume" },
+                        "entity_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "change": 120 }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
                 "condition": { "type": "origins:sneaking" },
                 "action": {
                     "type": "origins:if_else",
-                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 400 },
+                    "condition": { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 450 },
                     "if_action": {
                         "type": "origins:and",
                         "actions": [

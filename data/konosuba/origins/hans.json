@@ -4,6 +4,7 @@
     "icon": "minecraft:slime_ball",
 
     "powers": [
+        "konosuba:hans/spawnkill_prevention",
         "konosuba:hans/slime",
         "konosuba:hans/slime_management",
         "konosuba:hans/internal_balance",
