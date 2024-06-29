@@ -1,0 +1,6 @@
+{
+    "name": "Transfer life",
+    "description": "Transfer a life from one player to another",
+
+    "type": "origins:multiple"
+}

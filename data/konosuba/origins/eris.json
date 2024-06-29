@@ -1,0 +1,18 @@
+{
+    "name": "Eris",
+    "description": "Goddess of Luck and §kREDACTED",
+    "icon": "minecraft:glistering_melon_slice",
+
+    "powers": [
+        "konosuba:eris/transfer_life",
+        "konosuba:eris/blessing",
+        "konosuba:goddess",
+
+        "konosuba:no_netherite",
+        "konosuba:wiz/sane_person",
+        "konosuba:beldia/unique_armor",
+        "konosuba:lives"
+    ],
+
+    "impact": 2
+}

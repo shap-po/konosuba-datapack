@@ -1,0 +1,10 @@
+{
+    "name": "Transform back",
+    "description": "Transforms you back to your human form.",
+
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "walkers switchShape @s normal"
+    }
+}

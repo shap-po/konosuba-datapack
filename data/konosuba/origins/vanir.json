@@ -1,0 +1,18 @@
+{
+    "name": "Vanir",
+    "description": "A Duke of Hell and a master of disguise",
+    "icon": "minecraft:eye_armor_trim_smithing_template",
+
+    "powers": [
+        "konosuba:vanir/morph",
+        "konosuba:vanir/morph_back",
+        "konosuba:undead",
+
+        "konosuba:no_netherite",
+        "konosuba:wiz/sane_person",
+        "konosuba:beldia/unique_armor",
+        "konosuba:lives"
+    ],
+
+    "impact": 2
+}
