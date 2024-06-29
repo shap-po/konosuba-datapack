@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:smithing_transform",
+
+    "base": {
+        "item": "minecraft:diamond_helmet"
+    },
+    "template": {
+        "tag": "konosuba:beldia_upgrade_template"
+    },
+    "addition": {
+        "item": "minecraft:netherite_block"
+    },
+
+    "result": {
+        "item": "minecraft:netherite_helmet"
+    }
+}

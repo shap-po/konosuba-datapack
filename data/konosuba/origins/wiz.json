@@ -14,7 +14,9 @@
         "konosuba:wiz/spells/night_vision",
         "konosuba:wiz/meat_craving",
         "konosuba:undead",
+
         "konosuba:no_netherite",
+        "konosuba:beldia/unique_armor",
         "konosuba:lives"
     ],
     "impact": 2,

@@ -1,6 +1,13 @@
 {
     "name": "Reforge",
-    "description": "You can upgrade your armor",
+    "description": "You can upgrade your armor in the smithing table.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "Piece of armor + block of next tier + snowball = upgraded armor."
+        }
+    ],
 
-    "type": "origins:multiple"
+    "type": "origins:simple"
 }

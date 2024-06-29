@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:smithing_transform",
+
+    "base": {
+        "item": "minecraft:chainmail_chestplate"
+    },
+    "template": {
+        "tag": "konosuba:beldia_upgrade_template"
+    },
+    "addition": {
+        "item": "minecraft:iron_block"
+    },
+
+    "result": {
+        "item": "minecraft:iron_chestplate"
+    }
+}

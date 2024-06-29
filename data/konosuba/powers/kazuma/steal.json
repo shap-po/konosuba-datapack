@@ -77,7 +77,7 @@
                                     "type": "origins:actor_action",
                                     "action": {
                                         "type": "origins:execute_command",
-                                        "command": "function konosuba:origins/kazuma/steal/fail/caught"
+                                        "command": "function konosuba:origins/kazuma/steal/fail/caught {target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                     }
                                 }
                             },
@@ -90,7 +90,7 @@
                                     "type": "origins:actor_action",
                                     "action": {
                                         "type": "origins:execute_command",
-                                        "command": "function konosuba:origins/kazuma/steal/fail/moved"
+                                        "command": "function konosuba:origins/kazuma/steal/fail/moved {target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                     }
                                 }
                             },
@@ -104,301 +104,301 @@
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/fail/generic"
+                                                    "command": "function konosuba:origins/kazuma/steal/fail/generic {target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 24
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/weapon_mainhand"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"weapon.mainhand\",slot_nbt:\"SelectedItem\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 10
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/weapon_offhand"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"weapon.offhand\",slot_nbt:\"Inventory.[{Slot:-106b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 7
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/armor_head"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"armor.head\",slot_nbt:\"Inventory.[{Slot:103b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/armor_chest"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"armor.chest\",slot_nbt:\"Inventory.[{Slot:102b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/armor_legs"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"armor.legs\",slot_nbt:\"Inventory.[{Slot:101b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/armor_feet"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"armor.feet\",slot_nbt:\"Inventory.[{Slot:100b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_0"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.0\",slot_nbt:\"Inventory.[{Slot:0b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_1"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.1\",slot_nbt:\"Inventory.[{Slot:1b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_2"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.2\",slot_nbt:\"Inventory.[{Slot:2b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_3"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.3\",slot_nbt:\"Inventory.[{Slot:3b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_4"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.4\",slot_nbt:\"Inventory.[{Slot:4b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_5"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.5\",slot_nbt:\"Inventory.[{Slot:5b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_6"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.6\",slot_nbt:\"Inventory.[{Slot:6b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_7"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.7\",slot_nbt:\"Inventory.[{Slot:7b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/hotbar_8"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"hotbar.8\",slot_nbt:\"Inventory.[{Slot:8b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 6
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_0"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.0\",slot_nbt:\"Inventory.[{Slot:9b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_1"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.1\",slot_nbt:\"Inventory.[{Slot:10b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_2"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.2\",slot_nbt:\"Inventory.[{Slot:11b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_3"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.3\",slot_nbt:\"Inventory.[{Slot:12b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_4"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.4\",slot_nbt:\"Inventory.[{Slot:13b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_5"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.5\",slot_nbt:\"Inventory.[{Slot:14b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_6"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.6\",slot_nbt:\"Inventory.[{Slot:15b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_7"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.7\",slot_nbt:\"Inventory.[{Slot:16b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_8"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.8\",slot_nbt:\"Inventory.[{Slot:17b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_9"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.9\",slot_nbt:\"Inventory.[{Slot:18b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_10"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.10\",slot_nbt:\"Inventory.[{Slot:19b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_11"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.11\",slot_nbt:\"Inventory.[{Slot:20b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_12"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.12\",slot_nbt:\"Inventory.[{Slot:21b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_13"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.13\",slot_nbt:\"Inventory.[{Slot:22b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_14"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.14\",slot_nbt:\"Inventory.[{Slot:23b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_15"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.15\",slot_nbt:\"Inventory.[{Slot:24b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_16"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.16\",slot_nbt:\"Inventory.[{Slot:25b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_17"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.17\",slot_nbt:\"Inventory.[{Slot:26b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_18"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.18\",slot_nbt:\"Inventory.[{Slot:27b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_19"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.19\",slot_nbt:\"Inventory.[{Slot:28b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_20"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.20\",slot_nbt:\"Inventory.[{Slot:29b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_21"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.21\",slot_nbt:\"Inventory.[{Slot:30b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_22"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.22\",slot_nbt:\"Inventory.[{Slot:31b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_23"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.23\",slot_nbt:\"Inventory.[{Slot:32b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_24"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.24\",slot_nbt:\"Inventory.[{Slot:33b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_25"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.25\",slot_nbt:\"Inventory.[{Slot:34b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             },
                                             {
                                                 "element": {
                                                     "type": "origins:execute_command",
-                                                    "command": "function konosuba:origins/kazuma/steal/execute/inventory_26"
+                                                    "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"inventory.26\",slot_nbt:\"Inventory.[{Slot:35b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
                                                 "weight": 2
                                             }

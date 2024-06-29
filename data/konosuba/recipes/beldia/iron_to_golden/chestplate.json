@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:smithing_transform",
+
+    "base": {
+        "item": "minecraft:iron_chestplate"
+    },
+    "template": {
+        "tag": "konosuba:beldia_upgrade_template"
+    },
+    "addition": {
+        "item": "minecraft:gold_block"
+    },
+
+    "result": {
+        "item": "minecraft:golden_chestplate"
+    }
+}
