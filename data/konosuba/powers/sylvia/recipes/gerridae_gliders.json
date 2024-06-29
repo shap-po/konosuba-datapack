@@ -1,0 +1,32 @@
+{
+    "name": "Gerridae gliders",
+    "description": "You can now run on water. This is the first step to become Aqua.",
+    "type": "origins:recipe",
+    "recipe": 
+    {
+        "id": "konosuba:sylvia/gerridae_gliders",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            "# #",
+            "N N",
+            "K K"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:sea_pickle"
+            },
+            "N": {
+                "item": "minecraft:nautilus_shell"
+            },
+            "K": {
+                "item": "minecraft:kelp"
+            }
+        },
+        "result": {
+            "item": "artifacts:aqua_dashers",
+            "count": 1
+        }
+    }
+    
+}
+    

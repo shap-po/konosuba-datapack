@@ -1,0 +1,35 @@
+
+{
+    "name": "Adrenalin gland",
+    "description": "Get movement speed bost after taking damage.",
+    "type": "origins:recipe",
+    "recipe": 
+    {
+        "id": "konosuba:sylvia/adrenalin_gland",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            " # ",
+            "GRG",
+            " S "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:glow_berries"
+            },
+            "G": {
+                "item": "minecraft:glass"
+            },
+            "R": {
+                "item": "minecraft:rabbit"
+            },
+            "S": {
+                "item": "minecraft:golden_carrot"
+            }
+        },
+        "result": {
+            "item": "artifacts:panic_necklace",
+            "count": 1
+        }
+    }
+}
+    

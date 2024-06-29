@@ -1,0 +1,32 @@
+{
+    "name": "Cactus hair",
+    "description": "Yes, it's not hair, just thorns.",
+    "type": "origins:recipe",
+    "recipe": 
+    {
+        "id": "konosuba:sylvia/cactus_hair",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            "#C#",
+            "#L#",
+            "#C#"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:string"
+            },
+            "C": {
+                "item": "minecraft:cactus"
+            },
+            "L": {
+                "item": "minecraft:leather"
+            }
+        },
+        "result": {
+            "item": "artifacts:thorn_pendant",
+            "count": 1
+        }
+    }
+}
+    
+

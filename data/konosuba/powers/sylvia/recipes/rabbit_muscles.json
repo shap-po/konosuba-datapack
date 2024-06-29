@@ -1,0 +1,31 @@
+{
+    "name": "Rabbit muscles",
+    "description": "Run like a rabbit. Smell like a rabbit",
+    "type": "origins:recipe",
+    "recipe": 
+    {
+        "id": "konosuba:sylvia/rabbit_muscles",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+            "# #",
+            "R R",
+            "G G"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:nether_wart"
+            },
+            "R": {
+                "item": "minecraft:rabbit_hide"
+            },
+            "G": {
+                "item": "minecraft:gold_nugget"
+            }
+        },
+        "result": {
+            "item": "artifacts:running_shoes",
+            "count": 1
+        }
+    }
+}
+    
