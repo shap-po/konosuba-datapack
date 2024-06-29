@@ -6,7 +6,9 @@
     "powers": [
         "konosuba:beldia/living_armor",
         "konosuba:beldia/curse_granter",
+        "konosuba:beldia/upgrade_armor",
         "konosuba:undead",
+
         "konosuba:wiz/sane_person",
         "konosuba:lives"
     ],

@@ -1,0 +1,23 @@
+{
+    "name": "Restrict Beldia's armor",
+    "hidden": true,
+
+    "type": "origins:restrict_armor",
+
+    "head": {
+        "type": "origins:nbt",
+        "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+    },
+    "chest": {
+        "type": "origins:nbt",
+        "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+    },
+    "legs": {
+        "type": "origins:nbt",
+        "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+    },
+    "feet": {
+        "type": "origins:nbt",
+        "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+    }
+}

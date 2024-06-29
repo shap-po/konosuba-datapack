@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:smithing_transform",
+
+    "base": {
+        "item": "minecraft:golden_leggings"
+    },
+    "template": {
+        "tag": "konosuba:beldia_upgrade_template"
+    },
+    "addition": {
+        "item": "minecraft:diamond_block"
+    },
+
+    "result": {
+        "item": "minecraft:diamond_leggings"
+    }
+}
