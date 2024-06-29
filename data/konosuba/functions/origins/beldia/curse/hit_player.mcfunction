@@ -1,1 +1,1 @@
-tellraw @s ["", "You were cursed by Beldia! You have 30 seconds to live! (Unless you have a bucket of milk lying around)"]
+tellraw @s ["", "You were cursed by Beldia! You have 3 minutes to live! (Unless you have a bucket of milk or golden apple lying around)"]

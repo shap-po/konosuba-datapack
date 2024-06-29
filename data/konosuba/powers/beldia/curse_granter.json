@@ -3,8 +3,9 @@
     "description": "Your target will be cursed to die in §m3 days§r 30 seconds after the curse is cast.",
 
     "type": "origins:active_self",
+
     "key": { "key": "key.origins.primary_active" },
-    "cooldown": 10,
+    "cooldown": 6000,
     "hud_render": {
         "should_render": true,
         "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",

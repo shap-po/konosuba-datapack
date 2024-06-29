@@ -1,6 +1,10 @@
 # grant "curse" power
 power grant @s konosuba:beldia/cursed
-# if the power was granted successfully - continue with the curse
-execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"konosuba:beldia/cursed"}]}}}] run function konosuba:origins/beldia/curse/hit_success
-# otherwise notify the player that the target is invalid
-execute unless entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"konosuba:beldia/cursed"}]}}}] as @a[nbt={cardinal_components:{"origins:origin":{OriginLayers:[{Origin:"konosuba:beldia"}]}}}] run function konosuba:origins/beldia/curse/notify_invalid_target
+
+# effects
+particle crit ~ ~ ~ 0 0 0 0.2 3 normal @a
+playsound entity.elder_guardian.curse master @s ~ ~ ~ 1 1 1
+
+# separate the player and mob hit functions
+execute if entity @s[type=minecraft:player] run function konosuba:origins/beldia/curse/hit_player
+execute if entity @s[type=!minecraft:player] run function konosuba:origins/beldia/curse/hit_mob

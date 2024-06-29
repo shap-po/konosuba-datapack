@@ -5,8 +5,8 @@
     "timer": {
         "type": "origins:resource",
         "min": 0,
-        "max": 30,
-        "start_value": 30,
+        "max": 180,
+        "start_value": 180,
         "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
