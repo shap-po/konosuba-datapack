@@ -1,9 +1,10 @@
 {
     "name": "Elephant skin",
     "description": "Boost your health.",
+
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/elephant_skin",
         "type": "minecraft:crafting_shaped",
         "pattern": [

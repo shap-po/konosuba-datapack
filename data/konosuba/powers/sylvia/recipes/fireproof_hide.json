@@ -1,9 +1,10 @@
 {
     "name": "Fireproof hide",
     "description": "Lava? More like just a hot spring.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/fireproof_hide",
         "type": "minecraft:crafting_shaped",
         "pattern": [

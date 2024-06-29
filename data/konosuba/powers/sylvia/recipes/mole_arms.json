@@ -1,9 +1,10 @@
 {
     "name": "Mole arms",
     "description": "Secret dwarf technique. Extends your mining capabilities.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/mole_arms",
         "type": "minecraft:crafting_shaped",
         "pattern": [

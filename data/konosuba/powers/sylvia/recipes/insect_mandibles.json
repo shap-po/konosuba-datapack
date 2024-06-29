@@ -1,9 +1,10 @@
 {
     "name": "Insect mandibles",
-    "description": "They are suprusingly effective at consuming food.",
+    "description": "They are surprisingly effective at consuming food.",
+
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/insect_mandibles",
         "type": "minecraft:crafting_shaped",
         "pattern": [

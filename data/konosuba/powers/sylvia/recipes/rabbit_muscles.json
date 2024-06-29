@@ -1,9 +1,10 @@
 {
     "name": "Rabbit muscles",
     "description": "Run like a rabbit. Smell like a rabbit",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/rabbit_muscles",
         "type": "minecraft:crafting_shaped",
         "pattern": [

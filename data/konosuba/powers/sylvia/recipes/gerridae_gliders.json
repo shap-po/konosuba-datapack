@@ -1,9 +1,10 @@
 {
     "name": "Gerridae gliders",
     "description": "You can now run on water. This is the first step to become Aqua.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/gerridae_gliders",
         "type": "minecraft:crafting_shaped",
         "pattern": [

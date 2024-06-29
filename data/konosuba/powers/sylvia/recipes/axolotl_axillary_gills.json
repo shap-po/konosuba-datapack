@@ -1,10 +1,11 @@
 {
-    "name": "Axolotl axilary gills",
+    "name": "Axolotl axillary gills",
     "description": "Extends breathing time.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
-        "id": "konosuba:sylvia/axolotl_axilary-gills",
+
+    "recipe": {
+        "id": "konosuba:sylvia/axolotl_axillary_gills",
         "type": "minecraft:crafting_shaped",
         "pattern": [
             "#A#",
