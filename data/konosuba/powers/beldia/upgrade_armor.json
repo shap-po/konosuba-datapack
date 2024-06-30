@@ -12,8 +12,8 @@
                 "id": "konosuba:beldia/showcase1",
                 "type": "minecraft:crafting_shapeless",
                 "ingredients": [
-                    { "item": "minecraft:chainmail_helmet" },
                     { "item": "minecraft:flint" },
+                    { "item": "minecraft:chainmail_helmet" },
                     { "item": "minecraft:gold_block" }
                 ],
                 "result": { "item": "minecraft:golden_helmet" }
@@ -27,8 +27,8 @@
                 "id": "konosuba:beldia/showcase2",
                 "type": "minecraft:crafting_shapeless",
                 "ingredients": [
-                    { "item": "minecraft:golden_helmet" },
                     { "item": "minecraft:quartz" },
+                    { "item": "minecraft:golden_helmet" },
                     { "item": "minecraft:iron_block" }
                 ],
                 "result": { "item": "minecraft:iron_helmet" }
@@ -42,8 +42,8 @@
                 "id": "konosuba:beldia/showcase3",
                 "type": "minecraft:crafting_shapeless",
                 "ingredients": [
-                    { "item": "minecraft:iron_helmet" },
                     { "item": "minecraft:amethyst_cluster" },
+                    { "item": "minecraft:iron_helmet" },
                     { "item": "minecraft:diamond_block" }
                 ],
                 "result": { "item": "minecraft:diamond_helmet" }
@@ -57,8 +57,8 @@
                 "id": "konosuba:beldia/showcase4",
                 "type": "minecraft:crafting_shapeless",
                 "ingredients": [
-                    { "item": "minecraft:diamond_helmet" },
                     { "item": "minecraft:echo_shard" },
+                    { "item": "minecraft:diamond_helmet" },
                     { "item": "minecraft:netherite_block" }
                 ],
                 "result": { "item": "minecraft:netherite_helmet" }
