@@ -1,0 +1,11 @@
+{
+    "type": "origins:inventory",
+    "name": "Secret pouch",
+    "description": "A secret pouch that you can access.",
+    "title": "Boobas container",
+    "drop_on_death": false,
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": false
+    }
+}

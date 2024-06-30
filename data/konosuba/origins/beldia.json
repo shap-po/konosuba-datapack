@@ -4,6 +4,8 @@
     "icon": "minecraft:bone",
 
     "powers": [
+        "konosuba:beldia/horse",
+
         "konosuba:beldia/living_armor",
         "konosuba:beldia/curse_granter",
         "konosuba:beldia/craft_armor",

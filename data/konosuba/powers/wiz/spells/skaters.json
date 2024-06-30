@@ -28,6 +28,23 @@
         }
     },
 
+    "bar_visible": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 0,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "condition": {
+                "type": "origins:power_active",
+                "power": "*:*_toggle"
+            }
+        }
+    },
+
+
     "frostwalker": {
         "type": "origins:action_over_time",
         "name": "Ice skaters",

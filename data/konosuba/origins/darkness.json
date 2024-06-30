@@ -4,6 +4,8 @@
     "icon": "minecraft:netherite_chestplate",
 
     "powers": [
+        "konosuba:darkness/pouch",
+
         "konosuba:darkness/tank",
         "konosuba:darkness/more_hp",
         "konosuba:darkness/clumsy",
