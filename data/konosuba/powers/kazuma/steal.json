@@ -141,7 +141,7 @@
                                                     "type": "origins:execute_command",
                                                     "command": "function konosuba:origins/kazuma/steal/steal {slot_id:\"armor.legs\",slot_nbt:\"Inventory.[{Slot:101b}]\",target:\"@p[tag=konosuba.kazuma_steal]\"}"
                                                 },
-                                                "weight": 6
+                                                "weight": 8
                                             },
                                             {
                                                 "element": {
