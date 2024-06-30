@@ -1,4 +1,5 @@
 {
     "entities": ["player"],
-    "slots": ["konosuba/body", "konosuba/arms", "konosuba/legs"]
+    "slots": ["konosuba/body", "konosuba/arms", "konosuba/legs"],
+    "replace": true
 }

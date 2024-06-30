@@ -1,7 +1,7 @@
 {
     "name": "Beldia",
     "description": "Once you were a good man... Alas, now you spit nothing but curses. And, you know, being a set of haunted armour can be pretty advantageous at times. ",
-    "icon": "minecraft:skeleton_skull",
+    "icon": "minecraft:bone",
 
     "powers": [
         "konosuba:beldia/living_armor",
@@ -11,6 +11,7 @@
         "konosuba:undead",
 
         "konosuba:wiz/sane_person",
+        "konosuba:sylvia/restrict_slots",
         "konosuba:lives"
     ],
     "impact": 2,

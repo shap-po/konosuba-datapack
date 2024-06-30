@@ -1,0 +1,17 @@
+{
+    "name": "Sylvia's slots restriction",
+    "description": "Allows only Sylvia to use custom slots",
+    "hidden": true,
+
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+
+    "entity_action_chosen": {
+        "type": "origins:execute_command",
+        "command": "function konosuba:origins/sylvia/restrict/add"
+    },
+    "entity_action_lost": {
+        "type": "origins:execute_command",
+        "command": "function konosuba:origins/sylvia/restrict/remove"
+    }
+}
