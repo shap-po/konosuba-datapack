@@ -1,5 +1,6 @@
 {
-    "type": "origins:simple",
     "name": "Body modifications",
-    "description": "You have 3 modification oportunities, which can be chosen freely."
+    "description": "You have 3 modification opportunities, which can be chosen freely.",
+
+    "type": "origins:simple"
 }

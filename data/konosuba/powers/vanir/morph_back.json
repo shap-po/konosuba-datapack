@@ -3,8 +3,11 @@
     "description": "Transforms you back to your human form.",
 
     "type": "origins:active_self",
+
+    "key": "key.origins.secondary_active",
+
     "entity_action": {
         "type": "origins:execute_command",
-        "command": "walkers switchShape @s normal"
+        "command": "function konosuba:origins/vanir/morph {shape: \"normal\"}"
     }
 }

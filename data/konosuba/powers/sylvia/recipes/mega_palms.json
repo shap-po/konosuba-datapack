@@ -1,9 +1,10 @@
 {
     "name": "Mega palms",
     "description": "Add extra slap your slappers.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/mega_palms",
         "type": "minecraft:crafting_shaped",
         "pattern": [

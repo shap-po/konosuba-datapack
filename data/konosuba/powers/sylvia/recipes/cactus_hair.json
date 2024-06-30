@@ -1,9 +1,10 @@
 {
     "name": "Cactus hair",
     "description": "Yes, it's not hair, just thorns.",
+
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/cactus_hair",
         "type": "minecraft:crafting_shaped",
         "pattern": [

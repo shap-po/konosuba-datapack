@@ -1,9 +1,10 @@
 {
     "name": "Viper metabolism",
-    "description": "Cuts the duration of bad effects in half. I dont have a pun for this one.",
+    "description": "Cuts the duration of bad effects in half. I don't have a pun for this one.",
+
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/viper_metabolism",
         "type": "minecraft:crafting_shaped",
         "pattern": [

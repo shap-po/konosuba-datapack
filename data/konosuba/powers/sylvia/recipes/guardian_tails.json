@@ -1,9 +1,10 @@
 {
-    "name": "Fish tail(s)",
+    "name": "Guardian tail(s)",
     "description": "Get 2 fishes for legs, it's bound to increase your agility in water.",
+
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/fish_tails",
         "type": "minecraft:crafting_shaped",
         "pattern": [

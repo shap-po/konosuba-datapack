@@ -1,9 +1,10 @@
 {
     "name": "Villager nose",
     "description": "There are hot single nitwits in your area.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/villager_nose",
         "type": "minecraft:crafting_shaped",
         "pattern": [

@@ -1,9 +1,10 @@
 {
     "name": "Owl eyes",
     "description": "Owls can see in dark pretty well. Now you too.",
+    
     "type": "origins:recipe",
-    "recipe": 
-    {
+
+    "recipe": {
         "id": "konosuba:sylvia/owl_eyes",
         "type": "minecraft:crafting_shaped",
         "pattern": [
