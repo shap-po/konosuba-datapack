@@ -15,7 +15,12 @@
         "type": "origins:resource",
         "min": 0,
         "max": 1,
-        "hud_render": { "should_render": false }
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 9,
+            "should_render": true,
+            "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 }
+        }
     },
 
     "target": {
@@ -110,7 +115,8 @@
                                 "type": "origins:and",
                                 "conditions": [
                                     { "type": "origins:entity_type", "entity_type": "minecraft:player" },
-                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true }
+                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
+                                    { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
                                 ]
                             }
                         }
@@ -160,30 +166,59 @@
             },
 
             "else_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "_": "Clear set",
-                        "type": "origins:action_on_set",
+                "type": "origins:selector_action",
+                "selector": "@s",
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
                         "set": "*:*_target",
-                        "bientity_action": {
-                            "type": "origins:remove_from_set",
-                            "set": "*:*_target"
-                        }
+                        "inverted": true
                     },
-                    {
-                        "type": "origins:selector_action",
-                        "selector": "@s",
-                        "bientity_action": {
-                            "type": "origins:add_to_set",
-                            "set": "*:*_target"
-                        }
-                    },
-                    {
-                        "type": "origins:execute_command",
-                        "command": "function konosuba:origins/aqua/revive/notify/target_self"
+
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target"
+                                    }
+                                }
+                            },
+
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:actor_condition",
+                                    "condition": { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "_": "Add to set",
+                                            "type": "origins:add_to_set",
+                                            "set": "*:*_target"
+                                        },
+                                        {
+                                            "type": "origins:actor_action",
+                                            "action": {
+                                                "type": "origins:execute_command",
+                                                "command": "function konosuba:origins/aqua/revive/notify/target_self"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
                     }
-                ]
+                }
             }
         }
     },
@@ -199,15 +234,5 @@
         "red": 0,
         "green": 1,
         "blue": 1
-    },
-
-    "show_target": {
-        "type": "origins:action_over_time",
-        "interval": 4,
-        "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 },
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/aqua/revive/notify/target"
-        }
     }
 }

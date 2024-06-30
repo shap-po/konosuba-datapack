@@ -1,0 +1,16 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+        "konosuba.lives": {
+            "max": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "$maxLives"
+                },
+                "score": "konosuba.gamerule"
+            }
+        }
+    }
+}

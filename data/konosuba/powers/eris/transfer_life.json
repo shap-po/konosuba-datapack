@@ -2,5 +2,508 @@
     "name": "Transfer life",
     "description": "Transfer a life from one player to another",
 
-    "type": "origins:multiple"
+    "type": "origins:multiple",
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 24000,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 18,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
+        }
+    },
+
+    "state": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": { "should_render": false }
+    },
+
+    "bar_from": {
+        "type": "origins:resource",
+        "min": 1,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 17,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 1 }
+        }
+    },
+    "bar_to": {
+        "type": "origins:resource",
+        "min": 1,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 16,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 2 }
+        }
+    },
+
+    "target_from": {
+        "_": "Set that should hold only one entity",
+        "type": "origins:entity_set"
+    },
+    "target_to": {
+        "type": "origins:entity_set"
+    },
+
+    "activate": {
+        "_": "Works 'similar' to Aqua's revive ability",
+        "type": "origins:active_self",
+        "key": { "key": "key.origins.primary_active" },
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "!=", "compare_to": 0 },
+
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "function konosuba:origins/eris/transfer_life/notify/cooldown"
+            },
+
+            "else_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 0 },
+                        "action": { "type": "origins:change_resource", "resource": "*:*_state", "operation": "set", "change": 1 }
+                    },
+
+                    {
+                        "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 1 },
+                        "action": {
+                            "type": "origins:if_else",
+                            "condition": { "type": "origins:set_size", "set": "*:*_target_from", "comparison": "<", "compare_to": 1 },
+
+                            "if_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_state",
+                                "operation": "set",
+                                "change": 0
+                            },
+                            "else_action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_state",
+                                "operation": "set",
+                                "change": 2
+                            }
+                        }
+                    },
+
+                    {
+                        "condition": { "type": "origins:constant", "value": true },
+                        "action": {
+                            "type": "origins:if_else",
+                            "condition": { "type": "origins:set_size", "set": "*:*_target_to", "comparison": "<", "compare_to": 1 },
+
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    { "type": "origins:change_resource", "resource": "*:*_state", "operation": "set", "change": 0 },
+                                    {
+                                        "type": "origins:action_on_set",
+                                        "set": "*:*_target_from",
+                                        "bientity_action": {
+                                            "type": "origins:remove_from_set",
+                                            "set": "*:*_target_from"
+                                        }
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:modify_resource",
+                                        "resource": "*:*_state",
+                                        "modifier": { "operation": "set_total", "value": 0 }
+                                    },
+                                    {
+                                        "type": "origins:trigger_cooldown",
+                                        "power": "*:*_cooldown"
+                                    },
+                                    {
+                                        "type": "origins:action_on_set",
+                                        "set": "*:*_target_from",
+                                        "bientity_action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:target_action",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "function konosuba:origins/eris/transfer_life/remove_life"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:remove_from_set",
+                                                    "set": "*:*_target_from"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:action_on_set",
+                                        "set": "*:*_target_to",
+                                        "bientity_action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:target_action",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "function konosuba:origins/eris/transfer_life/add_life"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "origins:remove_from_set",
+                                                    "set": "*:*_target_to"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+
+    "select_target_from": {
+        "type": "origins:action_over_time",
+        "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 1 },
+        "interval": 2,
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": { "type": "origins:sneaking", "inverted": true },
+
+            "if_action": {
+                "type": "origins:raycast",
+                "distance": 2,
+                "block": false,
+
+                "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        { "type": "origins:can_see" },
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    { "type": "origins:entity_type", "entity_type": "minecraft:player" },
+                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
+                                    { "type": "origins:predicate", "predicate": "konosuba:can_transfer_lives" }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
+                        "set": "*:*_target_from",
+                        "inverted": true
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target_from",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target_from"
+                                    }
+                                }
+                            },
+                            {
+                                "_": "Add to set",
+                                "type": "origins:add_to_set",
+                                "set": "*:*_target_from"
+                            }
+                        ]
+                    }
+                },
+
+                "miss_action": {
+                    "_": "Clear set",
+                    "type": "origins:action_on_set",
+                    "set": "*:*_target_from",
+                    "bientity_action": {
+                        "type": "origins:remove_from_set",
+                        "set": "*:*_target_from"
+                    }
+                }
+            },
+
+            "else_action": {
+                "type": "origins:selector_action",
+                "selector": "@s",
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
+                        "set": "*:*_target_from",
+                        "inverted": true
+                    },
+
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target_from",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target_from"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:actor_condition",
+                                    "condition": { "type": "origins:predicate", "predicate": "konosuba:can_transfer_lives" }
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "_": "Add to set",
+                                            "type": "origins:add_to_set",
+                                            "set": "*:*_target_from"
+                                        },
+                                        {
+                                            "type": "origins:actor_action",
+                                            "action": {
+                                                "type": "origins:execute_command",
+                                                "command": "function konosuba:origins/eris/transfer_life/notify/target_self_from"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+
+    "select_target_to": {
+        "type": "origins:action_over_time",
+        "condition": { "type": "origins:resource", "resource": "*:*_state", "comparison": "==", "compare_to": 2 },
+        "interval": 2,
+
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": { "type": "origins:sneaking", "inverted": true },
+
+            "if_action": {
+                "type": "origins:raycast",
+                "distance": 2,
+                "block": false,
+
+                "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        { "type": "origins:can_see" },
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    { "type": "origins:entity_type", "entity_type": "minecraft:player" },
+                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
+                                    { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
+                                ]
+                            }
+                        },
+                        {
+                            "_": "Make sure we can't select the same target twice",
+                            "type": "origins:in_set",
+                            "set": "*:*_target_from",
+                            "inverted": true
+                        }
+                    ]
+                },
+
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
+                        "set": "*:*_target_to",
+                        "inverted": true
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target_to",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target_to"
+                                    }
+                                }
+                            },
+                            {
+                                "_": "Add to set",
+                                "type": "origins:add_to_set",
+                                "set": "*:*_target_to"
+                            }
+                        ]
+                    }
+                },
+
+                "miss_action": {
+                    "_": "Clear set",
+                    "type": "origins:action_on_set",
+                    "set": "*:*_target_to",
+                    "bientity_action": {
+                        "type": "origins:remove_from_set",
+                        "set": "*:*_target_to"
+                    }
+                }
+            },
+
+            "else_action": {
+                "type": "origins:selector_action",
+                "selector": "@s",
+                "bientity_action": {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:in_set",
+                        "set": "*:*_target_to",
+                        "inverted": true
+                    },
+
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "_": "Clear set",
+                                "type": "origins:actor_action",
+                                "action": {
+                                    "type": "origins:action_on_set",
+                                    "set": "*:*_target_to",
+                                    "bientity_action": {
+                                        "type": "origins:remove_from_set",
+                                        "set": "*:*_target_to"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        { "type": "origins:in_set", "set": "*:*_target_from", "inverted": true },
+                                        {
+                                            "type": "origins:actor_condition",
+                                            "condition": { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
+                                        }
+                                    ]
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "_": "Add to set",
+                                            "type": "origins:add_to_set",
+                                            "set": "*:*_target_to"
+                                        },
+                                        {
+                                            "type": "origins:actor_action",
+                                            "action": {
+                                                "type": "origins:execute_command",
+                                                "command": "function konosuba:origins/eris/transfer_life/notify/target_self_to"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+
+    "remove_if_too_far": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:action_on_set",
+            "set": "*:*_target_from",
+            "bientity_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:distance",
+                    "comparison": ">",
+                    "compare_to": 2.2
+                },
+
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        { "type": "origins:remove_from_set", "set": "*:*_target_from" },
+                        {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_state",
+                                "operation": "set",
+                                "change": 1
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+
+    "glow_target_from": {
+        "type": "origins:entity_glow",
+        "bientity_condition": {
+            "type": "origins:in_set",
+            "set": "*:*_target_from"
+        },
+
+        "use_teams": false,
+        "red": 1,
+        "green": 0,
+        "blue": 0.5
+    },
+    "glow_target_to": {
+        "type": "origins:entity_glow",
+        "bientity_condition": {
+            "type": "origins:in_set",
+            "set": "*:*_target_to"
+        },
+
+        "use_teams": false,
+        "red": 0,
+        "green": 0.5,
+        "blue": 1
+    }
 }
