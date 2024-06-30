@@ -13,24 +13,62 @@
                 "actions": [
                     {
                         "element": {
-                            "type": "origins:drop_inventory",
-                            "throw_randomly": false,
-                            "slot": "weapon.mainhand"
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:drop_inventory",
+                                    "throw_randomly": false,
+                                    "slot": "weapon.mainhand"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
+                                }
+                            ]
                         },
                         "weight": 30
                     },
                     {
                         "element": {
-                            "type": "origins:drop_inventory",
-                            "throw_randomly": true,
-                            "slot": "weapon.mainhand"
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:drop_inventory",
+                                    "throw_randomly": true,
+                                    "slot": "weapon.mainhand"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
+                                }
+                            ]
                         },
                         "weight": 9
                     },
                     {
                         "element": {
-                            "type": "origins:drop_inventory",
-                            "throw_randomly": true
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:drop_inventory",
+                                    "slots": [
+                                        "hotbar.0",
+                                        "hotbar.1",
+                                        "hotbar.2",
+                                        "hotbar.3",
+                                        "hotbar.4",
+                                        "hotbar.5",
+                                        "hotbar.6",
+                                        "hotbar.7",
+                                        "hotbar.8"
+                                    ],
+                                    "throw_randomly": true
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
+                                }
+                            ]
                         },
                         "weight": 1
                     },
