@@ -1,0 +1,12 @@
+{
+    "name": "Horse",
+    "description": "Get the horse.",
+
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+
+    "entity_action_chosen": {
+        "type": "origins:execute_command",
+        "command": "function konosuba:origins/beldia/horse_spawn"
+    }
+}
