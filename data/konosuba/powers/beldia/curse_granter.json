@@ -1,10 +1,10 @@
 {
     "name": "Death Curse",
-    "description": "No one shall live without your grant! Thy enemy bound to be cursed and die in §m3 days§r 30 seconds after your proclaim!",
+    "description": "No one shall live without your grant! Thy enemy bound to be cursed and die in §m7 days§r 3 minutes after your proclaim!",
 
     "type": "origins:active_self",
 
-    "key": { "key": "key.origins.primary_active" },
+    "key": "key.origins.primary_active",
     "cooldown": 6000,
     "hud_render": {
         "should_render": true,

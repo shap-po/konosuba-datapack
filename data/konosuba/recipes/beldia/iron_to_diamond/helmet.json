@@ -2,16 +2,16 @@
     "type": "minecraft:smithing_transform",
 
     "base": {
-        "item": "minecraft:golden_boots"
+        "item": "minecraft:iron_helmet"
     },
     "template": {
-        "tag": "konosuba:beldia_upgrade_template"
+        "item": "minecraft:amethyst_cluster"
     },
     "addition": {
         "item": "minecraft:diamond_block"
     },
 
     "result": {
-        "item": "minecraft:diamond_boots"
+        "item": "minecraft:diamond_helmet"
     }
 }

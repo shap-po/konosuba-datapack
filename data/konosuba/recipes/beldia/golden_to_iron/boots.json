@@ -2,16 +2,16 @@
     "type": "minecraft:smithing_transform",
 
     "base": {
-        "item": "minecraft:chainmail_chestplate"
+        "item": "minecraft:golden_boots"
     },
     "template": {
-        "tag": "konosuba:beldia_upgrade_template"
+        "item": "minecraft:quartz"
     },
     "addition": {
         "item": "minecraft:iron_block"
     },
 
     "result": {
-        "item": "minecraft:iron_chestplate"
+        "item": "minecraft:iron_boots"
     }
 }

@@ -4,12 +4,11 @@
     "icon": "minecraft:bone",
 
     "powers": [
-        "konosuba:beldia/horse",
-
-        "konosuba:beldia/living_armor",
         "konosuba:beldia/curse_granter",
+        "konosuba:beldia/living_armor",
         "konosuba:beldia/craft_armor",
         "konosuba:beldia/upgrade_armor",
+        "konosuba:beldia/horse",
         "konosuba:undead",
 
         "konosuba:wiz/sane_person",
