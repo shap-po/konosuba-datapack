@@ -7,11 +7,6 @@
         "block": [
             {
                 "namespace": "artifacts",
-                "path": "tags/items/slot.*"
-            },
-            
-            {
-                "namespace": "artifacts",
                 "path": "loot_modifiers/.*"
             },
             {
