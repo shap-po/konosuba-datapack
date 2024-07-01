@@ -9,3 +9,6 @@ tag @s remove konosuba.wiz_imaginary_meat_init
 
 # tp to spawn coords
 tp @s ~ ~ ~
+
+# rtp
+spreadplayers ~ ~ 10 60 false @s
