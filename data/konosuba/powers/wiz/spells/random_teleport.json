@@ -36,7 +36,7 @@
                                 "type": "origins:target_action",
                                 "action": {
                                     "type": "origins:execute_command",
-                                    "command": "/function konosuba:origins/wiz/rtp"
+                                    "command": "function konosuba:origins/wiz/rtp"
                                 }
                             },
                             {
@@ -69,7 +69,7 @@
                     "actions": [
                         {
                             "type": "origins:execute_command",
-                            "command": "/function konosuba:origins/wiz/rtp"
+                            "command": "function konosuba:origins/wiz/rtp"
                         },
                         {
                             "type": "origins:change_resource",
@@ -97,6 +97,10 @@
                 "resource": "*:wiz/spellchanger_spell",
                 "comparison": "==",
                 "compare_to": 1
+            },
+            {
+                "type": "origins:dimension",
+                "dimension": "minecraft:overworld"
             }
         ]
     }
