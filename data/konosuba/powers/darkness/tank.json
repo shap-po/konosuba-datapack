@@ -15,8 +15,16 @@
         "type": "origins:apply_effect",
         "effects": [
             {
+                "effect": "minecraft:jump_boost",
+                "duration": 200,
+                "amplifier": 250,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
                 "effect": "minecraft:resistance",
-                "duration": 100,
+                "duration": 200,
                 "amplifier": 9,
                 "is_ambient": false,
                 "show_particles": false,
@@ -39,7 +47,7 @@
             },
             {
                 "effect": "minecraft:slowness",
-                "duration": 100,
+                "duration": 200,
                 "amplifier": 9,
                 "is_ambient": false,
                 "show_particles": false,

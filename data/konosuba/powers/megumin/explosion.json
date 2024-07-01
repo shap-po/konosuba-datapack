@@ -195,7 +195,7 @@
     "weakness": {
         "_": "Effects after using the ability",
         "type": "origins:action_over_time",
-        "interval": 4,
+        "interval": 20,
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_cooldown",
@@ -206,20 +206,154 @@
             "type": "origins:if_else_list",
             "actions": [
                 {
-                    "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": ">", "compare_to": 100 },
-                    "action": {
+                    "condition": 
+                    { 
+                        "type": "origins:and",
+                        "conditions":
+                        [
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": ">", 
+                                "compare_to": 22800
+                            },
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": "<", 
+                                "compare_to": 24000
+                            }
+                            
+                        ]
+                    },
+                    "action": 
+                    {
+                        "type": "origins:apply_effect",
+                        "effects": [
+                            {
+                                "effect": "minecraft:jump_boost",
+                                "duration": 100,
+                                "amplifier": 250,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            },
+                            {
+                                "effect": "minecraft:weakness",
+                                "duration": 100,
+                                "amplifier": 9,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            },
+                            {
+                                "effect": "minecraft:slowness",
+                                "duration": 100,
+                                "amplifier": 9,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            },
+                            {
+                                "effect": "minecraft:blindness",
+                                "duration": 100,
+                                "amplifier": 0,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    { 
+                        "type": "origins:and",
+                        "conditions":
+                        [
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": ">", 
+                                "compare_to": 20400
+                            },
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": "<", 
+                                "compare_to": 22800
+                            }
+                            
+                        ]
+                    },
+                    "action": 
+                    {
                         "type": "origins:apply_effect",
                         "effects": [
                             {
                                 "effect": "minecraft:weakness",
-                                "duration": 20,
+                                "duration": 100,
                                 "amplifier": 1,
-                                "particles": false,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            },
+                            {
+                                "effect": "minecraft:slowness",
+                                "duration": 100,
+                                "amplifier": 1,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": 
+                    { 
+                        "type": "origins:and",
+                        "conditions":
+                        [
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": ">", 
+                                "compare_to": 12000
+                            },
+                            {
+                                "type": "origins:resource", 
+                                "resource": "*:*_cooldown", 
+                                "comparison": "<", 
+                                "compare_to": 20400
+                            }
+                            
+                        ]
+                    },
+                    "action": 
+                    {
+                        "type": "origins:apply_effect",
+                        "effects": [
+                            {
+                                "effect": "minecraft:weakness",
+                                "duration": 100,
+                                "amplifier": 0,
+                                "is_ambient": false,
+                                "show_particles": false,
+                                "show_icon": false
+                            },
+                            {
+                                "effect": "minecraft:slowness",
+                                "duration": 100,
+                                "amplifier": 0,
+                                "is_ambient": false,
+                                "show_particles": false,
                                 "show_icon": false
                             }
                         ]
                     }
                 }
+                
             ]
         }
     }
