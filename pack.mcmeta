@@ -2,5 +2,31 @@
     "pack": {
         "pack_format": 26,
         "description": "Data pack for the KonoSubaMC S2 server"
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "artifacts",
+                "path": "loot_modifiers/.*"
+            },
+            {
+                "namespace": "artifacts",
+                "path": "loot_tables/.*"
+            },
+
+            {
+                "namespace": "trinkets",
+                "path": "entities/artifacts.json"
+            },
+            {
+                "namespace": "trinkets",
+                "path": "entities/friendsandfoestotem.json"
+            },
+
+            {
+                "namespace": "waystones",
+                "path": "recipes/.*"
+            }
+        ]
     }
 }

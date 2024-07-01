@@ -289,5 +289,73 @@
             "comparison": "<=",
             "compare_to": 100
         }
+    },
+
+    "imaginary_meat": {
+        "type": "origins:action_over_time",
+        "interval": 80,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_flesh",
+            "comparison": "<=",
+            "compare_to": 100
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [{ "type": "origins:exposed_to_sky" }, { "type": "origins:dimension", "dimension": "minecraft:overworld" }]
+            },
+            "if_action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "element": {
+                            "type": "origins:nothing"
+                        },
+                        "weight": 6
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/meat_craving/despawn_random"
+                        },
+                        "weight": 6
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/meat_craving/spawn/chicken"
+                        },
+                        "weight": 3
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/meat_craving/spawn/cow"
+                        },
+                        "weight": 3
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/meat_craving/spawn/pig"
+                        },
+                        "weight": 3
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/meat_craving/spawn/sheep"
+                        },
+                        "weight": 3
+                    }
+                ]
+            }
+        },
+        "falling_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/wiz/meat_craving/despawn_all"
+        }
     }
 }

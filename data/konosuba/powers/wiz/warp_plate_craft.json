@@ -1,0 +1,24 @@
+{
+    "name": "Warp plates",
+    "description": "You can craft the new way to travel.",
+
+    "badges": [
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "origins:textures/gui/badge/recipe.png",
+            "prefix": "Smithing Table",
+            "recipe": {
+                "id": "konosuba:wiz/showcase",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    { "item": "minecraft:ender_pearl" },
+                    { "item": "minecraft:heavy_weighted_pressure_plate" },
+                    { "item": "minecraft:netherite_ingot" }
+                ],
+                "result": { "item": "waystones:warp_plate" }
+            }
+        }
+    ],
+
+    "type": "origins:simple"
+}

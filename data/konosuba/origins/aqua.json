@@ -4,8 +4,8 @@
     "icon": "minecraft:water_bucket",
 
     "powers": [
-        "konosuba:aqua/heal",
         "konosuba:aqua/revive",
+        "konosuba:aqua/heal",
         "konosuba:aqua/walk_on_water",
         "konosuba:aqua/fill_bottles",
         "konosuba:goddess",
