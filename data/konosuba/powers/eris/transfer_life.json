@@ -1,6 +1,13 @@
 {
     "name": "Transfer life",
     "description": "Transfer a life from one player to another",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Activate the ability with %s.\nLook at the player you want to transfer a life from (or sneak to select yourself), activate the ability again.\nDo the same for the player you want to transfer the life to."
+        }
+    ],
 
     "type": "origins:multiple",
 
