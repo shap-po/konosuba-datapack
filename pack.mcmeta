@@ -12,10 +12,6 @@
             
             {
                 "namespace": "artifacts",
-                "path": "worldgen/.*"
-            },
-            {
-                "namespace": "artifacts",
                 "path": "loot_modifiers/.*"
             },
             {
@@ -35,14 +31,6 @@
             {
                 "namespace": "waystones",
                 "path": "recipes/.*"
-            },
-            {
-                "namespace": "waystones",
-                "path": "worldgen/.*"
-            },
-            {
-                "namespace": "waystones",
-                "path": "structures/.*"
             }
         ]
     }
