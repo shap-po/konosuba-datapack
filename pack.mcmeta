@@ -11,6 +11,19 @@
             },
             
             {
+                "namespace": "artifacts",
+                "path": "worldgen/.*"
+            },
+            {
+                "namespace": "artifacts",
+                "path": "loot_modifiers/.*"
+            },
+            {
+                "namespace": "artifacts",
+                "path": "loot_tables/.*"
+            },
+
+            {
                 "namespace": "trinkets",
                 "path": "entities/artifacts.json"
             },
@@ -22,6 +35,14 @@
             {
                 "namespace": "waystones",
                 "path": "recipes/.*"
+            },
+            {
+                "namespace": "waystones",
+                "path": "worldgen/.*"
+            },
+            {
+                "namespace": "waystones",
+                "path": "structures/.*"
             }
         ]
     }
