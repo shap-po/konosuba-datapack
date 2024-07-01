@@ -5,7 +5,7 @@
         "item": "minecraft:diamond_chestplate"
     },
     "template": {
-        "tag": "konosuba:beldia_upgrade_template"
+        "item": "minecraft:echo_shard"
     },
     "addition": {
         "item": "minecraft:netherite_block"

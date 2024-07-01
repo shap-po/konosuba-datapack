@@ -1,11 +1,68 @@
 {
     "name": "Reforge",
-    "description": "You can upgrade your armor in the smithing table.",
+    
+    "description": "You can upgrade your armor and save all the enchantments on it... But at what cost?",
+
     "badges": [
         {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/badge/info.png",
-            "text": "Piece of armor + block of next tier + snowball = upgraded armor."
+            "type": "origins:crafting_recipe",
+            "sprite": "origins:textures/gui/community/silent/badge/colors/yellow.png",
+            "prefix": "Smithing Table",
+            "recipe": {
+                "id": "konosuba:beldia/showcase1",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    { "item": "minecraft:flint" },
+                    { "item": "minecraft:chainmail_helmet" },
+                    { "item": "minecraft:gold_block" }
+                ],
+                "result": { "item": "minecraft:golden_helmet" }
+            }
+        },
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "origins:textures/gui/community/silent/badge/colors/light_gray.png",
+            "prefix": "Smithing Table",
+            "recipe": {
+                "id": "konosuba:beldia/showcase2",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    { "item": "minecraft:quartz" },
+                    { "item": "minecraft:golden_helmet" },
+                    { "item": "minecraft:iron_block" }
+                ],
+                "result": { "item": "minecraft:iron_helmet" }
+            }
+        },
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "origins:textures/gui/community/silent/badge/colors/cyan.png",
+            "prefix": "Smithing Table",
+            "recipe": {
+                "id": "konosuba:beldia/showcase3",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    { "item": "minecraft:amethyst_cluster" },
+                    { "item": "minecraft:iron_helmet" },
+                    { "item": "minecraft:diamond_block" }
+                ],
+                "result": { "item": "minecraft:diamond_helmet" }
+            }
+        },
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "origins:textures/gui/community/silent/badge/colors/black.png",
+            "prefix": "Smithing Table",
+            "recipe": {
+                "id": "konosuba:beldia/showcase4",
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    { "item": "minecraft:echo_shard" },
+                    { "item": "minecraft:diamond_helmet" },
+                    { "item": "minecraft:netherite_block" }
+                ],
+                "result": { "item": "minecraft:netherite_helmet" }
+            }
         }
     ],
 

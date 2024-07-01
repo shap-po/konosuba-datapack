@@ -2,16 +2,16 @@
     "type": "minecraft:smithing_transform",
 
     "base": {
-        "item": "minecraft:iron_leggings"
+        "item": "minecraft:chainmail_chestplate"
     },
     "template": {
-        "tag": "konosuba:beldia_upgrade_template"
+        "item": "minecraft:flint"
     },
     "addition": {
         "item": "minecraft:gold_block"
     },
 
     "result": {
-        "item": "minecraft:golden_leggings"
+        "item": "minecraft:golden_chestplate"
     }
 }

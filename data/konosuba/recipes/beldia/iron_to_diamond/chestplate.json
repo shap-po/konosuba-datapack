@@ -2,10 +2,10 @@
     "type": "minecraft:smithing_transform",
 
     "base": {
-        "item": "minecraft:golden_chestplate"
+        "item": "minecraft:iron_chestplate"
     },
     "template": {
-        "tag": "konosuba:beldia_upgrade_template"
+        "item": "minecraft:amethyst_cluster"
     },
     "addition": {
         "item": "minecraft:diamond_block"
