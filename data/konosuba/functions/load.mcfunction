@@ -4,6 +4,7 @@ function konosuba:utils/uuid/load
 function konosuba:utils/gamerules/load
 function konosuba:utils/spin/load
 function konosuba:utils/global_cd/load
+function konosuba:events/load
 
 function konosuba:origins/vanir/load
 
