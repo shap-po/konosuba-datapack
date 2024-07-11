@@ -18,6 +18,9 @@ team add konosuba.axis "Axis Order"
 team add konosuba.eris "Eris Order"
 team modify konosuba.axis color aqua
 team modify konosuba.eris color light_purple
+function konosuba:utils/team_setup {team: "konosuba.axis"}
+function konosuba:utils/team_setup {team: "konosuba.eris"}
+
 
 # define default values for each religion
 scoreboard players add $AxisFollowers konosuba.religions 0
