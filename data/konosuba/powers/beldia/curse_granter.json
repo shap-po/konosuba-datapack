@@ -2,70 +2,126 @@
     "name": "Death Curse",
     "description": "No one shall live without your grant! Thy enemy bound to be cursed and die in §m7 days§r 3 minutes after your proclaim!",
 
-    "type": "origins:active_self",
+    "type": "origins:multiple",
 
-    "key": "key.origins.primary_active",
-    "cooldown": 6000,
-    "hud_render": {
-        "should_render": true,
-        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
-        "bar_index": 17
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 300,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 17,
+            "inverted": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "cooldown_drain": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cooldown",
+            "operation": "add",
+            "change": -1
+        }
     },
 
-    "entity_action": {
-        "type": "origins:raycast",
-        "distance": 40,
-        "block": true,
-        "entity": true,
-        "shape_type": "collider",
-        "fluid_handling": "none",
-        "command_along_ray": "function konosuba:origins/beldia/curse/step",
-
-        "bientity_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "_": "Check if the target can be cursed.",
-                "type": "origins:target_condition",
-                "condition": {
-                    "_": "XOR: if any of the conditions are true, the target is invalid.",
-                    "type": "origins:or",
-                    "conditions": [
-                        { "type": "origins:living", "inverted": true },
-                        { "type": "origins:gamemode", "gamemode": "creative" },
-                        { "type": "origins:gamemode", "gamemode": "spectator" },
-                        { "type": "origins:nbt", "nbt": "{Invulnerable:1b}" },
-                        { "type": "origins:in_tag", "tag": "konosuba:ignore_curse" }
-                    ],
-                    "inverted": true
-                }
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:target_action",
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function konosuba:origins/beldia/curse/hit"
-                        }
-                    },
-                    {
-                        "type": "origins:actor_action",
-                        "action": {
-                            "type": "origins:execute_command",
-                            "command": "function konosuba:origins/beldia/curse/notify_hit"
-                        }
-                    }
-                ]
-            },
-            "else_action": {
-                "type": "origins:actor_action",
-                "action": {
-                    "type": "origins:execute_command",
-                    "command": "function konosuba:origins/beldia/curse/notify_invalid_target"
-                }
-            }
+    "curse": {
+        "type": "origins:active_self",
+        "key": "key.origins.primary_active",
+        "hud_render": {
+            "should_render": false
         },
-        "command_step": 1
+
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": "==",
+            "compare_to": 0
+        },
+
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 40,
+            "block": true,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "none",
+            "command_along_ray": "function konosuba:origins/beldia/curse/step",
+
+            "bientity_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "_": "Check if the target can be cursed.",
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "_": "XOR: if any of the conditions are true, the target is invalid.",
+                        "type": "origins:or",
+                        "conditions": [
+                            { "type": "origins:living", "inverted": true },
+                            { "type": "origins:gamemode", "gamemode": "creative" },
+                            { "type": "origins:gamemode", "gamemode": "spectator" },
+                            { "type": "origins:nbt", "nbt": "{Invulnerable:1b}" },
+                            { "type": "origins:in_tag", "tag": "konosuba:curse_immunity" }
+                        ],
+                        "inverted": true
+                    }
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/beldia/curse/hit"
+                            }
+                        },
+                        {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function konosuba:origins/beldia/curse/notify_hit"
+                            }
+                        },
+                        {
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_cooldown",
+                                "operation": "add",
+                                "change": 300
+                            }
+                        }
+                    ]
+                },
+                "else_action": {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/beldia/curse/notify_invalid_target"
+                    }
+                }
+            },
+            "miss_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "operation": "add",
+                "change": 60
+            },
+            "hit_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_cooldown",
+                "operation": "add",
+                "change": 60
+            },
+            "command_step": 1
+        }
     }
 }

@@ -118,7 +118,7 @@
                             "type": "origins:or",
                             "conditions": [
                                 { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 },
-                                { "type": "origins:power", "power": "konosuba:beldia/cursed" }
+                                { "type": "origins:power", "power": "konosuba:beldia/cursed_status" }
                             ]
                         },
                         "action": {
@@ -166,7 +166,7 @@
                                         "type": "origins:or",
                                         "conditions": [
                                             { "type": "origins:relative_health", "comparison": "<", "compare_to": 1 },
-                                            { "type": "origins:power", "power": "konosuba:beldia/cursed" }
+                                            { "type": "origins:power", "power": "konosuba:beldia/cursed_status" }
                                         ]
                                     }
                                 }
