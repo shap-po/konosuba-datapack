@@ -4,3 +4,6 @@
 # ide files
 .vscode/
 .idea/
+
+# build files
+*.zip
