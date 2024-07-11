@@ -46,30 +46,29 @@
     "flesh_drain_over_time": {
         "type": "origins:action_over_time",
         "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_flesh",
-                        "change": -6
-                    },
-                    "condition": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
                         "type": "origins:exposed_to_sun"
-                    }
-                },
-                {
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:*_flesh",
-                        "change": -2
                     },
-                    "condition": {
-                        "type": "origins:exposed_to_sun",
-                        "inverted": true
+                    {
+                        "type": "origins:inventory",
+                        "slot": "armor.head"
                     }
-                }
-            ]
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_flesh",
+                "change": -4
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_flesh",
+                "change": -2
+            }
         },
         "interval": 20
     },
@@ -298,7 +297,7 @@
             "type": "origins:resource",
             "resource": "*:*_flesh",
             "comparison": "<=",
-            "compare_to": 100
+            "compare_to": 500
         },
         "entity_action": {
             "type": "origins:if_else",
