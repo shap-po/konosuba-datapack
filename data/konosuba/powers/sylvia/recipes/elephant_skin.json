@@ -27,7 +27,7 @@
             }
         },
         "result": {
-            "item": "minecraft:oak_log",
+            "item": "artifacts:crystal_heart",
             "count": 1
         }
     }
