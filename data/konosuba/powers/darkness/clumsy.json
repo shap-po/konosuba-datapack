@@ -26,7 +26,7 @@
                                 }
                             ]
                         },
-                        "weight": 30
+                        "weight": 40
                     },
                     {
                         "element": {
@@ -43,40 +43,13 @@
                                 }
                             ]
                         },
-                        "weight": 9
-                    },
-                    {
-                        "element": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:drop_inventory",
-                                    "slots": [
-                                        "hotbar.0",
-                                        "hotbar.1",
-                                        "hotbar.2",
-                                        "hotbar.3",
-                                        "hotbar.4",
-                                        "hotbar.5",
-                                        "hotbar.6",
-                                        "hotbar.7",
-                                        "hotbar.8"
-                                    ],
-                                    "throw_randomly": true
-                                },
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
-                                }
-                            ]
-                        },
-                        "weight": 1
+                        "weight": 10
                     },
                     {
                         "element": {
                             "type": "origins:nothing"
                         },
-                        "weight": 360
+                        "weight": 500
                     }
                 ]
             }
@@ -101,13 +74,13 @@
                                 "show_icon": false
                             }
                         },
-                        "weight": 30
+                        "weight": 20
                     },
                     {
                         "element": {
                             "type": "origins:nothing"
                         },
-                        "weight": 70
+                        "weight": 80
                     }
                 ]
             }
