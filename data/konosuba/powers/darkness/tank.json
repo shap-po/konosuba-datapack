@@ -15,58 +15,47 @@
         "type": "origins:apply_effect",
         "effects": [
             {
+                "effect": "minecraft:resistance",
+                "duration": 200,
+                "amplifier": 9,
+                "is_ambient": true
+            },
+            {
+                "effect": "minecraft:slowness",
+                "duration": 200,
+                "amplifier": 5,
+                "is_ambient": true
+            },
+            {
                 "effect": "minecraft:jump_boost",
                 "duration": 200,
                 "amplifier": 250,
-                "is_ambient": false,
                 "show_particles": false,
                 "show_icon": false
             },
-            {
-                "effect": "minecraft:resistance",
-                "duration": 200,
-                "amplifier": 9,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": false
-            },
+
             {
                 "effect": "minecraft:resistance",
                 "duration": 600,
                 "amplifier": 1,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": false
-            },
-            {
-                "effect": "minecraft:resistance",
-                "duration": 1200,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": true
-            },
-            {
-                "effect": "minecraft:slowness",
-                "duration": 200,
-                "amplifier": 9,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": false
+                "is_ambient": true
             },
             {
                 "effect": "minecraft:slowness",
                 "duration": 600,
                 "amplifier": 1,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": false
+                "is_ambient": true
+            },
+
+            {
+                "effect": "minecraft:resistance",
+                "duration": 1200,
+                "is_ambient": true
             },
             {
                 "effect": "minecraft:slowness",
                 "duration": 1200,
-                "is_ambient": false,
-                "show_particles": false,
-                "show_icon": true
+                "is_ambient": true
             }
         ]
     }
