@@ -24,11 +24,6 @@
             },
 
             {
-                "namespace": "waystones",
-                "path": "recipes/.*"
-            },
-
-            {
                 "namespace": "magnumtorch",
                 "path": "recipes/.*"
             }
