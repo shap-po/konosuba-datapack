@@ -1,0 +1,264 @@
+{
+    "name": "Blessed Status",
+
+    "type": "origins:multiple",
+
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 30,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 14
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/eris/blessing/remove"
+        }
+    },
+
+    "tick": {
+        "_": "Runs every minute",
+        "type": "origins:action_over_time",
+        "interval": 1200,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_timer",
+                    "operation": "add",
+                    "change": -1
+                },
+                {
+                    "_": "Apply the effect",
+                    "type": "origins:change_resource",
+                    "resource": "*:*_apply_effect",
+                    "operation": "set",
+                    "change": 1
+                }
+            ]
+        }
+    },
+
+    "effect": {
+        "type": "origins:resource",
+        "min": -1,
+        "max": 10,
+        "start_value": -1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "apply_effect": {
+        "_": "This resource will apply the effect each time it changes. The reason for that is that `action_over_time` waits for the interval to pass before firing the action and there is no way to make it fire immediately as soon as the power is gained.",
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_apply_effect",
+                    "operation": "set",
+                    "change": 0
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:strength",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:fire_resistance",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:water_breathing",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:slow_falling",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:speed",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 5
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:jump_boost",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 6
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:regeneration",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 7
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:night_vision",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 8
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:haste",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "*:*_effect",
+                                "comparison": "==",
+                                "compare_to": 9
+                            },
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:absorption",
+                                    "amplifier": 0,
+                                    "duration": 1440,
+                                    "is_ambient": true
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+
+    "on_gain": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "_": "Wait 1 tick so that resource is serialized and immediately apply the effect",
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_apply_effect",
+                "operation": "set",
+                "change": 1
+            }
+        }
+    }
+}

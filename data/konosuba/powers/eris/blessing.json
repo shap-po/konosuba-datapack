@@ -1,6 +1,6 @@
 {
     "name": "Blessing",
-    "description": "Gives a target additional health for a short period of time.",
+    "description": "Grants various beneficial effects to the target. The effects are based on the item in your offhand, and the item is sacrificed upon use.\n\n- Strength: Blaze Powder\n- Fire Resistance: Magma Cream\n- Water Breathing: Pufferfish\n- Slow Falling: Phantom Membrane\n- Speed: Sugar\n- Jump Boost: Rabbit Foot\n- Regeneration: Glistering Melon Slice\n- Night Vision: Golden Carrot\n- Haste: Diamond\n- Absorption: No Item",
     "badges": [
         "origins:active",
         {
@@ -12,28 +12,16 @@
 
     "type": "origins:multiple",
 
-    "mana": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 280,
-        "start_value": 280,
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 20,
         "hud_render": {
-            "should_render": true,
+            "should_render": false,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
             "bar_index": 14,
-            "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": "<", "compare_to": 280 }
+            "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": ">", "compare_to": 0 },
+            "inverted": true
         }
-    },
-    "regen_cooldown": {
-        "type": "origins:cooldown",
-        "cooldown": 2400,
-        "hud_render": { "should_render": false }
-    },
-    "mana_regen": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": 1 },
-        "condition": { "type": "origins:resource", "resource": "*:*_regen_cooldown", "comparison": "==", "compare_to": 0 }
     },
 
     "activate": {
@@ -42,62 +30,453 @@
             "key": "key.origins.secondary_active",
             "continuous": true
         },
-        "condition": { "type": "origins:resource", "resource": "*:*_mana", "comparison": ">=", "compare_to": 70 },
+        "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "==", "compare_to": 0 },
         "cooldown": 10,
 
         "entity_action": {
             "type": "origins:if_else",
-            "condition": { "type": "origins:sneaking" },
+            "condition": {
+                "type": "origins:sneaking"
+            },
 
             "if_action": {
                 "_": "Target self",
-                "type": "origins:and",
-                "actions": [
-                    { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": -70 },
-                    { "type": "origins:trigger_cooldown", "power": "*:*_regen_cooldown" },
-                    { "type": "origins:execute_command", "command": "function konosuba:origins/eris/blessing" }
-                ]
+
+                "type": "origins:selector_action",
+                "selector": "@s",
+                "bientity_action": {
+                    "type": "origins:add_to_set",
+                    "set": "*:*_target"
+                }
             },
 
             "else_action": {
                 "_": "Target other entities",
+
                 "type": "origins:raycast",
                 "distance": 8,
                 "block": false,
 
                 "bientity_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                        {
-                            "type": "origins:target_condition",
-                            "condition": { "type": "origins:living" }
-                        }
-                    ]
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:living"
+                    }
                 },
 
                 "bientity_action": {
-                    "type": "origins:and",
+                    "type": "origins:add_to_set",
+                    "set": "*:*_target"
+                }
+            }
+        }
+    },
+
+    "target": {
+        "_": "Apply the effect, when target is added to the set",
+
+        "type": "origins:entity_set",
+        "action_on_add": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:trigger_cooldown",
+                        "power": "*:*_cooldown"
+                    }
+                },
+                {
+                    "_": "Tag Eris, so that if she blesses herself, the duration is shortened",
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/eris/blessing/prepare"
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
                     "actions": [
                         {
-                            "type": "origins:actor_action",
+                            "_": "blaze_powder -> strength",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:blaze_powder"
+                                        }
+                                    }
+                                }
+                            },
                             "action": {
                                 "type": "origins:and",
                                 "actions": [
-                                    { "type": "origins:change_resource", "resource": "*:*_mana", "operation": "add", "change": -70 },
-                                    { "type": "origins:trigger_cooldown", "power": "*:*_regen_cooldown" }
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 0}"
+                                        }
+                                    }
                                 ]
                             }
                         },
+
                         {
-                            "type": "origins:target_action",
+                            "_": "magma_cream -> fire_resistance",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:magma_cream"
+                                        }
+                                    }
+                                }
+                            },
                             "action": {
-                                "type": "origins:execute_command",
-                                "command": "function konosuba:origins/eris/blessing"
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 1}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "pufferfish -> water_breathing",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:pufferfish"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 2}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "phantom_membrane -> slow_falling",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:phantom_membrane"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 3}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "sugar -> speed",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:sugar"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 4}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "rabbit_foot -> jump_boost",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:rabbit_foot"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 5}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "glistering_melon_slice -> regeneration",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:glistering_melon_slice"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 6}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "golden_carrot -> night_vision",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:golden_carrot"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 7}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "diamond -> haste",
+                            "condition": {
+                                "type": "origins:actor_condition",
+                                "condition": {
+                                    "type": "origins:inventory",
+                                    "slot": "weapon.offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:diamond"
+                                        }
+                                    }
+                                }
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:actor_action",
+                                        "action": {
+                                            "type": "origins:modify_inventory",
+                                            "slot": "weapon.offhand",
+                                            "item_action": {
+                                                "type": "origins:consume"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:target_action",
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "function konosuba:origins/eris/blessing/apply {effect: 8}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "_": "Fallback to Absorption effect if the player doesn't have any matched item in their offhand",
+                            "condition": {
+                                "type": "origins:constant",
+                                "value": true
+                            },
+                            "action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "function konosuba:origins/eris/blessing/apply {effect: 9}"
+                                }
                             }
                         }
                     ]
+                },
+                {
+                    "type": "origins:remove_from_set",
+                    "set": "*:*_target"
+                },
+                {
+                    "_": "Remove tag from Eris",
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/eris/blessing/cleanup"
+                    }
                 }
-            }
+            ]
         }
     }
 }
