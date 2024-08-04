@@ -55,7 +55,9 @@
                     },
                     {
                         "type": "origins:inventory",
-                        "slot": "armor.head"
+                        "slot": "armor.head",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             },
@@ -83,17 +85,9 @@
         },
         "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "item": "minecraft:porkchop"
-                },
-                {
-                    "item": "minecraft:beef"
-                },
-                {
-                    "item": "minecraft:mutton"
-                }
-            ]
+            "ingredient": {
+                "tag": "konosuba:wiz/meat_tier_4"
+            }
         }
     },
 
@@ -107,20 +101,9 @@
         },
         "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "item": "minecraft:chicken"
-                },
-                {
-                    "item": "minecraft:rabbit"
-                },
-                {
-                    "item": "minecraft:cod"
-                },
-                {
-                    "item": "minecraft:salmon"
-                }
-            ]
+            "ingredient": {
+                "tag": "konosuba:wiz/meat_tier_3"
+            }
         }
     },
 
@@ -134,26 +117,9 @@
         },
         "item_condition": {
             "type": "origins:ingredient",
-            "ingredient": [
-                {
-                    "item": "minecraft:cooked_beef"
-                },
-                {
-                    "item": "minecraft:cooked_porkchop"
-                },
-                {
-                    "item": "minecraft:cooked_mutton"
-                },
-                {
-                    "item": "minecraft:cooked_chicken"
-                },
-                {
-                    "item": "minecraft:cooked_rabbit"
-                },
-                {
-                    "item": "minecraft:rabbit_stew"
-                }
-            ]
+            "ingredient": {
+                "tag": "konosuba:wiz/meat_tier_2"
+            }
         }
     },
 
@@ -167,30 +133,35 @@
         },
         "item_condition": {
             "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "konosuba:wiz/meat_tier_1"
+            }
+        }
+    },
+
+    "eat_when_hungry": {
+        "type": "origins:modify_food",
+        "always_edible": true,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_flesh",
+            "comparison": "<=",
+            "compare_to": 400
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
             "ingredient": [
                 {
-                    "item": "minecraft:rotten_flesh"
+                    "tag": "konosuba:wiz/meat_tier_1"
                 },
                 {
-                    "item": "minecraft:cooked_salmon"
+                    "tag": "konosuba:wiz/meat_tier_2"
                 },
                 {
-                    "item": "minecraft:cooked_cod"
+                    "tag": "konosuba:wiz/meat_tier_3"
                 },
                 {
-                    "item": "minecraft:spider_eye"
-                },
-                {
-                    "item": "minecraft:tropical_fish"
-                },
-                {
-                    "item": "minecraft:mushroom_stew"
-                },
-                {
-                    "item": "minecraft:suspicious_stew"
-                },
-                {
-                    "item": "minecraft:pufferfish"
+                    "tag": "konosuba:wiz/meat_tier_4"
                 }
             ]
         }
@@ -292,7 +263,7 @@
 
     "imaginary_meat": {
         "type": "origins:action_over_time",
-        "interval": 80,
+        "interval": 60,
         "condition": {
             "type": "origins:resource",
             "resource": "*:*_flesh",
@@ -303,7 +274,15 @@
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:and",
-                "conditions": [{ "type": "origins:exposed_to_sky" }, { "type": "origins:dimension", "dimension": "minecraft:overworld" }]
+                "conditions": [
+                    {
+                        "type": "origins:exposed_to_sky"
+                    },
+                    {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:overworld"
+                    }
+                ]
             },
             "if_action": {
                 "type": "origins:choice",
