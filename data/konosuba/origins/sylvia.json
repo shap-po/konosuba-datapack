@@ -1,6 +1,6 @@
 {
     "name": "Sylvia",
-    "description": "A powerfull chimera that is able to modify her own body.",
+    "description": "A powerful chimera that is able to modify her own body.",
     "icon": "minecraft:tadpole_bucket",
 
     "powers": [
@@ -22,6 +22,8 @@
         "konosuba:sylvia/recipes/slime_secretion",
         "konosuba:sylvia/recipes/villager_nose",
         "konosuba:sylvia/recipes/viper_metabolism",
+
+        "konosuba:undead",
 
         "konosuba:no_netherite",
         "konosuba:wiz/sane_person",
