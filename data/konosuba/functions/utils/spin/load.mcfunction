@@ -1,5 +1,3 @@
-forceload add 0 0
-
 # remove old markers
 function konosuba:utils/spin/remove
 

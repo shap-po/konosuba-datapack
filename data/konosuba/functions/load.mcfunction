@@ -1,3 +1,5 @@
+forceload add 0 0
+
 function konosuba:lives/load
 function konosuba:religions/load
 function konosuba:utils/uuid/load
