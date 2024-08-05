@@ -27,7 +27,7 @@
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:change_resource",
-                        "resource": "*:magic_magic",
+                        "resource": "*:wiz/magic_magic",
                         "operation": "add",
                         "change": -300
                     }
@@ -41,7 +41,7 @@
                 "conditions": [
                     {
                         "type": "origins:resource",
-                        "resource": "*:magic_magic",
+                        "resource": "*:wiz/magic_magic",
                         "comparison": ">",
                         "compare_to": 300
                     },

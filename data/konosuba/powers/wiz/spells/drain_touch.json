@@ -3,7 +3,7 @@
     "description": "Siphon life force from hit living creature.",
 
     "type": "origins:multiple",
-    
+
     "badges": [
         "origins:toggle",
         {
@@ -13,18 +13,16 @@
         }
     ],
 
-    "toggle":
-    {
+    "toggle": {
         "type": "origins:toggle",
         "active_by_default": false,
         "key": "key.origins.primary_active",
         "retain_state": false,
-        "condition": 
-        {
+        "condition": {
             "type": "origins:resource",
             "resource": "*:wiz/spellchanger_spell",
             "comparison": "==",
-            "compare_to": 2        
+            "compare_to": 2
         }
     },
 
@@ -44,30 +42,24 @@
         }
     },
 
-
-    "lifesteal_empty_hand":
-    {
+    "lifesteal_empty_hand": {
         "type": "origins:action_on_hit",
         "cooldown": 4,
-        "bientity_action": 
-        {
+        "bientity_action": {
             "type": "origins:and",
-            "actions": 
-            [
+            "actions": [
                 {
                     "type": "origins:actor_action",
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:and",
-                        "actions": 
-                        [
+                        "actions": [
                             {
                                 "type": "origins:heal",
                                 "amount": 1
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:magic_magic",
+                                "resource": "*:wiz/magic_magic",
                                 "operation": "add",
                                 "change": -40
                             }
@@ -76,8 +68,7 @@
                 },
                 {
                     "type": "origins:target_action",
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:damage",
                         "damage_type": "minecraft:magic",
                         "amount": 1
@@ -85,21 +76,17 @@
                 }
             ]
         },
-        "bientity_condition": 
-        {
+        "bientity_condition": {
             "type": "origins:and",
-            "conditions": 
-            [
+            "conditions": [
                 {
                     "type": "origins:actor_condition",
-                    "condition": 
-                    {
+                    "condition": {
                         "type": "origins:and",
-                        "conditions": 
-                        [
+                        "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:magic_magic",
+                                "resource": "*:wiz/magic_magic",
                                 "comparison": ">",
                                 "compare_to": 50
                             },
@@ -109,11 +96,11 @@
                                 "comparison": "==",
                                 "compare_to": 2
                             },
-                            { 
-                                "type": "origins:inventory", 
-                                "slot": "weapon.mainhand", 
-                                "comparison": "==", 
-                                "compare_to": 0 
+                            {
+                                "type": "origins:inventory",
+                                "slot": "weapon.mainhand",
+                                "comparison": "==",
+                                "compare_to": 0
                             },
                             {
                                 "type": "origins:power_active",
@@ -132,31 +119,24 @@
         }
     },
 
-
-
-    "lifesteal_full_hand":
-    {
+    "lifesteal_full_hand": {
         "type": "origins:action_on_hit",
         "cooldown": 4,
-        "bientity_action": 
-        {
+        "bientity_action": {
             "type": "origins:and",
-            "actions": 
-            [
+            "actions": [
                 {
                     "type": "origins:actor_action",
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:and",
-                        "actions": 
-                        [
+                        "actions": [
                             {
                                 "type": "origins:heal",
                                 "amount": 0.25
                             },
                             {
                                 "type": "origins:change_resource",
-                                "resource": "*:magic_magic",
+                                "resource": "*:wiz/magic_magic",
                                 "operation": "add",
                                 "change": -50
                             }
@@ -165,8 +145,7 @@
                 },
                 {
                     "type": "origins:target_action",
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:damage",
                         "damage_type": "minecraft:magic",
                         "amount": 0.25
@@ -174,21 +153,17 @@
                 }
             ]
         },
-        "bientity_condition": 
-        {
+        "bientity_condition": {
             "type": "origins:and",
-            "conditions": 
-            [
+            "conditions": [
                 {
                     "type": "origins:actor_condition",
-                    "condition": 
-                    {
+                    "condition": {
                         "type": "origins:and",
-                        "conditions": 
-                        [
+                        "conditions": [
                             {
                                 "type": "origins:resource",
-                                "resource": "*:magic_magic",
+                                "resource": "*:wiz/magic_magic",
                                 "comparison": ">",
                                 "compare_to": 25
                             },
@@ -198,11 +173,11 @@
                                 "comparison": "==",
                                 "compare_to": 2
                             },
-                            { 
-                                "type": "origins:inventory", 
-                                "slot": "weapon.mainhand", 
-                                "comparison": "==", 
-                                "compare_to": 0 ,
+                            {
+                                "type": "origins:inventory",
+                                "slot": "weapon.mainhand",
+                                "comparison": "==",
+                                "compare_to": 0,
                                 "inverted": true
                             },
                             {
@@ -221,5 +196,4 @@
             ]
         }
     }
-    
 }

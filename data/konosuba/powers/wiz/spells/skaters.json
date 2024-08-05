@@ -44,7 +44,6 @@
         }
     },
 
-
     "frostwalker": {
         "type": "origins:action_over_time",
         "name": "Ice skaters",
@@ -58,7 +57,7 @@
                 },
                 {
                     "type": "origins:change_resource",
-                    "resource": "*:magic_magic",
+                    "resource": "*:wiz/magic_magic",
                     "operation": "add",
                     "change": -3
                 }
@@ -79,7 +78,7 @@
                 },
                 {
                     "type": "origins:resource",
-                    "resource": "*:magic_magic",
+                    "resource": "*:wiz/magic_magic",
                     "comparison": ">",
                     "compare_to": 10
                 },

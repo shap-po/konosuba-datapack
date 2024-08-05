@@ -39,14 +39,13 @@
                                         "effect": "minecraft:night_vision",
                                         "duration": 6000
                                     }
-                                    
                                 }
                             },
                             {
                                 "type": "origins:actor_action",
                                 "action": {
                                     "type": "origins:change_resource",
-                                    "resource": "*:magic_magic",
+                                    "resource": "*:wiz/magic_magic",
                                     "operation": "add",
                                     "change": -900
                                 }
@@ -72,15 +71,14 @@
                     "actions": [
                         {
                             "type": "origins:apply_effect",
-                            "effect": 
-                            {
+                            "effect": {
                                 "effect": "minecraft:night_vision",
                                 "duration": 6000
                             }
                         },
                         {
                             "type": "origins:change_resource",
-                            "resource": "*:magic_magic",
+                            "resource": "*:wiz/magic_magic",
                             "operation": "add",
                             "change": -900
                         }
@@ -95,7 +93,7 @@
         "conditions": [
             {
                 "type": "origins:resource",
-                "resource": "*:magic_magic",
+                "resource": "*:wiz/magic_magic",
                 "comparison": ">",
                 "compare_to": 900
             },
