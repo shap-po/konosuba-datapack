@@ -1,12 +1,33 @@
 {
     "name": "Horse",
-    "description": "Get the horse.",
+    "description": "You start with an undead horse, that only you can ride.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Press %s to teleport the horse to you."
+        }
+    ],
 
-    "type": "origins:action_on_callback",
-    "execute_chosen_when_orb": true,
+    "type": "origins:multiple",
 
-    "entity_action_chosen": {
-        "type": "origins:execute_command",
-        "command": "function konosuba:origins/beldia/horse_spawn"
+    "grant": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/beldia/horse/spawn"
+        }
+    },
+
+    "teleport": {
+        "type": "origins:active_self",
+        "cooldown": 20,
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/beldia/horse/teleport"
+        }
     }
 }
