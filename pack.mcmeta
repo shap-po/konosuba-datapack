@@ -21,11 +21,6 @@
             {
                 "namespace": "trinkets",
                 "path": "entities/friendsandfoestotem.json"
-            },
-
-            {
-                "namespace": "magnumtorch",
-                "path": "recipes/.*"
             }
         ]
     }
