@@ -120,11 +120,11 @@ Modifications:
 **Impact: Medium**
 
 -   **Death Curse** (active): Curse enemies to die in 3 minutes for players and 10 seconds for mobs. The curse can be lifted by eating golden apples, drinking milk, or healing by Aqua.
+-   **Horse** (active): You start with an unkillable skeleton horse, that can be summoned to you.
 -   **Living armor**: Start with a full set of unbreakable chainmail armor. Can't wear other armor.
 -   **Craft Armor**: Can craft your starting armor.
 -   **Reforge**: Upgrade your armor with blocks of iron, gold, diamond, and netherite.
 -   **[Undead](#Undead)**
--   **Horse**: You start with an unkillable zombie horse.
 
 ### Hans
 
@@ -152,10 +152,10 @@ Modifications:
 Spells:
 
 -   **Paralysis**: Stagger target for a few seconds.
--   **Random teleportation**: Abduct creature to a semi-random location.
+-   **Random teleportation**: Teleport target to a random location. Hold the ability key to charge the distance.
 -   **Draining touch**: Siphon life force from hit creature.
--   **Skaters**: Create cryo-stream under feet.
--   **Night vision**: See in the dark.
+-   **Skaters**: Turn water under your feet into ice. Also makes you faster.
+-   **Night vision**: Cast night vision on yourself or others.
 
 ## Traits
 
