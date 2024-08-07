@@ -10,5 +10,5 @@ $resource set @s konosuba:eris/blessed_status_effect $(effect)
 execute if entity @s[tag=konosuba.eris_blesser] run resource set @s konosuba:eris/blessed_status_timer 10
 
 # effects
-playsound minecraft:entity.allay.item_thrown master @a ~ ~ ~ 1.5 0.9 0.5
+playsound minecraft:entity.allay.item_thrown master @a ~ ~ ~ 1.5 0.9 0
 particle minecraft:entity_effect ~ ~1 ~ 0.3 0.3 0.3 20 10 normal
