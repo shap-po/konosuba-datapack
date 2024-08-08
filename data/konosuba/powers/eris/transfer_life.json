@@ -514,5 +514,43 @@
         "red": 0,
         "green": 0.5,
         "blue": 1
+    },
+
+    "animate_targets": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_state",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:action_on_set",
+                    "set": "*:*_target_from",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/aqua/revive/animate_target/magenta"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:action_on_set",
+                    "set": "*:*_target_to",
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/aqua/revive/animate_target/cyan"
+                        }
+                    }
+                }
+            ]
+        }
     }
 }

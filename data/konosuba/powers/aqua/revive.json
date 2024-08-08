@@ -241,5 +241,26 @@
         "red": 0,
         "green": 1,
         "blue": 1
+    },
+    "animate_target": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_is_active",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "entity_action": {
+            "type": "origins:action_on_set",
+            "set": "*:*_target",
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "function konosuba:origins/aqua/revive/animate_target/cyan"
+                }
+            }
+        }
     }
 }
