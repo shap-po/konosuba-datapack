@@ -2,8 +2,6 @@ summon cat ~ ~1 ~ {Invulnerable:1b, variant:"minecraft:all_black", CustomName:'{
 
 # set the owner of the cat to the player
 data modify entity @e[tag=konosuba.chomusuke_init,limit=1,sort=nearest] Owner set from entity @s UUID
-# link the cat to the player's UUID
-scoreboard players operation @e[tag=konosuba.chomusuke_init,limit=1,sort=nearest] konosuba.uuid.link = @s konosuba.uuid
 
 # continue with the rest of the summon command
 execute as @e[tag=konosuba.chomusuke_init,limit=1,sort=nearest] at @s run function konosuba:origins/megumin/chomusuke/summon_1

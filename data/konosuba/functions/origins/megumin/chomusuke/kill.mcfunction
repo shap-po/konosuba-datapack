@@ -1,3 +1,2 @@
-tag @s add konosuba.chomusuke.remove
-execute as @e[tag=konosuba.chomusuke] if score @s konosuba.uuid.link = @a[tag=konosuba.chomusuke.remove,limit=1] konosuba.uuid run kill @s
-tag @s remove konosuba.chomusuke.remove
+data modify storage konosuba:megumin/cat UUID set from entity @s UUID
+function konosuba:origins/megumin/chomusuke/kill_1 with storage konosuba:megumin/cat
