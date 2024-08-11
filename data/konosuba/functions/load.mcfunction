@@ -6,6 +6,7 @@ function konosuba:utils/gamerules/load
 function konosuba:utils/spin/load
 function konosuba:utils/global_cd/load
 function konosuba:utils/schedule/load
+function konosuba:utils/clocks/load
 function konosuba:events/load
 
 function konosuba:origins/vanir/load
