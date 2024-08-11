@@ -1,0 +1,1 @@
+tellraw @a [{"text":"You have ","color":"light_purple"},{"score":{"name":"$TimeLeft$","objective":"konosuba.events.end_bust.score"},"color":"light_purple"},{"text":" minutes left!","color":"light_purple"}]

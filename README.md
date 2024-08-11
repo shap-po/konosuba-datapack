@@ -23,6 +23,7 @@ Special events that are managed by the server operators. All events are disabled
 Enable/disable events by using a command `/function konosuba:events/<event>/enable` or `/function konosuba:events/<event>/disable`.
 
 -   **First death**: When a player dies for the first time, their name will turn orange. The last player to die is the winner.
+-   **End bust**: Players have a limited time to loot as many shulker shells and elytras as possible from the end dimension. The player with the most shulker shells and elytras wins.
 
 ## Origins
 
