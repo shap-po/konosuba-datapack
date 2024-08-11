@@ -2,14 +2,34 @@
 
 Date format: DD/MM/YYYY
 
-## 2.1.0 - Blessings & Curses Update - 05/08/2024
+## 2.1.1 - Time to Bust - 11/08/2024
+
+### Features
+
+-   Improved Aqua's and Eris's animations so that circles are now visible before the power is cast.
+-   Added `limitedEnd` gamerule to prevent players from exploiting the end dimension if the dragon is alive.
+-   Added `constant` utility module.
+-   Added inventory and shulker box item counting utilities
+-   Added `end_bust` event.
+-   Performance improvements:
+    -   Added clock functions that run every second/minute to improve performance.
+    -   Updated the `global_cd` utility to use the new clock functions and check for NBT components only when necessary.
+    -   Updated the `first_death` event to use the new clock functions.
 
 ### Fixes
 
--   Fixed the issue where `spin markers` would stack when a server restarts by removing old markers before adding new ones.
--   Fixed Sylvia's `elephant_skin` recipe to craft `artifacts:crystal_heart` instead of `minecraft:oak_log`.
--   Manually removed recipes to resolve issues caused by filters in `pack.mcmeta`.
--   Removed the debug `self_action` command in Megumin's `blast_resistance` power.
+-   Fixed Eris's blessing sound effect playing for all players on the server.
+-   Updated Beldia's horse storing so it works across all dimensions
+-   Updated the `first_death` event to show proper scores before someone dies
+-   Replaced `artifacts:kitty_slippers` with `artifacts:bunny_hoppers` in Sylvia's tags to match her recipes. 
+
+### Refactoring
+
+-   Updated first death event to use a separate status function
+-   Removed UUID link functions to use function parameters instead
+    -   Updated Megumin's Chomusuke functions
+
+## 2.1.0 - Blessings & Curses Update - 05/08/2024
 
 ### Features
 
@@ -24,7 +44,7 @@ Date format: DD/MM/YYYY
 -   Brought back the Aqua's `weakness_to_alligators` ability. **Friends And Foes** Mauler is now considered an alligator.
 -   Reworked the Eris blessing ability.
     -   Eris can now choose the effect of the blessing by holding a specific item in her offhand.
-    -   Effect of the blessing lasts 40m for other players and 10m for Eris.
+    -   The effect of the blessing lasts 40m for other players and 10m for Eris.
     -   Only one blessing can be active at a time.
     -   Blessings are removed on death.
 -   Added new power for Eris to provide death immunity at a cost of 4 hearts.
@@ -48,6 +68,13 @@ Date format: DD/MM/YYYY
 -   Modified `waystones:attuned_shard` recipe to use ender pearls and amethyst shards instead of `waystones:warp_dust`.
 -   Updated Wiz's paralysis status to use `modify_jump` power instead of `jump boost` effect
 -   Added the `undead` power to Sylvia
+
+### Fixes
+
+-   Fixed the issue where `spin markers` would stack when a server restarts by removing old markers before adding new ones.
+-   Fixed Sylvia's `elephant_skin` recipe to craft `artifacts:crystal_heart` instead of `minecraft:oak_log`.
+-   Manually removed recipes to resolve issues caused by filters in `pack.mcmeta`.
+-   Removed the debug `self_action` command in Megumin's `blast_resistance` power.
 
 ### Refactoring
 
