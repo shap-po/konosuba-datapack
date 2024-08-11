@@ -36,5 +36,5 @@ execute unless score $maxLives konosuba.gamerule matches 0.. run scoreboard play
 #define score_holder $livesEnabled [0/1] - Whether lives are enabled or not
 execute unless score $livesEnabled konosuba.gamerule matches 0..1 run scoreboard players set $livesEnabled konosuba.gamerule 1
 
-#define score_holder $limitedEnd [0/1] - Whether the end exploration is limited until the ender dragon is defeated
+#define score_holder $limitedEnd [0/1] - Whether the end exploration is limited until the ender dragon is defeated. 0 = unlimited, 1 = limited when the ender dragon is alive, 2 = central island only
 execute unless score $limitedEnd konosuba.gamerule matches 0..1 run scoreboard players set $limitedEnd konosuba.gamerule 1
