@@ -1,4 +1,5 @@
 scoreboard objectives add konosuba.events.end_bust.score dummy "End Bust Score"
+scoreboard objectives add konosuba.events.end_bust.submit trigger
 scoreboard objectives add konosuba.events.end_bust.shells dummy "Total Shells"
 scoreboard objectives add konosuba.events.end_bust.elytras dummy "Total Elytras"
 scoreboard objectives add konosuba.events.end_bust.settings dummy
