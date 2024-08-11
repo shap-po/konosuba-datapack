@@ -7,4 +7,5 @@ execute if score $minute konosuba.clocks matches 60.. run function konosuba:util
 
 # run all the second clock functions
 function konosuba:utils/global_cd/second
+function konosuba:utils/gamerules/second
 function konosuba:events/first_death/second

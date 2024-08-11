@@ -282,6 +282,14 @@ This section explains how to configure the custom gamerules in the datapack. Use
         scoreboard players set $livesEnabled konosuba.gamerule <0|1>
         ```
 
+1. **Limited End**
+    - **Description**: Prevent players from exploiting the end dimension if the dragon is alive.
+    - **Default**: Enabled (`1`)
+    - **Command**:
+        ```mcfunction
+        scoreboard players set $limitedEnd konosuba.gamerule <0|1>
+        ```
+
 ### Example Usage
 
 To change the explosion radius for Megumin's explosion to 2:
