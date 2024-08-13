@@ -4,58 +4,6 @@
 
     "type": "origins:multiple",
 
-    "drop_items": {
-        "type": "origins:action_on_hit",
-        "bientity_action": {
-            "type": "origins:actor_action",
-            "action": {
-                "type": "origins:choice",
-                "actions": [
-                    {
-                        "element": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:drop_inventory",
-                                    "throw_randomly": false,
-                                    "slot": "weapon.mainhand"
-                                },
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
-                                }
-                            ]
-                        },
-                        "weight": 40
-                    },
-                    {
-                        "element": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:drop_inventory",
-                                    "throw_randomly": true,
-                                    "slot": "weapon.mainhand"
-                                },
-                                {
-                                    "type": "origins:execute_command",
-                                    "command": "function konosuba:origins/darkness/clumsy/save_items"
-                                }
-                            ]
-                        },
-                        "weight": 10
-                    },
-                    {
-                        "element": {
-                            "type": "origins:nothing"
-                        },
-                        "weight": 500
-                    }
-                ]
-            }
-        }
-    },
-
     "miss": {
         "type": "origins:action_on_hit",
         "bientity_action": {
