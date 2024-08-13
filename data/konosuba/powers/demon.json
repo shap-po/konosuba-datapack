@@ -4,7 +4,88 @@
 
     "type": "origins:multiple",
 
-    "no_regen": {
-        "type": "origins:disable_regen"
+    "regen_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_regen_timer",
+            "operation": "set",
+            "change": 0
+        },
+        "hud_render": {
+            "should_render": true
+        }
+    },
+    "timer_decay": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_regen_timer",
+            "operation": "add",
+            "change": 1
+        }
+    },
+
+    "harder_regen": {
+        "type": "origins:disable_regen",
+        "condition": {
+            "_": "Demon must be in darkness; regeneration is slowed down by the timer.",
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:light_level",
+                        "comparison": ">",
+                        "compare_to": 6
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_regen_timer",
+                    "comparison": "<",
+                    "compare_to": 4
+                }
+            ]
+        }
+    },
+
+    "blood_thirsty": {
+        "type": "origins:action_on_hit",
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:health",
+                "comparison": "<=",
+                "compare_to": 0
+            }
+        },
+        "bientity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                }
+            },
+            "if_action": {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:heal",
+                    "amount": 10
+                }
+            },
+            "else_action": {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:heal",
+                    "amount": 2
+                }
+            }
+        }
     }
 }
