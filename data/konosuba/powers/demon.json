@@ -13,9 +13,6 @@
             "resource": "*:*_regen_timer",
             "operation": "set",
             "change": 0
-        },
-        "hud_render": {
-            "should_render": true
         }
     },
     "timer_decay": {
