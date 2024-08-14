@@ -2,6 +2,15 @@
 
 Date format: DD/MM/YYYY
 
+## 2.1.2 - Hotfix - 14/08/2024
+
+## Features
+
+-   Completely removed Darkness's `drop_items` sub-power
+-   Add demon regeneration mechanics
+    -   Demons now regenerate when in darkness
+    -   Regeneration is much slower than normal health regeneration and might not work if the player does not have enough saturation
+
 ## 2.1.1 - Time to Bust - 11/08/2024
 
 ### Features
@@ -21,7 +30,7 @@ Date format: DD/MM/YYYY
 -   Fixed Eris's blessing sound effect playing for all players on the server.
 -   Updated Beldia's horse storing so it works across all dimensions
 -   Updated the `first_death` event to show proper scores before someone dies
--   Replaced `artifacts:kitty_slippers` with `artifacts:bunny_hoppers` in Sylvia's tags to match her recipes. 
+-   Replaced `artifacts:kitty_slippers` with `artifacts:bunny_hoppers` in Sylvia's tags to match her recipes.
 
 ### Refactoring
 
@@ -82,7 +91,7 @@ Date format: DD/MM/YYYY
 -   Updated Wiz's meat craving to use tags
 -   Modified warp plate recipe to use tag for catalyst instead of the specific item
 -   Moved `magic` power to Wiz's folder
--   Moved `forceload add 0 `0` to the main load function from the spin utility
+-   Moved `forceload add 0 0` to the main load function from the spin utility
 -   Removed dev particle generator
 
 ## 2.0.0 - 01/08/2024
