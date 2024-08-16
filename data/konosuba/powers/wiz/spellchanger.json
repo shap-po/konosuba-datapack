@@ -92,7 +92,7 @@
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 2 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "function konosuba:origins/wiz/spellchanger/drain_touch"
+                                "command": "function konosuba:origins/wiz/spellchanger/ender_storage"
                             }
                         },
                         {
