@@ -1,0 +1,115 @@
+{
+    "type": "origins:multiple",
+
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 5,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_timer",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "_": "Trigger cooldown once the timer reaches 0 by any means",
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+        }
+    },
+    "timer_drain": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "operation": "add",
+            "change": -1
+        }
+    },
+
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 1200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 12
+        }
+    },
+
+    "activate": {
+        "type": "origins:active_self",
+        "key": "key.origins.secondary_active",
+        "cooldown": 10,
+
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "_": "Activate the power if not active and not on cooldown",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_timer",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_timer",
+                        "operation": "set",
+                        "change": 600
+                    }
+                },
+                {
+                    "_": "Deactivate the power if active",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_timer",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_timer",
+                        "operation": "set",
+                        "change": 0
+                    }
+                }
+            ]
+        }
+    },
+
+    "invisibility": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "render_outline": true,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_timer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "bientity_condition": {
+            "_": "Partial invisibility for the player",
+            "type": "origins:equal",
+            "inverted": true
+        }
+    }
+}
