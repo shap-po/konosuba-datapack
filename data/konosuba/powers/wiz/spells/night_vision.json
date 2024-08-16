@@ -12,97 +12,100 @@
 
     "type": "origins:active_self",
 
-    "cooldown": 100,
+    "cooldown": 20,
     "hud_render": {
         "should_render": false
     },
     "key": "key.origins.primary_active",
 
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:wiz/spellchanger_spell",
+        "comparison": "==",
+        "compare_to": 4
+    },
+
     "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:if_else",
-                "condition": { "type": "origins:sneaking", "inverted": true },
-                "if_action": {
-                    "type": "origins:raycast",
-                    "distance": 4,
-                    "block": false,
-                    "bientity_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:target_action",
-                                "action": {
-                                    "type": "origins:apply_effect",
-                                    "effect": {
-                                        "effect": "minecraft:night_vision",
-                                        "duration": 6000
-                                    }
-                                }
-                            },
-                            {
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:wiz/magic_magic",
-                                    "operation": "add",
-                                    "change": -900
-                                }
-                            }
-                        ]
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:wiz/magic_magic",
+            "comparison": ">=",
+            "compare_to": 900
+        },
+        "if_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:sneaking"
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:night_vision",
+                            "is_ambient": true,
+                            "duration": 6000
+                        }
                     },
-                    "bientity_condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:can_see" },
-                            {
-                                "type": "origins:target_condition",
-                                "condition": {
-                                    "type": "origins:and",
-                                    "conditions": [{ "type": "origins:living" }]
-                                }
-                            }
-                        ]
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:wiz/magic_magic",
+                        "operation": "add",
+                        "change": -900
                     }
+                ]
+            },
+            "else_action": {
+                "type": "origins:raycast",
+                "distance": 4,
+                "block": false,
+                "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:can_see"
+                        },
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "type": "origins:entity_type",
+                                "entity_type": "minecraft:player"
+                            }
+                        }
+                    ]
                 },
-                "else_action": {
+                "bientity_action": {
                     "type": "origins:and",
                     "actions": [
                         {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:night_vision",
-                                "duration": 6000
+                            "type": "origins:target_action",
+                            "action": {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:night_vision",
+                                    "is_ambient": true,
+                                    "duration": 6000
+                                }
                             }
                         },
                         {
-                            "type": "origins:change_resource",
-                            "resource": "*:wiz/magic_magic",
-                            "operation": "add",
-                            "change": -900
+                            "type": "origins:actor_action",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:wiz/magic_magic",
+                                "operation": "add",
+                                "change": -900
+                            }
                         }
                     ]
                 }
             }
-        ]
-    },
-
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:resource",
-                "resource": "*:wiz/magic_magic",
-                "comparison": ">",
-                "compare_to": 900
-            },
-            {
-                "type": "origins:resource",
-                "resource": "*:wiz/spellchanger_spell",
-                "comparison": "==",
-                "compare_to": 4
-            }
-        ]
+        },
+        "else_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/wiz/not_enough_mana"
+        }
     }
 }

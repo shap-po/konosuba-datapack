@@ -6,50 +6,53 @@
     },
     "key": "key.origins.primary_active",
 
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:wiz/spellchanger_spell",
+        "comparison": "==",
+        "compare_to": 0
+    },
+
     "entity_action": {
-        "type": "origins:raycast",
-        "block": false,
-        "distance": 15,
-        "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function konosuba:origins/wiz/paralysis/add"
-                    }
-                },
-                {
-                    "type": "origins:actor_action",
-                    "action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:wiz/magic_magic",
-                        "operation": "add",
-                        "change": -300
-                    }
-                }
-            ]
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:wiz/magic_magic",
+            "comparison": ">=",
+            "compare_to": 300
         },
-        "bientity_condition": {
-            "type": "origins:actor_condition",
-            "condition": {
+        "if_action": {
+            "type": "origins:raycast",
+            "block": false,
+            "distance": 15,
+            "bientity_condition": {
+                "type": "origins:can_see"
+            },
+            "bientity_action": {
                 "type": "origins:and",
-                "conditions": [
+                "actions": [
                     {
-                        "type": "origins:resource",
-                        "resource": "*:wiz/magic_magic",
-                        "comparison": ">",
-                        "compare_to": 300
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "function konosuba:origins/wiz/paralysis/add"
+                        }
                     },
                     {
-                        "type": "origins:resource",
-                        "resource": "*:wiz/spellchanger_spell",
-                        "comparison": "==",
-                        "compare_to": 0
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:wiz/magic_magic",
+                            "operation": "add",
+                            "change": -300
+                        }
                     }
                 ]
             }
+        },
+        "else_action": {
+            "type": "origins:execute_command",
+            "command": "function konosuba:origins/wiz/not_enough_mana"
         }
     }
 }
