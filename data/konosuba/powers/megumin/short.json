@@ -1,6 +1,4 @@
 {
-    "name": "Short",
-    "description": "You are short.",
     "hidden": true,
 
     "type": "origins:action_on_callback",

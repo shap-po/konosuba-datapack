@@ -1,7 +1,4 @@
 {
-    "name": "Chomusuke",
-    "description": "Chomusuke will join you to fill your empty heart!",
-
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": true,
 

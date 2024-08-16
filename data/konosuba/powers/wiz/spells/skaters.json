@@ -1,15 +1,36 @@
 {
-    "name": "Skaters",
-    "description": "Create cryo-stream under your feet.",
-
     "type": "origins:multiple",
 
     "badges": [
-        "origins:toggle",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": {
+                "translate": "origins.gui.badge.active",
+                "with": [
+                    {
+                        "text": "",
+                        "extra": [
+                            {
+                                "text": "["
+                            },
+                            {
+                                "keybind": "key.origins.primary_active"
+                            },
+                            {
+                                "text": "]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/info.png",
-            "text": "Freezes water under you."
+            "text": {
+                "translate": "badge.konosuba.wiz.spells.skaters.0"
+            }
         }
     ],
 
@@ -46,8 +67,6 @@
 
     "frostwalker": {
         "type": "origins:action_over_time",
-        "name": "Ice skaters",
-        "description": "-",
         "entity_action": {
             "type": "origins:and",
             "actions": [

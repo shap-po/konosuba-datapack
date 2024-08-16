@@ -1,7 +1,4 @@
 {
-    "name": "Craft Armor",
-    "description": "You can conjure your special armor. (The crafting recipe is the same as vanilla ones, but with chains.)",
-
     "type": "origins:multiple",
 
     "helmet": {
@@ -9,10 +6,7 @@
         "recipe": {
             "type": "minecraft:crafting_shaped",
             "id": "konosuba:beldia/helmet",
-            "pattern": [
-                "###",
-                "# #"
-            ],
+            "pattern": ["###", "# #"],
             "key": {
                 "#": {
                     "item": "minecraft:chain"
@@ -36,16 +30,12 @@
         }
     },
 
-    "chestplate":{
+    "chestplate": {
         "type": "origins:recipe",
         "recipe": {
             "type": "minecraft:crafting_shaped",
             "id": "konosuba:beldia/chestplate",
-            "pattern": [
-                "# #",
-                "###",
-                "###"
-            ],
+            "pattern": ["# #", "###", "###"],
             "key": {
                 "#": {
                     "item": "minecraft:chain"
@@ -69,16 +59,12 @@
         }
     },
 
-    "leggings":{
+    "leggings": {
         "type": "origins:recipe",
         "recipe": {
             "type": "minecraft:crafting_shaped",
             "id": "konosuba:beldia/leggings",
-            "pattern": [
-                "###",
-                "# #",
-                "# #"
-            ],
+            "pattern": ["###", "# #", "# #"],
             "key": {
                 "#": {
                     "item": "minecraft:chain"
@@ -102,15 +88,12 @@
         }
     },
 
-    "boots":{
+    "boots": {
         "type": "origins:recipe",
         "recipe": {
             "type": "minecraft:crafting_shaped",
             "id": "konosuba:beldia/boots",
-            "pattern": [
-                "# #",
-                "# #"
-            ],
+            "pattern": ["# #", "# #"],
             "key": {
                 "#": {
                     "item": "minecraft:chain"

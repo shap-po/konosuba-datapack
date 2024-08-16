@@ -1,7 +1,4 @@
 {
-    "name": "Imaginary Meat",
-    "description": "You are a Wiz's hallucination",
-
     "type": "origins:multiple",
 
     "prevent_interact": {

@@ -1,7 +1,4 @@
 {
-    "name": "Brace for attack",
-    "description": "Make yourself more resistant to any incoming damage at the cost of speed. This effect weakens over time.",
-
     "type": "origins:active_self",
 
     "cooldown": 600,

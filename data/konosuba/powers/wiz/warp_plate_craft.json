@@ -1,12 +1,11 @@
 {
-    "name": "Warp plates",
-    "description": "You know how to craft the new way of traveling.",
-
     "badges": [
         {
             "type": "origins:crafting_recipe",
             "sprite": "origins:textures/gui/badge/recipe.png",
-            "prefix": "Smithing Table",
+            "prefix": {
+                "translate": "block.minecraft.smithing_table"
+            },
             "recipe": {
                 "id": "konosuba:wiz/showcase",
                 "type": "minecraft:crafting_shapeless",

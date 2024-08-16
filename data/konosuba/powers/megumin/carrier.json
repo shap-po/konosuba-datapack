@@ -1,6 +1,4 @@
 {
-    "name": "Megumin Carrier",
-
     "type": "origins:action_over_time",
     "interval": 5,
     "condition": { "type": "origins:sneaking", "inverted": true },

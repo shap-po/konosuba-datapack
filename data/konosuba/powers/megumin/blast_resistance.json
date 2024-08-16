@@ -1,7 +1,4 @@
 {
-    "name": "Blast Resistance",
-    "description": "As an Explosion Mage, you have a natural resistance to explosions. You take 10% less damage from explosions.",
-
     "type": "origins:modify_damage_taken",
 
     "modifier": {

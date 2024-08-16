@@ -1,6 +1,4 @@
 {
-    "name": "Sylvia's slots restriction",
-    "description": "Allows only Sylvia to use custom slots",
     "hidden": true,
 
     "type": "origins:action_on_callback",

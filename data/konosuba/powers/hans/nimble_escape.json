@@ -1,7 +1,5 @@
 {
     "type": "origins:multiple",
-    "name": "The nimble escape",
-    "description": "After receiving critical damage, you can leave all the slime behind and make quick escape. This puts a great stress on your body, preventing you from from absorbing external slime for a long time.",
 
     "cooldown": {
         "type": "origins:cooldown",

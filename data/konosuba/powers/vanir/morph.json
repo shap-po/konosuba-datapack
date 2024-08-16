@@ -1,6 +1,4 @@
 {
-    "name": "Take over",
-    "description": "Allows you to morph into a creature you have just killed",
     "badges": ["origins:toggle"],
 
     "type": "origins:multiple",

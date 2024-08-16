@@ -1,2 +1,2 @@
-tellraw @s [{"text": "Kill the Ender Dragon, before exploring the End, you cheaty bastard!", "color": "red"}]
+tellraw @s [{"translate": "tellraw.konosuba.gamerule.limited_end.block_by_dragon", "color": "red"}]
 function konosuba:utils/gamerules/limited_end/block

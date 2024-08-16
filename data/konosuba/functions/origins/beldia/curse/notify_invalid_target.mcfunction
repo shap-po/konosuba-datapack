@@ -1,1 +1,1 @@
-tellraw @s ["", {"text":"You can't curse this target!","color":"red"}]
+tellraw @s [{"translate":"tellraw.konosuba.beldia.curse.notify.invalid_target", "color":"red"}]

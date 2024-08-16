@@ -1,16 +1,18 @@
 {
-    "name": "Flesh craving",
-    "description": "As lich you cannot regenerate living tissue by yourself. As far as it goes, you need to regularly ingest some meat. Preferably raw.",
     "badges": [
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/info.png",
-            "text": "Cooked meat and rotten flesh can stave off your hunger for just little bit"
+            "text": {
+                "translate": "badge.konosuba.wiz.meat_craving.0"
+            }
         },
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/star.png",
-            "text": "Pro-Tip: Sun isn't good for your skin"
+            "text": {
+                "translate": "badge.konosuba.wiz.meat_craving.1"
+            }
         }
     ],
 

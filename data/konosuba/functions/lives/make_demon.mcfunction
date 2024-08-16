@@ -7,6 +7,6 @@ function konosuba:religions/leave
 # join demon team
 team join konosuba.demon @s
 tag @s add konosuba.demon
-tellraw @a ["", {"selector":"@s"}, " has become a demon!"]
-title @s title ["", {"text":"You have become a demon!","color":"dark_red"}]
+tellraw @a [{"translate": "tellraw.konosuba.lives.demon.message", "with":[{"selector":"@s"}]}]
+title @s title [{"translate": "tellraw.konosuba.lives.demon.title", "color":"dark_red"}]
 playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 1 1 1

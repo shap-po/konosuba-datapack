@@ -1,1 +1,1 @@
-tellraw @a [{"text": "["},{"score": {"name": "$playersDied", "objective": "konosuba.events.died_once"}}, {"text": "/"}, {"score": {"name": "$playersCount", "objective": "konosuba.events.died_once"}}, {"text": "] players have died once."}]
+tellraw @a [{"translate": "tellraw.konosuba.event.first_death.status", "color": "light_purple", "with": [{"score": {"name": "$playersDied", "objective": "konosuba.events.died_once"}, "color": "gold"}, {"score": {"name": "$playersCount", "objective": "konosuba.events.died_once"}, "color": "gold"}]}]

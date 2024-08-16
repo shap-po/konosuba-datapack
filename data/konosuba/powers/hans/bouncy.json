@@ -1,7 +1,4 @@
 {
-    "name": "Bouncy",
-    "description": "Makes jumping easier and greatly reduces fall damage.",
-
     "type": "origins:multiple",
 
     "jump_height": {

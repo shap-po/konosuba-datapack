@@ -1,13 +1,11 @@
 {
-    "name": "Reforge",
-    
-    "description": "You can upgrade your armor and save all the enchantments on it... But at what cost?",
-
     "badges": [
         {
             "type": "origins:crafting_recipe",
             "sprite": "origins:textures/gui/community/silent/badge/colors/yellow.png",
-            "prefix": "Smithing Table",
+            "prefix": {
+                "translate": "block.minecraft.smithing_table"
+            },
             "recipe": {
                 "id": "konosuba:beldia/showcase1",
                 "type": "minecraft:crafting_shapeless",
@@ -22,22 +20,22 @@
         {
             "type": "origins:crafting_recipe",
             "sprite": "origins:textures/gui/community/silent/badge/colors/light_gray.png",
-            "prefix": "Smithing Table",
+            "prefix": {
+                "translate": "block.minecraft.smithing_table"
+            },
             "recipe": {
                 "id": "konosuba:beldia/showcase2",
                 "type": "minecraft:crafting_shapeless",
-                "ingredients": [
-                    { "item": "minecraft:quartz" },
-                    { "item": "minecraft:golden_helmet" },
-                    { "item": "minecraft:iron_block" }
-                ],
+                "ingredients": [{ "item": "minecraft:quartz" }, { "item": "minecraft:golden_helmet" }, { "item": "minecraft:iron_block" }],
                 "result": { "item": "minecraft:iron_helmet" }
             }
         },
         {
             "type": "origins:crafting_recipe",
             "sprite": "origins:textures/gui/community/silent/badge/colors/cyan.png",
-            "prefix": "Smithing Table",
+            "prefix": {
+                "translate": "block.minecraft.smithing_table"
+            },
             "recipe": {
                 "id": "konosuba:beldia/showcase3",
                 "type": "minecraft:crafting_shapeless",
@@ -52,7 +50,9 @@
         {
             "type": "origins:crafting_recipe",
             "sprite": "origins:textures/gui/community/silent/badge/colors/black.png",
-            "prefix": "Smithing Table",
+            "prefix": {
+                "translate": "block.minecraft.smithing_table"
+            },
             "recipe": {
                 "id": "konosuba:beldia/showcase4",
                 "type": "minecraft:crafting_shapeless",

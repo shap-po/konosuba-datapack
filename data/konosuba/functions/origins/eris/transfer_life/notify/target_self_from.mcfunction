@@ -1,1 +1,1 @@
-title @s actionbar [{"text":"Targeting self","color":"dark_purple"}]
+title @s actionbar [{"translate": "tellraw.konosuba.eris.transfer_life.target_self_from", "color": "dark_purple"}]

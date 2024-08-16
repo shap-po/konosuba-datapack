@@ -183,6 +183,7 @@ Spells:
 -   [Fabric](https://fabricmc.net/)
 -   [Origins](https://modrinth.com/mod/origins)
 -   [Apugli](https://modrinth.com/mod/apugli)
+-   [Resourcepack](https://github.com/shap-po/konosuba-resourcepack) without this pack, all text translations will be missing.
 
 ### Origin-specific
 

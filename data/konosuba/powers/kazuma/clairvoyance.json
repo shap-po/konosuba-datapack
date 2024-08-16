@@ -1,7 +1,4 @@
 {
-    "name": "Clairvoyance",
-    "description": "Focus on your senses and improve them for a short while. Improves vision and reveals hostiles, but slightly slows down.",
-
     "type": "origins:multiple",
 
     "toggle": {

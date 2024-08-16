@@ -1,2 +1,2 @@
-$tellraw $(target) ["",{"text":"You noticed ","color":"red"}, {"selector":"@s"},{"text":" trying stealing from you","color":"red"}]
-$tellraw @s ["",{"selector":"$(target)"},{"text":" caught you stealing from them","color":"red"}]
+$tellraw $(target) [{"translate": "tellraw.konosuba.kazuma.steal.fail.caught.target", "color": "red", "with":[{"selector":"@s"}]}]
+$tellraw @s [{"translate": "tellraw.konosuba.kazuma.steal.fail.caught.actor", "color": "red", "with":[{"selector":"$(target)"}]}]

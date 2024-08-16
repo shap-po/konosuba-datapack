@@ -1,7 +1,4 @@
 {
-    "name": "Magic expert",
-    "description": "You are profound user of magic, allowing you to bend it to your will. \n Magica will regenerate slowly with time... \n ...or very fast by eating \"golden\" food.",
-
     "type": "origins:multiple",
 
     "magic": {

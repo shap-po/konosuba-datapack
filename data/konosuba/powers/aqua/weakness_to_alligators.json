@@ -1,7 +1,4 @@
 {
-    "name": "Weakness to Alligators",
-    "description": "1.5x damage from alligators.",
-
     "type": "origins:modify_damage_taken",
 
     "modifier": {

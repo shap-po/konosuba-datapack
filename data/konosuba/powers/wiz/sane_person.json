@@ -1,6 +1,4 @@
 {
-    "name": "Sane person",
-    "description": "Prevents you from seeing Wiz's hallucinations.",
     "hidden": true,
 
     "type": "origins:prevent_entity_render",

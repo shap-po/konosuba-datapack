@@ -1,7 +1,4 @@
 {
-    "name": "Weak body",
-    "description": "You are too weak to wear netherite armor.",
-
     "type": "origins:restrict_armor",
 
     "head": {

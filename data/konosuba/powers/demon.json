@@ -1,7 +1,4 @@
 {
-    "name": "Demon",
-    "description": "You have died too many times and been brought back to life as a demon.",
-
     "type": "origins:multiple",
 
     "regen_timer": {

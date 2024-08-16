@@ -1,5 +1,4 @@
 {
-    "name": "Restrict Beldia's armor",
     "hidden": true,
 
     "type": "origins:restrict_armor",

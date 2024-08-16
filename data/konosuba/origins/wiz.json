@@ -1,6 +1,4 @@
 {
-    "name": "Wiz",
-    "description": "You are a powerful lich, centered around teleportation and frost magic.",
     "icon": "minecraft:redstone",
 
     "powers": [

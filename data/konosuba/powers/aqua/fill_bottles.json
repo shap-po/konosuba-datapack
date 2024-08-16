@@ -1,6 +1,4 @@
 {
-    "name": "Full of water",
-    "description": "Your buckets and bottles are always full, whether you like it or not.",
     "hidden": true,
 
     "_": "in 1.21+ better use action_on_item_pickup with item modifier instead",

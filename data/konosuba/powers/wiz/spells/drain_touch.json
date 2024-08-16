@@ -1,15 +1,36 @@
 {
-    "name": "Draining touch",
-    "description": "Siphon life force from hit living creature.",
-
     "type": "origins:multiple",
 
     "badges": [
-        "origins:toggle",
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": {
+                "translate": "origins.gui.badge.active",
+                "with": [
+                    {
+                        "text": "",
+                        "extra": [
+                            {
+                                "text": "["
+                            },
+                            {
+                                "keybind": "key.origins.primary_active"
+                            },
+                            {
+                                "text": "]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
         {
             "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/info.png",
-            "text": "More effective with bare hands."
+            "text": {
+                "translate": "badge.konosuba.wiz.spells.drain_touch.0"
+            }
         }
     ],
 

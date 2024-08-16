@@ -1,7 +1,4 @@
 {
-    "name": "Mountain of muscles",
-    "description": "You just build different. Gain 4 additional hearts and an ability to wear netherite armour.",
-
     "type": "origins:attribute",
 
     "modifier": {

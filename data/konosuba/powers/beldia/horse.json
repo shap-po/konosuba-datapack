@@ -1,11 +1,16 @@
 {
-    "name": "Horse",
-    "description": "You start with an undead horse, that only you can ride.",
     "badges": [
         {
-            "type": "origins:keybind",
+            "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/active.png",
-            "text": "Press %s to teleport the horse to you."
+            "text": {
+                "translate": "badge.konosuba.beldia.horse.0",
+                "with": [
+                    {
+                        "keybind": "key.origins.secondary_active"
+                    }
+                ]
+            }
         }
     ],
 

@@ -1,7 +1,4 @@
 {
-    "name": "Explosion magic",
-    "description": "Invoke great magic within and destroy everything in your path!",
-
     "type": "origins:multiple",
 
     "cooldown": {
@@ -206,28 +203,24 @@
             "type": "origins:if_else_list",
             "actions": [
                 {
-                    "condition": 
-                    { 
+                    "condition": {
                         "type": "origins:and",
-                        "conditions":
-                        [
+                        "conditions": [
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": ">", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": ">",
                                 "compare_to": 22800
                             },
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": "<", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": "<",
                                 "compare_to": 24000
                             }
-                            
                         ]
                     },
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:apply_effect",
                         "effects": [
                             {
@@ -258,28 +251,24 @@
                     }
                 },
                 {
-                    "condition": 
-                    { 
+                    "condition": {
                         "type": "origins:and",
-                        "conditions":
-                        [
+                        "conditions": [
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": ">", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": ">",
                                 "compare_to": 20400
                             },
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": "<", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": "<",
                                 "compare_to": 22800
                             }
-                            
                         ]
                     },
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:apply_effect",
                         "effects": [
                             {
@@ -302,28 +291,24 @@
                     }
                 },
                 {
-                    "condition": 
-                    { 
+                    "condition": {
                         "type": "origins:and",
-                        "conditions":
-                        [
+                        "conditions": [
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": ">", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": ">",
                                 "compare_to": 12000
                             },
                             {
-                                "type": "origins:resource", 
-                                "resource": "*:*_cooldown", 
-                                "comparison": "<", 
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": "<",
                                 "compare_to": 20400
                             }
-                            
                         ]
                     },
-                    "action": 
-                    {
+                    "action": {
                         "type": "origins:apply_effect",
                         "effects": [
                             {
@@ -345,7 +330,6 @@
                         ]
                     }
                 }
-                
             ]
         }
     }

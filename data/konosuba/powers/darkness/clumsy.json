@@ -1,7 +1,4 @@
 {
-    "name": "Extreme clumsiness",
-    "description": "For you, wielding a simple sword is as hard as getting a PHD.",
-
     "type": "origins:multiple",
 
     "miss": {

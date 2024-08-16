@@ -1,7 +1,4 @@
 {
-    "name": "Death Curse",
-    "description": "No one shall live without your grant! Thy enemy bound to be cursed and die in §m7 days§r 3 minutes after your proclaim!",
-
     "type": "origins:multiple",
 
     "cooldown": {

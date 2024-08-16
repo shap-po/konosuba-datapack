@@ -1,1 +1,1 @@
-tellraw @s [{"text": "You don't have enough magica to teleport others!","color":"red"}]
+tellraw @s [{"translate": "tellraw.konosuba.wiz.teleport.not_enough_mana", "color":"red"}]

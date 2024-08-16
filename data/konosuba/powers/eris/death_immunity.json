@@ -1,6 +1,4 @@
 {
-    "name": "Death Immunity",
-    "description": "You are damn hard to kill... And you can eat totems, for some reason.",
     "hidden": true,
 
     "type": "origins:multiple",

@@ -1,17 +1,10 @@
 {
-    "name": "Feline paws",
-    "description": "Makes you fall the way it doesn't hurt.",
-    
     "type": "origins:recipe",
 
     "recipe": {
         "id": "konosuba:sylvia/feline_paws",
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-            "# #",
-            "R R",
-            "W W"
-        ],
+        "pattern": ["# #", "R R", "W W"],
         "key": {
             "#": {
                 "item": "minecraft:phantom_membrane"
@@ -29,4 +22,3 @@
         }
     }
 }
-    

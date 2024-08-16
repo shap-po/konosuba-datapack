@@ -1,11 +1,16 @@
 {
-    "name": "Another chance",
-    "description": "As the goddess you may give people as many chances as you see fit.",
     "badges": [
         {
-            "type": "origins:keybind",
+            "type": "origins:tooltip",
             "sprite": "origins:textures/gui/badge/active.png",
-            "text": "Activate the ability with %s.\nLook at the player you want to revive (or sneak to select yourself) and use it again."
+            "text": {
+                "translate": "badge.konosuba.aqua.revive.0",
+                "with": [
+                    {
+                        "keybind": "key.origins.primary_active"
+                    }
+                ]
+            }
         }
     ],
 

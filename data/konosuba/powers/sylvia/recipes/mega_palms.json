@@ -1,17 +1,10 @@
 {
-    "name": "Mega palms",
-    "description": "Add extra slap your slappers.",
-    
     "type": "origins:recipe",
 
     "recipe": {
         "id": "konosuba:sylvia/mega_palms",
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-            "#n#",
-            "LBL",
-            "LBL"
-        ],
+        "pattern": ["#n#", "LBL", "LBL"],
         "key": {
             "#": {
                 "item": "minecraft:iron_block"
@@ -32,4 +25,3 @@
         }
     }
 }
-    

@@ -1,7 +1,4 @@
 {
-    "name": "Extreme luck",
-    "description": "Sometimes things just turn in your favor.",
-
     "type": "origins:replace_loot_table",
 
     "replace": {

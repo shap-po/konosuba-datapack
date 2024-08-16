@@ -1,18 +1,10 @@
-
 {
-    "name": "Adrenalin gland",
-    "description": "Get movement speed boost after taking damage.",
-
     "type": "origins:recipe",
-    
+
     "recipe": {
         "id": "konosuba:sylvia/adrenalin_gland",
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-            " # ",
-            "GRG",
-            " S "
-        ],
+        "pattern": [" # ", "GRG", " S "],
         "key": {
             "#": {
                 "item": "minecraft:glow_berries"
@@ -33,4 +25,3 @@
         }
     }
 }
-    

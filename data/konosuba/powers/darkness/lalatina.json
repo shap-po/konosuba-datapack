@@ -1,6 +1,4 @@
 {
-    "name": "Lalatina",
-    "description": "You are so embarrassed by your own name that you take damage each time someone calls you by it.",
     "hidden": true,
 
     "type": "origins:simple",

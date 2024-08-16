@@ -1,16 +1,10 @@
 {
-    "name": "Insect mandibles",
-    "description": "They are surprisingly effective at consuming food.",
-
     "type": "origins:recipe",
 
     "recipe": {
         "id": "konosuba:sylvia/insect_mandibles",
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-            "#i#",
-            "#i#"
-        ],
+        "pattern": ["#i#", "#i#"],
         "key": {
             "#": {
                 "item": "minecraft:iron_nugget"
@@ -20,8 +14,8 @@
             }
         },
         "result": {
-        "item": "artifacts:plastic_drinking_hat",
-        "count": 1
-    }
+            "item": "artifacts:plastic_drinking_hat",
+            "count": 1
+        }
     }
 }

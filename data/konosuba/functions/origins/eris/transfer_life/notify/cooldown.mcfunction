@@ -1,1 +1,1 @@
-title @s actionbar [{"text":"The power is on cooldown!", "color":"red"}]
+title @s actionbar [{"translate": "tellraw.konosuba.eris.transfer_life.cooldown", "color": "red"}]
