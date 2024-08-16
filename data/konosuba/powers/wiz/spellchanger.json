@@ -38,7 +38,9 @@
         "type": "origins:resource",
         "min": 0,
         "max": 5,
-        "hud_render": { "should_render": false }
+        "hud_render": {
+            "should_render": false
+        }
     },
 
     "change_spell": {
@@ -53,7 +55,9 @@
             "actions": [
                 {
                     "type": "origins:if_else",
-                    "condition": { "type": "origins:sneaking" },
+                    "condition": {
+                        "type": "origins:sneaking"
+                    },
                     "if_action": {
                         "type": "origins:if_else",
                         "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 0 },
@@ -74,42 +78,42 @@
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 0 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: Paralysis\",\"color\":\"blue\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/paralysis"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 1 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: Random teleport\",\"color\":\"blue\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/random_teleport"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 2 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: Draining touch\",\"color\":\"blue\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/drain_touch"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 3 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: Skaters\",\"color\":\"blue\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/skaters"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 4 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: Night vision\",\"color\":\"blue\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/night_vision"
                             }
                         },
                         {
                             "condition": { "type": "origins:resource", "resource": "*:*_spell", "comparison": "==", "compare_to": 5 },
                             "action": {
                                 "type": "origins:execute_command",
-                                "command": "title @s actionbar {\"text\":\"Current spell: EMPTY\",\"color\":\"red\"}"
+                                "command": "function konosuba:origins/wiz/spellchanger/empty"
                             }
                         }
                     ]
