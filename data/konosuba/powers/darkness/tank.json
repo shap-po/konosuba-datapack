@@ -6,26 +6,28 @@
         "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
         "bar_index": 0
     },
-    "key": { "key": "key.origins.primary_active" },
+    "key": {
+        "key": "key.origins.primary_active"
+    },
 
     "entity_action": {
         "type": "origins:apply_effect",
         "effects": [
             {
                 "effect": "minecraft:resistance",
-                "duration": 200,
+                "duration": 400,
                 "amplifier": 9,
                 "is_ambient": true
             },
             {
                 "effect": "minecraft:slowness",
-                "duration": 200,
+                "duration": 400,
                 "amplifier": 5,
                 "is_ambient": true
             },
             {
                 "effect": "minecraft:jump_boost",
-                "duration": 200,
+                "duration": 400,
                 "amplifier": 250,
                 "show_particles": false,
                 "show_icon": false
