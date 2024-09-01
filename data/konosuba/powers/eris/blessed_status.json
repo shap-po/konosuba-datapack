@@ -245,6 +245,22 @@
         }
     },
 
+    "reduce_on_milk": {
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:milk_bucket"
+            }
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_timer",
+            "operation": "add",
+            "change": -10
+        }
+    },
+
     "on_gain": {
         "type": "origins:action_on_callback",
         "entity_action_gained": {
