@@ -1,15 +1,32 @@
 {
+    "type": "shappoli:modify_trinket_slots",
     "hidden": true,
 
-    "type": "origins:action_on_callback",
-    "execute_chosen_when_orb": true,
-
-    "entity_action_chosen": {
-        "type": "origins:execute_command",
-        "command": "function konosuba:origins/sylvia/restrict/add"
-    },
-    "entity_action_lost": {
-        "type": "origins:execute_command",
-        "command": "function konosuba:origins/sylvia/restrict/remove"
-    }
+    "modifiers": [
+        {
+            "slot": "chimeraorigin/core",
+            "operation": "addition",
+            "value": -1
+        },
+        {
+            "slot": "chimeraorigin/active_primary",
+            "operation": "addition",
+            "value": -1
+        },
+        {
+            "slot": "chimeraorigin/active_secondary",
+            "operation": "addition",
+            "value": -1
+        },
+        {
+            "slot": "chimeraorigin/passive_primary",
+            "operation": "addition",
+            "value": -1
+        },
+        {
+            "slot": "chimeraorigin/passive_secondary",
+            "operation": "addition",
+            "value": -1
+        }
+    ]
 }

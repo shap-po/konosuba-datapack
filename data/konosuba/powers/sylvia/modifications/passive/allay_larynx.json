@@ -1,0 +1,41 @@
+{
+    "type": "origins:multiple",
+
+    "modify_villager_reputation": {
+        "type": "shappoli:modify_villager_reputation",
+
+        "modifier": {
+            "operation": "addition",
+            "value": 100
+        },
+
+        "condition": {
+            "type": "shappoli:equipped_trinket",
+            "slot": {
+                "group": "chimeraorigin"
+            },
+            "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "chimeraorigin:allay_larynx"
+                        }
+                    },
+                    {
+                        "type": "apugli:on_cooldown",
+                        "inverted": true
+                    }
+                ]
+            }
+        }
+    },
+
+    "drop": {
+        "type": "origins:replace_loot_table",
+        "replace": {
+            "minecraft:entities/allay": "konosuba:sylvia/allay_larynx"
+        }
+    }
+}

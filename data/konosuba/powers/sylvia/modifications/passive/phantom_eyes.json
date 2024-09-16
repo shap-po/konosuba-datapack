@@ -1,0 +1,38 @@
+{
+    "type": "origins:multiple",
+
+    "night_vision": {
+        "type": "origins:night_vision",
+
+        "strength": 0.2,
+
+        "condition": {
+            "type": "shappoli:equipped_trinket",
+            "slot": {
+                "group": "chimeraorigin"
+            },
+            "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "chimeraorigin:phantom_eyes"
+                        }
+                    },
+                    {
+                        "type": "apugli:on_cooldown",
+                        "inverted": true
+                    }
+                ]
+            }
+        }
+    },
+
+    "drop": {
+        "type": "origins:replace_loot_table",
+        "replace": {
+            "minecraft:entities/phantom": "konosuba:sylvia/phantom_eyes"
+        }
+    }
+}

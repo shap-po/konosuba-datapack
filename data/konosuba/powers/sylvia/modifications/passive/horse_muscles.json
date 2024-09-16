@@ -1,0 +1,59 @@
+{
+    "type": "origins:multiple",
+
+    "attribute": {
+        "type": "origins:conditioned_attribute",
+
+        "tick_rate": 10,
+        "modifiers": [
+            {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.05
+            },
+            {
+                "attribute": "stepheightentityattribute:stepheight",
+                "operation": "addition",
+                "value": 0.5
+            }
+        ],
+
+        "condition": {
+            "type": "shappoli:equipped_trinket",
+            "slot": {
+                "group": "chimeraorigin"
+            },
+            "item_condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "chimeraorigin:horse_muscles"
+                        }
+                    },
+                    {
+                        "type": "apugli:on_cooldown",
+                        "inverted": true
+                    }
+                ]
+            }
+        }
+    },
+
+    "drop": {
+        "type": "origins:replace_loot_table",
+        "replace": {
+            "minecraft:entities/horse": "konosuba:sylvia/horse_muscles"
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:attribute",
+                "attribute": "minecraft:generic.movement_speed",
+                "comparison": ">=",
+                "compare_to": 0.325
+            }
+        }
+    }
+}
