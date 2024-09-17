@@ -2,7 +2,7 @@
 
 Date format: DD/MM/YYYY
 
-## 2.2.0 - - 17/09/2024
+## 2.2.0 - Forged with Mana - 17/09/2024
 
 ## Features
 
