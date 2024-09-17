@@ -2,6 +2,61 @@
 
 Date format: DD/MM/YYYY
 
+## 2.2.0 - - 17/09/2024
+
+## Features
+
+-   Added translations support for all origins, powers and functions
+    -   The datapack now requires a resource pack to be installed to display translations
+-   Added new origin: `Chris`
+    -   Chris has the same `clairvoyance` power as Kazuma
+    -   Secondary ability allows Chris to temporarily become completely invisible, it even hides her armor
+    -   Chris has the `luck` power, which is slightly better than Kazuma's
+-   Updated `double drops` to use origins condition that is easier to customize
+    -   Updated Kazuma's `luck` power to use condition
+    -   Made use of the new condition in Chris's `luck` power
+-   Replaced Wiz's `drain touch` spell with an `ender storage` spell. It allows Wiz easy access to her ender chest at the cost of some magica
+-   Completely reworked Sylvia's origin
+    -   Sylvia now has 5 body modifications:
+        -   Core (1 slot):
+            -   **Chimera Prime core**: Removes penalty from switching modifications. Reduces the cooldown before a modification can be used after equipping.
+            -   **Blaze core**: Grants fire resistance, lava vision, faster movement in lava, and makes you always on fire. Water will hurt.
+            -   **Dragon heart**: Grants 6 extra hearts and better health regeneration.
+            -   **Prismarine core**: Grants water breathing, better water vision, faster movement in water, and removes block breaking slowdown in water.
+            -   **Omnivore stomach**: Allows eating all food types. Including the ones that only mobs can eat.
+            -   **Silverfish stomach**: Allows eating any block, which grants a random effect. Most of the effects are negative.
+        -   Active (2 slots):
+            -   **Mage killer**: Temporarily disables all magic-based abilities in a radius around.
+            -   **Ravager horns**: Charge at the target, dealing damage and knocking them back.
+            -   **Slime tentacles**: Pull/push entities.
+            -   **Squid tentacles**: Release ink cloud, blinding and slowing down entities.
+            -   **Warden vocal cords**: Warden's sound wave attack.
+            -   **Llama glands**: Spits at the targets like a llama.
+        -   Passive (2 slots):
+            -   **Allay larynx**: Villager trading discounts.
+            -   **Cave Spider fangs**: A chance to poison the target on hit.
+            -   **Creeper skin**: Slowly become invisible when standing still.
+            -   **Dragon scales**: Damage resistance.
+            -   **Horse muscles**: Faster movement speed.
+            -   **Ocelot paws**: Less fall damage.
+            -   **Phantom eyes**: Night vision.
+            -   **Warden claws**: Faster block breaking.
+-   Reworked Vanir's morphs to use powers from `shappoli` instead of commands.
+    -   Vanir can now morph into mobs from any mod.
+    -   NBT data of the killed mob is now passed to Vanir's morph.
+-   Increased Darkness's `tank` power first stage duration: 10s -> 20s.
+-   Reduced Hans's fall damage resistance: 80% -> 60%.
+-   Eris's blessings can now be removed with a few buckets of milk.
+
+## Fixes
+
+-   Fixed Wiz's `skaters`
+    -   Will now consume magica when the player is on the ground
+    -   Will now not replace flowing water with ice
+    -   Freezing water will now consume some additional magica
+-   Fixed `spin` utility creating markers every time the server restarts
+-   Fixed Beldia's curse destroying player's armor
+
 ## 2.1.2 - Hotfix - 14/08/2024
 
 ## Features
