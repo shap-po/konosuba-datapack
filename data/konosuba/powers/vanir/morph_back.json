@@ -4,7 +4,6 @@
     "key": "key.origins.secondary_active",
 
     "entity_action": {
-        "type": "origins:execute_command",
-        "command": "function konosuba:origins/vanir/morph {shape: \"normal\"}"
+        "type": "shappoli:morph"
     }
 }

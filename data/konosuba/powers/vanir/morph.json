@@ -1,5 +1,7 @@
 {
-    "badges": ["origins:toggle"],
+    "badges": [
+        "origins:toggle"
+    ],
 
     "type": "origins:multiple",
 
@@ -20,7 +22,12 @@
         "hud_render": {
             "bar_index": 17,
             "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-            "condition": { "type": "origins:resource", "resource": "*:*_toggled", "comparison": "==", "compare_to": 1 },
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_toggled",
+                "comparison": "==",
+                "compare_to": 1
+            },
             "should_render": true
         }
     },
@@ -29,11 +36,21 @@
         "type": "origins:active_self",
         "key": "key.origins.primary_active",
 
-        "condition": { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "==", "compare_to": 0 },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": "==",
+            "compare_to": 0
+        },
 
         "entity_action": {
             "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_toggled", "comparison": "==", "compare_to": 1 },
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_toggled",
+                "comparison": "==",
+                "compare_to": 1
+            },
 
             "if_action": {
                 "type": "origins:change_resource",
@@ -53,16 +70,31 @@
     "morph_on_kill": {
         "type": "origins:action_on_hit",
 
-        "condition": { "type": "origins:resource", "resource": "*:*_toggled", "comparison": "==", "compare_to": 1 },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggled",
+            "comparison": "==",
+            "compare_to": 1
+        },
 
         "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
                 "type": "origins:and",
                 "conditions": [
-                    { "type": "origins:living" },
-                    { "type": "origins:in_tag", "tag": "konosuba:vanir_can_morph_into" },
-                    { "type": "origins:health", "comparison": "<=", "compare_to": 0 }
+                    {
+                        "type": "origins:living"
+                    },
+                    {
+                        "type": "origins:in_tag",
+                        "tag": "konosuba:vanir_denylist",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:health",
+                        "comparison": "<=",
+                        "compare_to": 0
+                    }
                 ]
             }
         },
@@ -70,21 +102,13 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:execute_command",
-                        "command": "function konosuba:origins/vanir/prepare_morph"
-                    }
+                    "type": "shappoli:morph"
                 },
                 {
                     "type": "origins:actor_action",
                     "action": {
                         "type": "origins:and",
                         "actions": [
-                            {
-                                "type": "origins:execute_command",
-                                "command": "function konosuba:origins/vanir/morph_into_entity"
-                            },
                             {
                                 "type": "origins:change_resource",
                                 "resource": "*:*_toggled",

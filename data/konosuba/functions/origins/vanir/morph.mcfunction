@@ -1,1 +1,0 @@
-$walkers switchShape @s $(shape)
