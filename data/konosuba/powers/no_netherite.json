@@ -1,28 +1,28 @@
 {
-    "type": "origins:restrict_armor",
+  "type": "origins:restrict_armor",
 
-    "head": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "tag": "konosuba:netherite"
-        }
-    },
-    "chest": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "tag": "konosuba:netherite"
-        }
-    },
-    "legs": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "tag": "konosuba:netherite"
-        }
-    },
-    "feet": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "tag": "konosuba:netherite"
-        }
+  "head": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "konosuba:netherite"
     }
+  },
+  "chest": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "konosuba:netherite"
+    }
+  },
+  "legs": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "konosuba:netherite"
+    }
+  },
+  "feet": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "konosuba:netherite"
+    }
+  }
 }

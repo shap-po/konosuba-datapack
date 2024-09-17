@@ -1,9 +1,9 @@
 {
-    "type": "origins:active_self",
+  "type": "origins:active_self",
 
-    "key": "key.origins.secondary_active",
+  "key": "key.origins.secondary_active",
 
-    "entity_action": {
-        "type": "shappoli:morph"
-    }
+  "entity_action": {
+    "type": "shappoli:morph"
+  }
 }

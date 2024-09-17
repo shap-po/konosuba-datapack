@@ -1,12 +1,12 @@
 {
-    "type": "origins:modify_damage_taken",
+  "type": "origins:modify_damage_taken",
 
-    "modifier": {
-        "operation": "multiply_base",
-        "value": -0.1
-    },
-    "damage_condition": {
-        "type": "origins:in_tag",
-        "tag": "minecraft:is_explosion"
-    }
+  "modifier": {
+    "operation": "multiply_base",
+    "value": -0.1
+  },
+  "damage_condition": {
+    "type": "origins:in_tag",
+    "tag": "minecraft:is_explosion"
+  }
 }

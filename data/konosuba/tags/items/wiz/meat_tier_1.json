@@ -1,12 +1,12 @@
 {
-    "values": [
-        "minecraft:rotten_flesh",
-        "minecraft:cooked_salmon",
-        "minecraft:cooked_cod",
-        "minecraft:spider_eye",
-        "minecraft:tropical_fish",
-        "minecraft:mushroom_stew",
-        "minecraft:suspicious_stew",
-        "minecraft:pufferfish"
-    ]
+  "values": [
+    "minecraft:rotten_flesh",
+    "minecraft:cooked_salmon",
+    "minecraft:cooked_cod",
+    "minecraft:spider_eye",
+    "minecraft:tropical_fish",
+    "minecraft:mushroom_stew",
+    "minecraft:suspicious_stew",
+    "minecraft:pufferfish"
+  ]
 }

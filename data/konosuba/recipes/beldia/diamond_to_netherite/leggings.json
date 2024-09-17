@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:diamond_leggings"
-    },
-    "template": {
-        "item": "minecraft:echo_shard"
-    },
-    "addition": {
-        "item": "minecraft:netherite_block"
-    },
+  "base": {
+    "item": "minecraft:diamond_leggings"
+  },
+  "template": {
+    "item": "minecraft:echo_shard"
+  },
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
 
-    "result": {
-        "item": "minecraft:netherite_leggings"
-    }
+  "result": {
+    "item": "minecraft:netherite_leggings"
+  }
 }

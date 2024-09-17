@@ -1,54 +1,54 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "modify_fall": {
-        "type": "origins:modify_damage_taken",
+  "modify_fall": {
+    "type": "origins:modify_damage_taken",
 
-        "damage_condition": {
-            "type": "origins:name",
-            "name": "fall"
-        },
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.5
-        },
-
-        "condition": {
-            "type": "shappoli:equipped_trinket",
-            "slot": {
-                "group": "chimeraorigin"
-            },
-            "item_condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:ingredient",
-                        "ingredient": {
-                            "item": "chimeraorigin:ocelot_paws"
-                        }
-                    },
-                    {
-                        "type": "apugli:on_cooldown",
-                        "inverted": true
-                    }
-                ]
-            }
-        }
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.5
     },
 
-    "drop": {
-        "type": "origins:replace_loot_table",
-        "replace": {
-            "minecraft:entities/ocelot": "konosuba:sylvia/ocelot_paws"
-        }
-    },
-    "badges": [
-        {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-            "text": {
-                "translate": "badge.konosuba.sylvia.modifications.ocelot_paws.0"
+    "condition": {
+      "type": "shappoli:equipped_trinket",
+      "slot": {
+        "group": "chimeraorigin"
+      },
+      "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "chimeraorigin:ocelot_paws"
             }
-        }
-    ]
+          },
+          {
+            "type": "apugli:on_cooldown",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  },
+
+  "drop": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:entities/ocelot": "konosuba:sylvia/ocelot_paws"
+    }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+      "text": {
+        "translate": "badge.konosuba.sylvia.modifications.ocelot_paws.0"
+      }
+    }
+  ]
 }

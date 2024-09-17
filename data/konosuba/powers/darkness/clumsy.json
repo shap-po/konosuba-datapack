@@ -1,34 +1,34 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "miss": {
-        "type": "origins:action_on_hit",
-        "bientity_action": {
-            "type": "origins:actor_action",
-            "action": {
-                "type": "origins:choice",
-                "actions": [
-                    {
-                        "element": {
-                            "type": "origins:apply_effect",
-                            "effect": {
-                                "effect": "minecraft:weakness",
-                                "duration": 10,
-                                "amplifier": 9,
-                                "show_particles": false,
-                                "show_icon": false
-                            }
-                        },
-                        "weight": 20
-                    },
-                    {
-                        "element": {
-                            "type": "origins:nothing"
-                        },
-                        "weight": 80
-                    }
-                ]
-            }
-        }
+  "miss": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:choice",
+        "actions": [
+          {
+            "element": {
+              "type": "origins:apply_effect",
+              "effect": {
+                "effect": "minecraft:weakness",
+                "duration": 10,
+                "amplifier": 9,
+                "show_particles": false,
+                "show_icon": false
+              }
+            },
+            "weight": 20
+          },
+          {
+            "element": {
+              "type": "origins:nothing"
+            },
+            "weight": 80
+          }
+        ]
+      }
     }
+  }
 }

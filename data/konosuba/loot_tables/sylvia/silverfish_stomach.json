@@ -1,27 +1,27 @@
 {
-    "pools": [
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
         {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:loot_table",
-                    "name": "apoli:replaced_loot_table"
-                }
-            ]
+          "type": "minecraft:loot_table",
+          "name": "apoli:replaced_loot_table"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 3
         },
         {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:empty",
-                    "weight": 3
-                },
-                {
-                    "type": "minecraft:item",
-                    "name": "chimeraorigin:silverfish_stomach",
-                    "weight": 1
-                }
-            ]
+          "type": "minecraft:item",
+          "name": "chimeraorigin:silverfish_stomach",
+          "weight": 1
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,16 +1,16 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:heavy_weighted_pressure_plate"
-    },
-    "template": {
-        "tag": "konosuba:warp_plate_catalyst"
-    },
-    "addition": {
-        "item": "minecraft:netherite_ingot"
-    },
-    "result": {
-        "item": "waystones:warp_plate"
-    }
+  "base": {
+    "item": "minecraft:heavy_weighted_pressure_plate"
+  },
+  "template": {
+    "tag": "konosuba:warp_plate_catalyst"
+  },
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "item": "waystones:warp_plate"
+  }
 }

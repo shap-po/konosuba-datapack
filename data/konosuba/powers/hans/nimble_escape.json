@@ -1,40 +1,84 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "cooldown": {
-        "type": "origins:cooldown",
-        "cooldown": 1200,
-        "hud_render": { "should_render": true, "bar_index": 3 }
-    },
-
-    "prevent_death": {
-        "type": "origins:prevent_death",
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">", "compare_to": 3750 },
-                { "type": "origins:resource", "resource": "*:*_cooldown", "comparison": "<=", "compare_to": 1 }
-            ]
-        },
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                { "type": "origins:trigger_cooldown", "power": "*:*_cooldown" },
-                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "operation": "set", "change": 0 },
-
-                { "type": "origins:clear_effect" },
-                {
-                    "type": "origins:apply_effect",
-                    "effects": [
-                        { "effect": "minecraft:invisibility", "amplifier": 0, "duration": 60 },
-                        { "effect": "minecraft:speed", "amplifier": 1, "duration": 80 },
-                        { "effect": "minecraft:absorption", "amplifier": 1, "duration": 120 }
-                    ]
-                },
-                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
-                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" },
-                { "type": "origins:execute_command", "command": "function konosuba:origins/hans/summon_decoy" }
-            ]
-        }
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 1200,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 3
     }
+  },
+
+  "prevent_death": {
+    "type": "origins:prevent_death",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:hans/slime_count",
+          "comparison": ">",
+          "compare_to": 3750
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "<=",
+          "compare_to": 1
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:hans/slime_count",
+          "operation": "set",
+          "change": 0
+        },
+
+        {
+          "type": "origins:clear_effect"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:invisibility",
+              "amplifier": 0,
+              "duration": 60
+            },
+            {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 80
+            },
+            {
+              "effect": "minecraft:absorption",
+              "amplifier": 1,
+              "duration": 120
+            }
+          ]
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function konosuba:origins/hans/summon_decoy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function konosuba:origins/hans/summon_decoy"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function konosuba:origins/hans/summon_decoy"
+        }
+      ]
+    }
+  }
 }

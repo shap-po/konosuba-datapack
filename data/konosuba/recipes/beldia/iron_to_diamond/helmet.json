@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:iron_helmet"
-    },
-    "template": {
-        "item": "minecraft:amethyst_cluster"
-    },
-    "addition": {
-        "item": "minecraft:diamond_block"
-    },
+  "base": {
+    "item": "minecraft:iron_helmet"
+  },
+  "template": {
+    "item": "minecraft:amethyst_cluster"
+  },
+  "addition": {
+    "item": "minecraft:diamond_block"
+  },
 
-    "result": {
-        "item": "minecraft:diamond_helmet"
-    }
+  "result": {
+    "item": "minecraft:diamond_helmet"
+  }
 }

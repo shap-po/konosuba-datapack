@@ -1,9 +1,9 @@
 {
-    "type": "origins:inventory",
-    "title": "power.konosuba.darkness.pouch.title",
-    "drop_on_death": false,
-    "key": {
-        "key": "key.origins.secondary_active",
-        "continuous": false
-    }
+  "type": "origins:inventory",
+  "title": "power.konosuba.darkness.pouch.title",
+  "drop_on_death": false,
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  }
 }

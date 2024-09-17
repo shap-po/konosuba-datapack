@@ -1,24 +1,24 @@
 {
-    "icon": "minecraft:redstone",
+  "icon": "minecraft:redstone",
 
-    "powers": [
-        "konosuba:wiz/magic",
-        "konosuba:wiz/hunger_immunity",
-        "konosuba:wiz/spellchanger",
-        "konosuba:wiz/spells/paralysis",
-        "konosuba:wiz/spells/random_teleport",
-        "konosuba:wiz/spells/ender_storage",
-        "konosuba:wiz/spells/skaters",
-        "konosuba:wiz/spells/night_vision",
-        "konosuba:wiz/meat_craving",
-        "konosuba:wiz/warp_plate_craft",
-        "konosuba:undead",
+  "powers": [
+    "konosuba:wiz/magic",
+    "konosuba:wiz/hunger_immunity",
+    "konosuba:wiz/spellchanger",
+    "konosuba:wiz/spells/paralysis",
+    "konosuba:wiz/spells/random_teleport",
+    "konosuba:wiz/spells/ender_storage",
+    "konosuba:wiz/spells/skaters",
+    "konosuba:wiz/spells/night_vision",
+    "konosuba:wiz/meat_craving",
+    "konosuba:wiz/warp_plate_craft",
+    "konosuba:undead",
 
-        "konosuba:no_netherite",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 3,
-    "order": 7
+    "konosuba:no_netherite",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 3,
+  "order": 7
 }

@@ -1,24 +1,24 @@
 {
-    "type": "waystones:waystone",
-    "result": {
-        "item": "waystones:crumbling_attuned_shard",
-        "count": 4
+  "type": "waystones:waystone",
+  "result": {
+    "item": "waystones:crumbling_attuned_shard",
+    "count": 4
+  },
+  "primary": {
+    "item": "minecraft:flint"
+  },
+  "secondary": [
+    {
+      "item": "minecraft:amethyst_shard"
     },
-    "primary": {
-        "item": "minecraft:flint"
+    {
+      "item": "minecraft:amethyst_shard"
     },
-    "secondary": [
-        {
-            "item": "minecraft:amethyst_shard"
-        },
-        {
-            "item": "minecraft:amethyst_shard"
-        },
-        {
-            "item": "minecraft:amethyst_shard"
-        },
-        {
-            "item": "minecraft:amethyst_shard"
-        }
-    ]
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ]
 }

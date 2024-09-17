@@ -1,18 +1,18 @@
 {
-    "icon": "minecraft:bone",
+  "icon": "minecraft:bone",
 
-    "powers": [
-        "konosuba:beldia/curse_granter",
-        "konosuba:beldia/living_armor",
-        "konosuba:beldia/craft_armor",
-        "konosuba:beldia/upgrade_armor",
-        "konosuba:beldia/horse",
-        "konosuba:undead",
+  "powers": [
+    "konosuba:beldia/curse_granter",
+    "konosuba:beldia/living_armor",
+    "konosuba:beldia/craft_armor",
+    "konosuba:beldia/upgrade_armor",
+    "konosuba:beldia/horse",
+    "konosuba:undead",
 
-        "konosuba:wiz/sane_person",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 2,
-    "order": 2
+    "konosuba:wiz/sane_person",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 2,
+  "order": 2
 }

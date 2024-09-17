@@ -1,19 +1,19 @@
 {
-    "icon": "minecraft:fire_charge",
+  "icon": "minecraft:fire_charge",
 
-    "powers": [
-        "konosuba:megumin/explosion",
-        "konosuba:megumin/chomusuke",
-        "konosuba:megumin/blast_resistance",
-        "konosuba:megumin/short",
-        "konosuba:megumin/can_be_carried",
+  "powers": [
+    "konosuba:megumin/explosion",
+    "konosuba:megumin/chomusuke",
+    "konosuba:megumin/blast_resistance",
+    "konosuba:megumin/short",
+    "konosuba:megumin/can_be_carried",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 1,
-    "order": 3
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 1,
+  "order": 3
 }

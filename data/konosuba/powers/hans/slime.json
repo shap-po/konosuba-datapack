@@ -1,201 +1,498 @@
 {
-    "hidden": true,
+  "hidden": true,
 
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "count": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 10000,
-        "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-            "bar_index": 21
-        }
-    },
-
-    "stage": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 5,
-        "hud_render": { "should_render": false }
-    },
-
-    "startup": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
-
-        "entity_action_chosen": {
-            "type": "origins:and",
-            "actions": [
-                { "type": "origins:execute_command", "command": "scale persist set true" },
-                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "operation": "set", "change": 1875 }
-            ]
-        },
-        "entity_action_lost": {
-            "type": "origins:and",
-            "actions": [
-                { "type": "origins:execute_command", "command": "scale persist set false" },
-                { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 20" },
-                { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.1" },
-                { "type": "origins:execute_command", "command": "scale reset @s" }
-            ]
-        }
-    },
-
-    "stage_change": {
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:if_else_list",
-            "actions": [
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 0 },
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 1250 },
-                            { "type": "origins:resource", "resource": "*:*_stage", "comparison": "!=", "compare_to": 1 }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 8" },
-                            { "type": "origins:heal", "amount": 0 },
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.18" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:height 0.3" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:width 0.3" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:block_reach 0.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:entity_reach 0.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:jump_height 0.8" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:step_height 0.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack 0.4" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack_speed 1.2" },
-                            { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 1 }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 1250 },
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 3750 },
-                            { "type": "origins:resource", "resource": "*:*_stage", "comparison": "!=", "compare_to": 2 }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 16" },
-                            { "type": "origins:heal", "amount": 0 },
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.13" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:height 0.6" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:width 0.6" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:block_reach 0.8" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:entity_reach 0.8" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:jump_height 0.9" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:step_height 0.9" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack 0.7" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack_speed 1.1" },
-                            { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 2 }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 3750 },
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 6250 },
-                            { "type": "origins:resource", "resource": "*:*_stage", "comparison": "!=", "compare_to": 3 }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 24" },
-                            { "type": "origins:heal", "amount": 0 },
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:height 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:width 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:block_reach 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:entity_reach 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:jump_height 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:step_height 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack 1" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack_speed 1" },
-                            { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 3 }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 6250 },
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 8750 },
-                            { "type": "origins:resource", "resource": "*:*_stage", "comparison": "!=", "compare_to": 4 }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 32" },
-                            { "type": "origins:heal", "amount": 0 },
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.09" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:height 1.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:width 1.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:block_reach 1.3" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:entity_reach 1.3" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:jump_height 1.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:step_height 2" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack 1.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack_speed 0.9" },
-                            { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 4 }
-                        ]
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": ">=", "compare_to": 8750 },
-                            { "type": "origins:resource", "resource": "*:hans/slime_count", "comparison": "<=", "compare_to": 10000 },
-                            { "type": "origins:resource", "resource": "*:*_stage", "comparison": "!=", "compare_to": 5 }
-                        ]
-                    },
-                    "action": {
-                        "type": "origins:and",
-                        "actions": [
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.max_health base set 40" },
-                            { "type": "origins:heal", "amount": 0 },
-                            { "type": "origins:execute_command", "command": "attribute @s minecraft:generic.movement_speed base set 0.07" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:height 2" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:width 2" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:block_reach 1.7" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:entity_reach 1.7" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:jump_height 1.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:step_height 2.5" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack 2" },
-                            { "type": "origins:execute_command", "command": "scale set pehkui:attack_speed 0.8" },
-                            { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 5 }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-
-    "on_death": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": false,
-        "entity_action_respawned": {
-            "type": "origins:and",
-            "actions": [
-                { "type": "origins:change_resource", "resource": "*:*_stage", "operation": "set", "change": 0 },
-                { "type": "origins:change_resource", "resource": "*:hans/slime_count", "operation": "set", "change": 0 }
-            ]
-        }
+  "count": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 10000,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 21
     }
+  },
+
+  "stage": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 5,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+
+  "startup": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale persist set true"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:hans/slime_count",
+          "operation": "set",
+          "change": 1875
+        }
+      ]
+    },
+    "entity_action_lost": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale persist set false"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "attribute @s minecraft:generic.max_health base set 20"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "attribute @s minecraft:generic.movement_speed base set 0.1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale reset @s"
+        }
+      ]
+    }
+  },
+
+  "stage_change": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": "<=",
+                "compare_to": 1250
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_stage",
+                "comparison": "!=",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.max_health base set 8"
+              },
+              {
+                "type": "origins:heal",
+                "amount": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.movement_speed base set 0.18"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 0.3"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 0.3"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:block_reach 0.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:entity_reach 0.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 0.8"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 0.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack 0.4"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack_speed 1.2"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_stage",
+                "operation": "set",
+                "change": 1
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 1250
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": "<=",
+                "compare_to": 3750
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_stage",
+                "comparison": "!=",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.max_health base set 16"
+              },
+              {
+                "type": "origins:heal",
+                "amount": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.movement_speed base set 0.13"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 0.6"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 0.6"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:block_reach 0.8"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:entity_reach 0.8"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 0.9"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 0.9"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack 0.7"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack_speed 1.1"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_stage",
+                "operation": "set",
+                "change": 2
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 3750
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": "<=",
+                "compare_to": 6250
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_stage",
+                "comparison": "!=",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.max_health base set 24"
+              },
+              {
+                "type": "origins:heal",
+                "amount": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.movement_speed base set 0.1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:block_reach 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:entity_reach 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack_speed 1"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_stage",
+                "operation": "set",
+                "change": 3
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 6250
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": "<=",
+                "compare_to": 8750
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_stage",
+                "comparison": "!=",
+                "compare_to": 4
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.max_health base set 32"
+              },
+              {
+                "type": "origins:heal",
+                "amount": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.movement_speed base set 0.09"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 1.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 1.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:block_reach 1.3"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:entity_reach 1.3"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 1.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 2"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack 1.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack_speed 0.9"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_stage",
+                "operation": "set",
+                "change": 4
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": ">=",
+                "compare_to": 8750
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:hans/slime_count",
+                "comparison": "<=",
+                "compare_to": 10000
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_stage",
+                "comparison": "!=",
+                "compare_to": 5
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.max_health base set 40"
+              },
+              {
+                "type": "origins:heal",
+                "amount": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "attribute @s minecraft:generic.movement_speed base set 0.07"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 2"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 2"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:block_reach 1.7"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:entity_reach 1.7"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:jump_height 1.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 2.5"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack 2"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:attack_speed 0.8"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_stage",
+                "operation": "set",
+                "change": 5
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+
+  "on_death": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": false,
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_stage",
+          "operation": "set",
+          "change": 0
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:hans/slime_count",
+          "operation": "set",
+          "change": 0
+        }
+      ]
+    }
+  }
 }

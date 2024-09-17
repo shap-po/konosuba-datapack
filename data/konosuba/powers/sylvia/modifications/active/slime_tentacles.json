@@ -1,111 +1,111 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "receiver": {
-        "type": "shappoli:receive_action",
-        "item_condition": {
-            "type": "shappoli:holder",
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_cooldown",
-                "comparison": "==",
-                "compare_to": 0
-            }
-        },
-        "item_action": {
-            "type": "apugli:cooldown",
-            "ticks": 120
-        },
-        "action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:trigger_cooldown",
-                    "power": "*:*_cooldown"
-                },
-                {
-                    "type": "origins:play_sound",
-                    "category": "players",
-                    "sound": "minecraft:block.slime_block.place",
-                    "volume": 1,
-                    "pitch": 1.25
-                },
-
-                {
-                    "type": "origins:raycast",
-                    "command_along_ray": "particle minecraft:item_slime ~ ~ ~ 0 0 0 0.5 2",
-                    "command_at_hit": "particle minecraft:glow_squid_ink ~ ~ ~ 0 0 0 0.1 4",
-                    "command_step": 0.25,
-                    "distance": 16,
-                    "bientity_condition": {
-                        "type": "origins:target_condition",
-                        "condition": {
-                            "type": "origins:or",
-                            "conditions": [
-                                {
-                                    "type": "origins:living"
-                                },
-                                {
-                                    "type": "origins:entity_type",
-                                    "entity_type": "minecraft:item"
-                                }
-                            ]
-                        }
-                    },
-                    "bientity_action": {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:actor_condition",
-                            "condition": {
-                                "type": "origins:sneaking"
-                            }
-                        },
-                        "if_action": {
-                            "type": "origins:add_velocity",
-                            "client": false,
-                            "z": -1.5
-                        },
-                        "else_action": {
-                            "type": "origins:add_velocity",
-                            "client": false,
-                            "z": 1.5
-                        }
-                    }
-                }
-            ]
-        }
+  "receiver": {
+    "type": "shappoli:receive_action",
+    "item_condition": {
+      "type": "shappoli:holder",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_cooldown",
+        "comparison": "==",
+        "compare_to": 0
+      }
     },
-
-    "cooldown": {
-        "type": "origins:cooldown",
-        "cooldown": 120,
-        "hud_render": {
-            "should_render": true,
-            "sprite_location": "origins:textures/gui/resource_bar.png",
-            "bar_index": 8
-        }
+    "item_action": {
+      "type": "apugli:cooldown",
+      "ticks": 120
     },
-
-    "drop": {
-        "type": "origins:replace_loot_table",
-        "replace": {
-            "minecraft:entities/slime": "konosuba:sylvia/slime_tentacles"
+    "action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
         },
-        "bientity_condition": {
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "sound": "minecraft:block.slime_block.place",
+          "volume": 1,
+          "pitch": 1.25
+        },
+
+        {
+          "type": "origins:raycast",
+          "command_along_ray": "particle minecraft:item_slime ~ ~ ~ 0 0 0 0.5 2",
+          "command_at_hit": "particle minecraft:glow_squid_ink ~ ~ ~ 0 0 0 0.1 4",
+          "command_step": 0.25,
+          "distance": 16,
+          "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
-                "type": "origins:nbt",
-                "nbt": "{Size: 3}"
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:living"
+                },
+                {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:item"
+                }
+              ]
             }
+          },
+          "bientity_action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:actor_condition",
+              "condition": {
+                "type": "origins:sneaking"
+              }
+            },
+            "if_action": {
+              "type": "origins:add_velocity",
+              "client": false,
+              "z": -1.5
+            },
+            "else_action": {
+              "type": "origins:add_velocity",
+              "client": false,
+              "z": 1.5
+            }
+          }
         }
+      ]
+    }
+  },
+
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 120,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/resource_bar.png",
+      "bar_index": 8
+    }
+  },
+
+  "drop": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:entities/slime": "konosuba:sylvia/slime_tentacles"
     },
-    "badges": [
-        {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-            "text": {
-                "translate": "badge.konosuba.sylvia.modifications.slime_tentacles.0"
-            }
-        }
-    ]
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:nbt",
+        "nbt": "{Size: 3}"
+      }
+    }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+      "text": {
+        "translate": "badge.konosuba.sylvia.modifications.slime_tentacles.0"
+      }
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
-    "hidden": true,
+  "hidden": true,
 
-    "type": "origins:simple",
+  "type": "origins:simple",
 
-    "_": "KubeJS is used to detect messages in the chat and run a function that deals damage to players with this power"
+  "_": "KubeJS is used to detect messages in the chat and run a function that deals damage to players with this power"
 }

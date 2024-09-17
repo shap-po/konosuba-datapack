@@ -1,179 +1,185 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "badges": [
-        {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/badge/toggle.png",
-            "text": {
-                "translate": "origins.gui.badge.active",
-                "with": [
-                    {
-                        "text": "",
-                        "extra": [
-                            {
-                                "text": "["
-                            },
-                            {
-                                "keybind": "key.origins.primary_active"
-                            },
-                            {
-                                "text": "]"
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/badge/info.png",
-            "text": {
-                "translate": "badge.konosuba.wiz.spells.skaters.0"
-            }
-        }
-    ],
-
-    "toggle": {
-        "type": "origins:toggle",
-        "active_by_default": false,
-        "retain_state": false,
-        "key": {
-            "key": "key.origins.primary_active"
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "*:wiz/spellchanger_spell",
-                    "comparison": "==",
-                    "compare_to": 3
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:wiz/magic_magic",
-                    "comparison": ">=",
-                    "compare_to": 3
-                }
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": {
+        "translate": "origins.gui.badge.active",
+        "with": [
+          {
+            "text": "",
+            "extra": [
+              {
+                "text": "["
+              },
+              {
+                "keybind": "key.origins.primary_active"
+              },
+              {
+                "text": "]"
+              }
             ]
-        }
+          }
+        ]
+      }
     },
-
-    "bar_visible": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "start_value": 1,
-        "hud_render": {
-            "should_render": true,
-            "bar_index": 0,
-            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-            "condition": {
-                "type": "origins:power_active",
-                "power": "*:*_toggle"
-            }
-        }
-    },
-
-    "frostwalker": {
-        "type": "origins:action_over_time",
-        "interval": 5,
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_toggle"
-        },
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:wiz/magic_magic",
-                    "operation": "add",
-                    "change": -3
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "type": "origins:fluid_height",
-                                "compare_to": 1,
-                                "comparison": "<=",
-                                "fluid": "minecraft:water"
-                            },
-                            {
-                                "type": "origins:submerged_in",
-                                "fluid": "minecraft:water",
-                                "inverted": true
-                            },
-                            {
-                                "type": "origins:resource",
-                                "resource": "*:wiz/magic_magic",
-                                "comparison": ">=",
-                                "compare_to": 1
-                            },
-                            {
-                                "_": "Check if we fill any blocks, if we do - subtract mana",
-                                "type": "origins:command",
-                                "command": "fill ~-3 ~-0.2 ~-3 ~3 ~-0.2 ~3 minecraft:frosted_ice replace minecraft:water[level=0]",
-                                "comparison": ">=",
-                                "compare_to": 5
-                            }
-                        ]
-                    },
-                    "if_action": {
-                        "type": "origins:change_resource",
-                        "resource": "*:wiz/magic_magic",
-                        "operation": "add",
-                        "change": -1
-                    }
-                }
-            ]
-        }
-    },
-
-    "faster_on_ice": {
-        "type": "origins:conditioned_attribute",
-        "tick_rate": 20,
-        "modifier": {
-            "attribute": "minecraft:generic.movement_speed",
-            "operation": "addition",
-            "value": 0.04
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:power_active",
-                    "power": "*:*_toggle"
-                },
-                {
-                    "type": "origins:on_block",
-                    "block_condition": {
-                        "type": "origins:or",
-                        "conditions": [
-                            { "type": "origins:in_tag", "tag": "minecraft:ice" },
-                            { "type": "origins:in_tag", "tag": "minecraft:snow" }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-
-    "faster_everywhere": {
-        "type": "origins:conditioned_attribute",
-        "tick_rate": 20,
-        "modifier": {
-            "attribute": "minecraft:generic.movement_speed",
-            "operation": "addition",
-            "value": 0.03
-        },
-        "condition": {
-            "type": "origins:power_active",
-            "power": "*:*_toggle"
-        }
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": {
+        "translate": "badge.konosuba.wiz.spells.skaters.0"
+      }
     }
+  ],
+
+  "toggle": {
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "retain_state": false,
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:wiz/spellchanger_spell",
+          "comparison": "==",
+          "compare_to": 3
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:wiz/magic_magic",
+          "comparison": ">=",
+          "compare_to": 3
+        }
+      ]
+    }
+  },
+
+  "bar_visible": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "start_value": 1,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 0,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "condition": {
+        "type": "origins:power_active",
+        "power": "*:*_toggle"
+      }
+    }
+  },
+
+  "frostwalker": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:wiz/magic_magic",
+          "operation": "add",
+          "change": -3
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:fluid_height",
+                "compare_to": 1,
+                "comparison": "<=",
+                "fluid": "minecraft:water"
+              },
+              {
+                "type": "origins:submerged_in",
+                "fluid": "minecraft:water",
+                "inverted": true
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:wiz/magic_magic",
+                "comparison": ">=",
+                "compare_to": 1
+              },
+              {
+                "_": "Check if we fill any blocks, if we do - subtract mana",
+                "type": "origins:command",
+                "command": "fill ~-3 ~-0.2 ~-3 ~3 ~-0.2 ~3 minecraft:frosted_ice replace minecraft:water[level=0]",
+                "comparison": ">=",
+                "compare_to": 5
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:wiz/magic_magic",
+            "operation": "add",
+            "change": -1
+          }
+        }
+      ]
+    }
+  },
+
+  "faster_on_ice": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.04
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:power_active",
+          "power": "*:*_toggle"
+        },
+        {
+          "type": "origins:on_block",
+          "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:in_tag",
+                "tag": "minecraft:ice"
+              },
+              {
+                "type": "origins:in_tag",
+                "tag": "minecraft:snow"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+
+  "faster_everywhere": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.03
+    },
+    "condition": {
+      "type": "origins:power_active",
+      "power": "*:*_toggle"
+    }
+  }
 }

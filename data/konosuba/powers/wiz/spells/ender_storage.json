@@ -1,38 +1,38 @@
 {
-    "type": "origins:active_self",
+  "type": "origins:active_self",
 
+  "condition": {
+    "type": "origins:resource",
+    "resource": "*:wiz/spellchanger_spell",
+    "comparison": "==",
+    "compare_to": 2
+  },
+
+  "entity_action": {
+    "type": "origins:if_else",
     "condition": {
-        "type": "origins:resource",
-        "resource": "*:wiz/spellchanger_spell",
-        "comparison": "==",
-        "compare_to": 2
+      "type": "origins:resource",
+      "resource": "*:wiz/magic_magic",
+      "comparison": ">=",
+      "compare_to": 500
     },
-
-    "entity_action": {
-        "type": "origins:if_else",
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:wiz/magic_magic",
-            "comparison": ">=",
-            "compare_to": 500
+    "if_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:ender_chest"
         },
-        "if_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:ender_chest"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:wiz/magic_magic",
-                    "operation": "add",
-                    "change": -500
-                }
-            ]
-        },
-        "else_action": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/wiz/not_enough_mana"
+        {
+          "type": "origins:change_resource",
+          "resource": "*:wiz/magic_magic",
+          "operation": "add",
+          "change": -500
         }
+      ]
+    },
+    "else_action": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/wiz/not_enough_mana"
     }
+  }
 }

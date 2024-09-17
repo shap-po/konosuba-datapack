@@ -1,23 +1,23 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "jump_height": {
-        "type": "origins:modify_jump",
-        "modifier": {
-            "operation": "addition",
-            "value": 0.05
-        }
-    },
-
-    "fall_damage_resistance": {
-        "type": "origins:modify_damage_taken",
-        "damage_condition": {
-            "type": "origins:name",
-            "name": "fall"
-        },
-        "modifier": {
-            "operation": "multiply_base_additive",
-            "value": -0.6
-        }
+  "jump_height": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "addition",
+      "value": 0.05
     }
+  },
+
+  "fall_damage_resistance": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "modifier": {
+      "operation": "multiply_base_additive",
+      "value": -0.6
+    }
+  }
 }

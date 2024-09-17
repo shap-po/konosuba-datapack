@@ -1,17 +1,17 @@
 {
-    "icon": "minecraft:emerald",
+  "icon": "minecraft:emerald",
 
-    "powers": [
-        "konosuba:kazuma/clairvoyance",
-        "konosuba:chris/lurk",
-        "konosuba:chris/lucky",
+  "powers": [
+    "konosuba:kazuma/clairvoyance",
+    "konosuba:chris/lurk",
+    "konosuba:chris/lucky",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 1,
-    "order": 4
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 1,
+  "order": 4
 }

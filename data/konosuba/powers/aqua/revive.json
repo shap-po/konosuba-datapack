@@ -1,271 +1,319 @@
 {
-    "badges": [
-        {
-            "type": "origins:tooltip",
-            "sprite": "origins:textures/gui/badge/active.png",
-            "text": {
-                "translate": "badge.konosuba.aqua.revive.0",
-                "with": [
-                    {
-                        "keybind": "key.origins.primary_active"
-                    }
-                ]
-            }
-        }
-    ],
-
-    "type": "origins:multiple",
-
-    "on_cooldown": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "hud_render": { "should_render": false }
-    },
-
-    "is_active": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-            "bar_index": 9,
-            "should_render": true,
-            "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 }
-        }
-    },
-
-    "target": {
-        "_": "Set that should hold only one entity",
-        "type": "origins:entity_set"
-    },
-
-    "activate": {
-        "type": "origins:active_self",
-        "key": { "key": "key.origins.primary_active" },
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": { "type": "origins:resource", "resource": "*:*_on_cooldown", "comparison": "==", "compare_to": 1 },
-
-            "if_action": {
-                "type": "origins:execute_command",
-                "command": "function konosuba:origins/aqua/revive/notify/cooldown"
-            },
-
-            "else_action": {
-                "type": "origins:if_else",
-                "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 0 },
-                "if_action": {
-                    "type": "origins:modify_resource",
-                    "resource": "*:*_is_active",
-                    "modifier": { "operation": "set_total", "value": 1 }
-                },
-                "else_action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:modify_resource",
-                            "resource": "*:*_is_active",
-                            "modifier": { "operation": "set_total", "value": 0 }
-                        },
-                        {
-                            "type": "origins:action_on_set",
-                            "set": "*:*_target",
-                            "bientity_action": {
-                                "type": "origins:and",
-                                "actions": [
-                                    {
-                                        "type": "origins:actor_action",
-                                        "action": {
-                                            "type": "origins:change_resource",
-                                            "resource": "*:*_on_cooldown",
-                                            "operation": "set",
-                                            "change": 1
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:target_action",
-                                        "action": {
-                                            "type": "origins:execute_command",
-                                            "command": "function konosuba:origins/aqua/revive/revive"
-                                        }
-                                    },
-                                    {
-                                        "type": "origins:remove_from_set",
-                                        "set": "*:*_target"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            }
-        }
-    },
-
-    "select_target": {
-        "type": "origins:action_over_time",
-        "condition": { "type": "origins:resource", "resource": "*:*_is_active", "comparison": "==", "compare_to": 1 },
-        "interval": 2,
-
-        "entity_action": {
-            "type": "origins:if_else",
-            "condition": { "type": "origins:sneaking", "inverted": true },
-
-            "if_action": {
-                "type": "origins:raycast",
-                "distance": 4,
-                "block": false,
-
-                "bientity_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                        { "type": "origins:can_see" },
-                        {
-                            "type": "origins:target_condition",
-                            "condition": {
-                                "type": "origins:and",
-                                "conditions": [
-                                    { "type": "origins:entity_type", "entity_type": "minecraft:player" },
-                                    { "type": "origins:power", "power": "konosuba:demon", "inverted": true },
-                                    { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
-                                ]
-                            }
-                        }
-                    ]
-                },
-
-                "bientity_action": {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:in_set",
-                        "set": "*:*_target",
-                        "inverted": true
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "_": "Clear set",
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:action_on_set",
-                                    "set": "*:*_target",
-                                    "bientity_action": {
-                                        "type": "origins:remove_from_set",
-                                        "set": "*:*_target"
-                                    }
-                                }
-                            },
-                            {
-                                "_": "Add to set",
-                                "type": "origins:add_to_set",
-                                "set": "*:*_target"
-                            }
-                        ]
-                    }
-                },
-
-                "miss_action": {
-                    "_": "Clear set",
-                    "type": "origins:action_on_set",
-                    "set": "*:*_target",
-                    "bientity_action": {
-                        "type": "origins:remove_from_set",
-                        "set": "*:*_target"
-                    }
-                }
-            },
-
-            "else_action": {
-                "type": "origins:selector_action",
-                "selector": "@s",
-                "bientity_action": {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:in_set",
-                        "set": "*:*_target",
-                        "inverted": true
-                    },
-
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "_": "Clear set",
-                                "type": "origins:actor_action",
-                                "action": {
-                                    "type": "origins:action_on_set",
-                                    "set": "*:*_target",
-                                    "bientity_action": {
-                                        "type": "origins:remove_from_set",
-                                        "set": "*:*_target"
-                                    }
-                                }
-                            },
-
-                            {
-                                "type": "origins:if_else",
-                                "condition": {
-                                    "type": "origins:actor_condition",
-                                    "condition": { "type": "origins:predicate", "predicate": "konosuba:can_get_more_lives" }
-                                },
-                                "if_action": {
-                                    "type": "origins:and",
-                                    "actions": [
-                                        {
-                                            "_": "Add to set",
-                                            "type": "origins:add_to_set",
-                                            "set": "*:*_target"
-                                        },
-                                        {
-                                            "type": "origins:actor_action",
-                                            "action": {
-                                                "type": "origins:execute_command",
-                                                "command": "function konosuba:origins/aqua/revive/notify/target_self"
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            }
-        }
-    },
-
-    "glow_target": {
-        "type": "origins:entity_glow",
-        "bientity_condition": {
-            "type": "origins:in_set",
-            "set": "*:*_target"
-        },
-
-        "use_teams": false,
-        "red": 0,
-        "green": 1,
-        "blue": 1
-    },
-    "animate_target": {
-        "type": "origins:action_over_time",
-        "interval": 2,
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_is_active",
-            "comparison": "==",
-            "compare_to": 1
-        },
-        "entity_action": {
-            "type": "origins:action_on_set",
-            "set": "*:*_target",
-            "bientity_action": {
-                "type": "origins:target_action",
-                "action": {
-                    "type": "origins:execute_command",
-                    "command": "function konosuba:origins/aqua/revive/animate_target/cyan"
-                }
-            }
-        }
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": {
+        "translate": "badge.konosuba.aqua.revive.0",
+        "with": [
+          {
+            "keybind": "key.origins.primary_active"
+          }
+        ]
+      }
     }
+  ],
+
+  "type": "origins:multiple",
+
+  "on_cooldown": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+
+  "is_active": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 9,
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_is_active",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    }
+  },
+
+  "target": {
+    "_": "Set that should hold only one entity",
+    "type": "origins:entity_set"
+  },
+
+  "activate": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_on_cooldown",
+        "comparison": "==",
+        "compare_to": 1
+      },
+
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function konosuba:origins/aqua/revive/notify/cooldown"
+      },
+
+      "else_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:resource",
+          "resource": "*:*_is_active",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        "if_action": {
+          "type": "origins:modify_resource",
+          "resource": "*:*_is_active",
+          "modifier": {
+            "operation": "set_total",
+            "value": 1
+          }
+        },
+        "else_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:modify_resource",
+              "resource": "*:*_is_active",
+              "modifier": {
+                "operation": "set_total",
+                "value": 0
+              }
+            },
+            {
+              "type": "origins:action_on_set",
+              "set": "*:*_target",
+              "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_on_cooldown",
+                      "operation": "set",
+                      "change": 1
+                    }
+                  },
+                  {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:execute_command",
+                      "command": "function konosuba:origins/aqua/revive/revive"
+                    }
+                  },
+                  {
+                    "type": "origins:remove_from_set",
+                    "set": "*:*_target"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "select_target": {
+    "type": "origins:action_over_time",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_is_active",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "interval": 2,
+
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:sneaking",
+        "inverted": true
+      },
+
+      "if_action": {
+        "type": "origins:raycast",
+        "distance": 4,
+        "block": false,
+
+        "bientity_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:can_see"
+            },
+            {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                  },
+                  {
+                    "type": "origins:power",
+                    "power": "konosuba:demon",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:predicate",
+                    "predicate": "konosuba:can_get_more_lives"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        "bientity_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:in_set",
+            "set": "*:*_target",
+            "inverted": true
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "_": "Clear set",
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:action_on_set",
+                  "set": "*:*_target",
+                  "bientity_action": {
+                    "type": "origins:remove_from_set",
+                    "set": "*:*_target"
+                  }
+                }
+              },
+              {
+                "_": "Add to set",
+                "type": "origins:add_to_set",
+                "set": "*:*_target"
+              }
+            ]
+          }
+        },
+
+        "miss_action": {
+          "_": "Clear set",
+          "type": "origins:action_on_set",
+          "set": "*:*_target",
+          "bientity_action": {
+            "type": "origins:remove_from_set",
+            "set": "*:*_target"
+          }
+        }
+      },
+
+      "else_action": {
+        "type": "origins:selector_action",
+        "selector": "@s",
+        "bientity_action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:in_set",
+            "set": "*:*_target",
+            "inverted": true
+          },
+
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "_": "Clear set",
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:action_on_set",
+                  "set": "*:*_target",
+                  "bientity_action": {
+                    "type": "origins:remove_from_set",
+                    "set": "*:*_target"
+                  }
+                }
+              },
+
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:actor_condition",
+                  "condition": {
+                    "type": "origins:predicate",
+                    "predicate": "konosuba:can_get_more_lives"
+                  }
+                },
+                "if_action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "_": "Add to set",
+                      "type": "origins:add_to_set",
+                      "set": "*:*_target"
+                    },
+                    {
+                      "type": "origins:actor_action",
+                      "action": {
+                        "type": "origins:execute_command",
+                        "command": "function konosuba:origins/aqua/revive/notify/target_self"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "glow_target": {
+    "type": "origins:entity_glow",
+    "bientity_condition": {
+      "type": "origins:in_set",
+      "set": "*:*_target"
+    },
+
+    "use_teams": false,
+    "red": 0,
+    "green": 1,
+    "blue": 1
+  },
+  "animate_target": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_is_active",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "entity_action": {
+      "type": "origins:action_on_set",
+      "set": "*:*_target",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "function konosuba:origins/aqua/revive/animate_target/cyan"
+        }
+      }
+    }
+  }
 }

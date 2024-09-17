@@ -1,18 +1,18 @@
 {
-    "icon": "minecraft:iron_sword",
+  "icon": "minecraft:iron_sword",
 
-    "powers": [
-        "konosuba:kazuma/clairvoyance",
-        "konosuba:kazuma/steal",
-        "konosuba:kazuma/lucky",
-        "konosuba:kazuma/chunchunmaru",
+  "powers": [
+    "konosuba:kazuma/clairvoyance",
+    "konosuba:kazuma/steal",
+    "konosuba:kazuma/lucky",
+    "konosuba:kazuma/chunchunmaru",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 1,
-    "order": 4
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 1,
+  "order": 4
 }

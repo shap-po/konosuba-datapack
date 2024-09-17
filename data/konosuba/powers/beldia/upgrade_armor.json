@@ -1,70 +1,106 @@
 {
-    "badges": [
-        {
-            "type": "origins:crafting_recipe",
-            "sprite": "origins:textures/gui/community/silent/badge/colors/yellow.png",
-            "prefix": {
-                "translate": "block.minecraft.smithing_table"
-            },
-            "recipe": {
-                "id": "konosuba:beldia/showcase1",
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [
-                    { "item": "minecraft:flint" },
-                    { "item": "minecraft:chainmail_helmet" },
-                    { "item": "minecraft:gold_block" }
-                ],
-                "result": { "item": "minecraft:golden_helmet" }
-            }
-        },
-        {
-            "type": "origins:crafting_recipe",
-            "sprite": "origins:textures/gui/community/silent/badge/colors/light_gray.png",
-            "prefix": {
-                "translate": "block.minecraft.smithing_table"
-            },
-            "recipe": {
-                "id": "konosuba:beldia/showcase2",
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [{ "item": "minecraft:quartz" }, { "item": "minecraft:golden_helmet" }, { "item": "minecraft:iron_block" }],
-                "result": { "item": "minecraft:iron_helmet" }
-            }
-        },
-        {
-            "type": "origins:crafting_recipe",
-            "sprite": "origins:textures/gui/community/silent/badge/colors/cyan.png",
-            "prefix": {
-                "translate": "block.minecraft.smithing_table"
-            },
-            "recipe": {
-                "id": "konosuba:beldia/showcase3",
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [
-                    { "item": "minecraft:amethyst_cluster" },
-                    { "item": "minecraft:iron_helmet" },
-                    { "item": "minecraft:diamond_block" }
-                ],
-                "result": { "item": "minecraft:diamond_helmet" }
-            }
-        },
-        {
-            "type": "origins:crafting_recipe",
-            "sprite": "origins:textures/gui/community/silent/badge/colors/black.png",
-            "prefix": {
-                "translate": "block.minecraft.smithing_table"
-            },
-            "recipe": {
-                "id": "konosuba:beldia/showcase4",
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [
-                    { "item": "minecraft:echo_shard" },
-                    { "item": "minecraft:diamond_helmet" },
-                    { "item": "minecraft:netherite_block" }
-                ],
-                "result": { "item": "minecraft:netherite_helmet" }
-            }
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "origins:textures/gui/community/silent/badge/colors/yellow.png",
+      "prefix": {
+        "translate": "block.minecraft.smithing_table"
+      },
+      "recipe": {
+        "id": "konosuba:beldia/showcase1",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:flint"
+          },
+          {
+            "item": "minecraft:chainmail_helmet"
+          },
+          {
+            "item": "minecraft:gold_block"
+          }
+        ],
+        "result": {
+          "item": "minecraft:golden_helmet"
         }
-    ],
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "origins:textures/gui/community/silent/badge/colors/light_gray.png",
+      "prefix": {
+        "translate": "block.minecraft.smithing_table"
+      },
+      "recipe": {
+        "id": "konosuba:beldia/showcase2",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:quartz"
+          },
+          {
+            "item": "minecraft:golden_helmet"
+          },
+          {
+            "item": "minecraft:iron_block"
+          }
+        ],
+        "result": {
+          "item": "minecraft:iron_helmet"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "origins:textures/gui/community/silent/badge/colors/cyan.png",
+      "prefix": {
+        "translate": "block.minecraft.smithing_table"
+      },
+      "recipe": {
+        "id": "konosuba:beldia/showcase3",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:amethyst_cluster"
+          },
+          {
+            "item": "minecraft:iron_helmet"
+          },
+          {
+            "item": "minecraft:diamond_block"
+          }
+        ],
+        "result": {
+          "item": "minecraft:diamond_helmet"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "origins:textures/gui/community/silent/badge/colors/black.png",
+      "prefix": {
+        "translate": "block.minecraft.smithing_table"
+      },
+      "recipe": {
+        "id": "konosuba:beldia/showcase4",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:echo_shard"
+          },
+          {
+            "item": "minecraft:diamond_helmet"
+          },
+          {
+            "item": "minecraft:netherite_block"
+          }
+        ],
+        "result": {
+          "item": "minecraft:netherite_helmet"
+        }
+      }
+    }
+  ],
 
-    "type": "origins:simple"
+  "type": "origins:simple"
 }

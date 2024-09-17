@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:diamond_boots"
-    },
-    "template": {
-        "item": "minecraft:echo_shard"
-    },
-    "addition": {
-        "item": "minecraft:netherite_block"
-    },
+  "base": {
+    "item": "minecraft:diamond_boots"
+  },
+  "template": {
+    "item": "minecraft:echo_shard"
+  },
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
 
-    "result": {
-        "item": "minecraft:netherite_boots"
-    }
+  "result": {
+    "item": "minecraft:netherite_boots"
+  }
 }

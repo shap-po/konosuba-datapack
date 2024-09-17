@@ -1,19 +1,19 @@
 {
-    "icon": "minecraft:netherite_chestplate",
+  "icon": "minecraft:netherite_chestplate",
 
-    "powers": [
-        "konosuba:darkness/pouch",
+  "powers": [
+    "konosuba:darkness/pouch",
 
-        "konosuba:darkness/tank",
-        "konosuba:darkness/more_hp",
-        "konosuba:darkness/clumsy",
-        "konosuba:darkness/lalatina",
+    "konosuba:darkness/tank",
+    "konosuba:darkness/more_hp",
+    "konosuba:darkness/clumsy",
+    "konosuba:darkness/lalatina",
 
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 2,
-    "order": 2
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 2,
+  "order": 2
 }

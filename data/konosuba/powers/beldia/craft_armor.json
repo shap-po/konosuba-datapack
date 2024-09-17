@@ -1,115 +1,129 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "helmet": {
-        "type": "origins:recipe",
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "id": "konosuba:beldia/helmet",
-            "pattern": ["###", "# #"],
-            "key": {
-                "#": {
-                    "item": "minecraft:chain"
-                }
-            },
-            "result": {
-                "item": "minecraft:chainmail_helmet"
-            }
+  "helmet": {
+    "type": "origins:recipe",
+    "recipe": {
+      "type": "minecraft:crafting_shaped",
+      "id": "konosuba:beldia/helmet",
+      "pattern": [
+        "###",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
         }
-    },
-    "helmet_data": {
-        "type": "origins:modify_crafting",
-        "recipe": "konosuba:beldia/helmet",
-        "item_action_after_crafting": {
-            "type": "origins:merge_nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
-        },
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "say Crafted Beldia Helmet"
-        }
-    },
-
-    "chestplate": {
-        "type": "origins:recipe",
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "id": "konosuba:beldia/chestplate",
-            "pattern": ["# #", "###", "###"],
-            "key": {
-                "#": {
-                    "item": "minecraft:chain"
-                }
-            },
-            "result": {
-                "item": "minecraft:chainmail_chestplate"
-            }
-        }
-    },
-    "chestplate_data": {
-        "type": "origins:modify_crafting",
-        "recipe": "konosuba:beldia/chestplate",
-        "item_action_after_crafting": {
-            "type": "origins:merge_nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
-        },
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "say Crafted Beldia Chestplate"
-        }
-    },
-
-    "leggings": {
-        "type": "origins:recipe",
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "id": "konosuba:beldia/leggings",
-            "pattern": ["###", "# #", "# #"],
-            "key": {
-                "#": {
-                    "item": "minecraft:chain"
-                }
-            },
-            "result": {
-                "item": "minecraft:chainmail_leggings"
-            }
-        }
-    },
-    "leggings_data": {
-        "type": "origins:modify_crafting",
-        "recipe": "konosuba:beldia/leggings",
-        "item_action_after_crafting": {
-            "type": "origins:merge_nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
-        },
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "say Crafted Beldia Leggings"
-        }
-    },
-
-    "boots": {
-        "type": "origins:recipe",
-        "recipe": {
-            "type": "minecraft:crafting_shaped",
-            "id": "konosuba:beldia/boots",
-            "pattern": ["# #", "# #"],
-            "key": {
-                "#": {
-                    "item": "minecraft:chain"
-                }
-            },
-            "result": {
-                "item": "minecraft:chainmail_boots"
-            }
-        }
-    },
-    "boots_data": {
-        "type": "origins:modify_crafting",
-        "recipe": "konosuba:beldia/boots",
-        "item_action_after_crafting": {
-            "type": "origins:merge_nbt",
-            "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
-        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_helmet"
+      }
     }
+  },
+  "helmet_data": {
+    "type": "origins:modify_crafting",
+    "recipe": "konosuba:beldia/helmet",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "say Crafted Beldia Helmet"
+    }
+  },
+
+  "chestplate": {
+    "type": "origins:recipe",
+    "recipe": {
+      "type": "minecraft:crafting_shaped",
+      "id": "konosuba:beldia/chestplate",
+      "pattern": [
+        "# #",
+        "###",
+        "###"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_chestplate"
+      }
+    }
+  },
+  "chestplate_data": {
+    "type": "origins:modify_crafting",
+    "recipe": "konosuba:beldia/chestplate",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "say Crafted Beldia Chestplate"
+    }
+  },
+
+  "leggings": {
+    "type": "origins:recipe",
+    "recipe": {
+      "type": "minecraft:crafting_shaped",
+      "id": "konosuba:beldia/leggings",
+      "pattern": [
+        "###",
+        "# #",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_leggings"
+      }
+    }
+  },
+  "leggings_data": {
+    "type": "origins:modify_crafting",
+    "recipe": "konosuba:beldia/leggings",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
+    },
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "say Crafted Beldia Leggings"
+    }
+  },
+
+  "boots": {
+    "type": "origins:recipe",
+    "recipe": {
+      "type": "minecraft:crafting_shaped",
+      "id": "konosuba:beldia/boots",
+      "pattern": [
+        "# #",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_boots"
+      }
+    }
+  },
+  "boots_data": {
+    "type": "origins:modify_crafting",
+    "recipe": "konosuba:beldia/boots",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Konosuba:{BeldiaArmor:1b},Unbreakable:1b}"
+    }
+  }
 }

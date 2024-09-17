@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:golden_leggings"
-    },
-    "template": {
-        "item": "minecraft:quartz"
-    },
-    "addition": {
-        "item": "minecraft:iron_block"
-    },
+  "base": {
+    "item": "minecraft:golden_leggings"
+  },
+  "template": {
+    "item": "minecraft:quartz"
+  },
+  "addition": {
+    "item": "minecraft:iron_block"
+  },
 
-    "result": {
-        "item": "minecraft:iron_leggings"
-    }
+  "result": {
+    "item": "minecraft:iron_leggings"
+  }
 }

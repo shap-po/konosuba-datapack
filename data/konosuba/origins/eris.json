@@ -1,18 +1,18 @@
 {
-    "icon": "minecraft:glistering_melon_slice",
+  "icon": "minecraft:glistering_melon_slice",
 
-    "powers": [
-        "konosuba:eris/transfer_life",
-        "konosuba:eris/blessing",
-        "konosuba:eris/death_immunity",
-        "konosuba:goddess",
+  "powers": [
+    "konosuba:eris/transfer_life",
+    "konosuba:eris/blessing",
+    "konosuba:eris/death_immunity",
+    "konosuba:goddess",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
 
-    "impact": 2
+  "impact": 2
 }

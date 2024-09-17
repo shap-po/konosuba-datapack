@@ -1,20 +1,20 @@
 {
-    "icon": "minecraft:water_bucket",
+  "icon": "minecraft:water_bucket",
 
-    "powers": [
-        "konosuba:aqua/revive",
-        "konosuba:aqua/heal",
-        "konosuba:aqua/walk_on_water",
-        "konosuba:aqua/fill_bottles",
-        "konosuba:aqua/weakness_to_alligators",
-        "konosuba:goddess",
+  "powers": [
+    "konosuba:aqua/revive",
+    "konosuba:aqua/heal",
+    "konosuba:aqua/walk_on_water",
+    "konosuba:aqua/fill_bottles",
+    "konosuba:aqua/weakness_to_alligators",
+    "konosuba:goddess",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 2,
-    "order": 1
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 2,
+  "order": 1
 }

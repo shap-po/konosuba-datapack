@@ -1,108 +1,108 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "magic": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 2000,
-        "start_value": 1800,
-        "hud_render": {
-            "should_render": true,
-            "bar_index": 23,
-            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
-        },
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.amethyst_block.hit",
-                    "volume": 1
-                },
-                {
-                    "type": "origins:spawn_particles",
-                    "particle": {
-                        "type": "minecraft:dust",
-                        "params": "0.314 0.314 0.922 2"
-                    },
-                    "count": 16,
-                    "speed": 100.0,
-                    "force": false,
-                    "spread": {
-                        "x": 3.0,
-                        "y": 0.0,
-                        "z": 3.0
-                    }
-                }
-            ]
-        }
+  "magic": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 2000,
+    "start_value": 1800,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 23,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
     },
-
-    "magic_regeneration_passive": {
-        "type": "origins:action_over_time",
-        "interval": 200,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_magic",
-            "operation": "add",
-            "change": 50
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.amethyst_block.hit",
+          "volume": 1
         },
-        "condition": {
-            "type": "origins:resource",
-            "compare_to": 250,
-            "comparison": ">=",
-            "resource": "*:wiz/meat_craving_flesh"
+        {
+          "type": "origins:spawn_particles",
+          "particle": {
+            "type": "minecraft:dust",
+            "params": "0.314 0.314 0.922 2"
+          },
+          "count": 16,
+          "speed": 100.0,
+          "force": false,
+          "spread": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 3.0
+          }
         }
-    },
-
-    "magic_regeneration_active_carrot": {
-        "type": "origins:action_on_item_use",
-        "trigger": "finish",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_magic",
-            "operation": "add",
-            "change": 50
-        },
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "minecraft:golden_carrot"
-            }
-        }
-    },
-
-    "magic_regeneration_active_apple": {
-        "type": "origins:action_on_item_use",
-        "trigger": "finish",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_magic",
-            "operation": "add",
-            "change": 300
-        },
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "minecraft:golden_apple"
-            }
-        }
-    },
-
-    "magic_regeneration_active_apple_plus": {
-        "type": "origins:action_on_item_use",
-        "trigger": "finish",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_magic",
-            "operation": "set",
-            "change": 1999
-        },
-        "item_condition": {
-            "type": "origins:ingredient",
-            "ingredient": {
-                "item": "minecraft:enchanted_golden_apple"
-            }
-        }
+      ]
     }
+  },
+
+  "magic_regeneration_passive": {
+    "type": "origins:action_over_time",
+    "interval": 200,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_magic",
+      "operation": "add",
+      "change": 50
+    },
+    "condition": {
+      "type": "origins:resource",
+      "compare_to": 250,
+      "comparison": ">=",
+      "resource": "*:wiz/meat_craving_flesh"
+    }
+  },
+
+  "magic_regeneration_active_carrot": {
+    "type": "origins:action_on_item_use",
+    "trigger": "finish",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_magic",
+      "operation": "add",
+      "change": 50
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:golden_carrot"
+      }
+    }
+  },
+
+  "magic_regeneration_active_apple": {
+    "type": "origins:action_on_item_use",
+    "trigger": "finish",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_magic",
+      "operation": "add",
+      "change": 300
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:golden_apple"
+      }
+    }
+  },
+
+  "magic_regeneration_active_apple_plus": {
+    "type": "origins:action_on_item_use",
+    "trigger": "finish",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_magic",
+      "operation": "set",
+      "change": 1999
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:enchanted_golden_apple"
+      }
+    }
+  }
 }

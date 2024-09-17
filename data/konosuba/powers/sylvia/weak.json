@@ -1,14 +1,14 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "less_health": {
-        "type": "origins:attribute",
-        "modifier": {
-            "name": "konosuba:sylvia/weak",
-            "attribute": "minecraft:generic.max_health",
-            "operation": "addition",
-            "value": -4
-        },
-        "update_health": true
-    }
+  "less_health": {
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "konosuba:sylvia/weak",
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": -4
+    },
+    "update_health": true
+  }
 }

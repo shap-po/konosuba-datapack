@@ -1,22 +1,22 @@
 {
-    "icon": "minecraft:slime_ball",
+  "icon": "minecraft:slime_ball",
 
-    "powers": [
-        "konosuba:hans/spawnkill_prevention",
-        "konosuba:hans/slime",
-        "konosuba:hans/slime_management",
-        "konosuba:hans/internal_balance",
-        "konosuba:hans/bouncy",
-        "konosuba:hans/nimble_escape",
-        "konosuba:hans/soluble",
-        "konosuba:undead",
+  "powers": [
+    "konosuba:hans/spawnkill_prevention",
+    "konosuba:hans/slime",
+    "konosuba:hans/slime_management",
+    "konosuba:hans/internal_balance",
+    "konosuba:hans/bouncy",
+    "konosuba:hans/nimble_escape",
+    "konosuba:hans/soluble",
+    "konosuba:undead",
 
-        "konosuba:no_netherite",
-        "konosuba:wiz/sane_person",
-        "konosuba:beldia/unique_armor",
-        "konosuba:sylvia/restrict_slots",
-        "konosuba:lives"
-    ],
-    "impact": 3,
-    "order": 5
+    "konosuba:no_netherite",
+    "konosuba:wiz/sane_person",
+    "konosuba:beldia/unique_armor",
+    "konosuba:sylvia/restrict_slots",
+    "konosuba:lives"
+  ],
+  "impact": 3,
+  "order": 5
 }

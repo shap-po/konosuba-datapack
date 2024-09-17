@@ -1,21 +1,21 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "prevent_riding": {
-        "type": "origins:prevent_being_used",
-        "bientity_condition": {
-            "type": "origins:owner",
-            "inverted": true
-        }
-    },
-
-    "store": {
-        "_": "Store the horse if the owner is far away.",
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/beldia/horse/store"
-        }
+  "prevent_riding": {
+    "type": "origins:prevent_being_used",
+    "bientity_condition": {
+      "type": "origins:owner",
+      "inverted": true
     }
+  },
+
+  "store": {
+    "_": "Store the horse if the owner is far away.",
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/beldia/horse/store"
+    }
+  }
 }

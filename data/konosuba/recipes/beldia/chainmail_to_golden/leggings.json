@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:chainmail_leggings"
-    },
-    "template": {
-        "item": "minecraft:flint"
-    },
-    "addition": {
-        "item": "minecraft:gold_block"
-    },
+  "base": {
+    "item": "minecraft:chainmail_leggings"
+  },
+  "template": {
+    "item": "minecraft:flint"
+  },
+  "addition": {
+    "item": "minecraft:gold_block"
+  },
 
-    "result": {
-        "item": "minecraft:golden_leggings"
-    }
+  "result": {
+    "item": "minecraft:golden_leggings"
+  }
 }

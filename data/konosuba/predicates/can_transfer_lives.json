@@ -1,9 +1,9 @@
 {
-    "condition": "minecraft:entity_scores",
-    "entity": "this",
-    "scores": {
-        "konosuba.lives": {
-            "min": 2
-        }
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "konosuba.lives": {
+      "min": 2
     }
+  }
 }

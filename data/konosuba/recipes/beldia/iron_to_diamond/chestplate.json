@@ -1,17 +1,17 @@
 {
-    "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing_transform",
 
-    "base": {
-        "item": "minecraft:iron_chestplate"
-    },
-    "template": {
-        "item": "minecraft:amethyst_cluster"
-    },
-    "addition": {
-        "item": "minecraft:diamond_block"
-    },
+  "base": {
+    "item": "minecraft:iron_chestplate"
+  },
+  "template": {
+    "item": "minecraft:amethyst_cluster"
+  },
+  "addition": {
+    "item": "minecraft:diamond_block"
+  },
 
-    "result": {
-        "item": "minecraft:diamond_chestplate"
-    }
+  "result": {
+    "item": "minecraft:diamond_chestplate"
+  }
 }

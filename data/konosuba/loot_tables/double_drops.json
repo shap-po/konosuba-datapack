@@ -1,13 +1,13 @@
 {
-    "pools": [
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
         {
-            "rolls": 2,
-            "entries": [
-                {
-                    "type": "minecraft:loot_table",
-                    "name": "apoli:replaced_loot_table"
-                }
-            ]
+          "type": "minecraft:loot_table",
+          "name": "apoli:replaced_loot_table"
         }
-    ]
+      ]
+    }
+  ]
 }

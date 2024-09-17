@@ -1,16 +1,16 @@
 {
-    "replace": false,
-    "origins": [
-        "konosuba:megumin",
-        "konosuba:aqua",
-        "konosuba:darkness",
-        "konosuba:vanir",
-        "konosuba:eris",
-        "konosuba:hans",
-        "konosuba:kazuma",
-        "konosuba:beldia",
-        "konosuba:sylvia",
-        "konosuba:chris",
-        "konosuba:wiz"
-    ]
+  "replace": false,
+  "origins": [
+    "konosuba:megumin",
+    "konosuba:aqua",
+    "konosuba:darkness",
+    "konosuba:vanir",
+    "konosuba:eris",
+    "konosuba:hans",
+    "konosuba:kazuma",
+    "konosuba:beldia",
+    "konosuba:sylvia",
+    "konosuba:chris",
+    "konosuba:wiz"
+  ]
 }

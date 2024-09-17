@@ -1,97 +1,105 @@
 {
-    "hidden": true,
+  "hidden": true,
 
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "timer": {
+  "timer": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 180,
+    "start_value": 180,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 1,
+      "condition": {
         "type": "origins:resource",
-        "min": 0,
-        "max": 180,
-        "start_value": 180,
-        "hud_render": {
-            "should_render": true,
-            "bar_index": 1,
-            "condition": {
-                "type": "origins:resource",
-                "resource": "*:*_timer",
-                "comparison": "<",
-                "compare_to": 180
-            }
-        }
-    },
-
-    "walk_on_fluid": {
-        "type": "origins:walk_on_fluid",
-        "fluid": "minecraft:water",
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "_": "Allow swimming if already submerged in water.",
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": "<=",
-                    "compare_to": 0.4
-                },
-                { "type": "origins:sneaking", "inverted": true },
-                { "type": "origins:resource", "resource": "*:*_timer", "comparison": ">", "compare_to": 0 }
-            ]
-        }
-    },
-
-    "no_jumping": {
-        "type": "origins:modify_jump",
-        "modifier": {
-            "operation": "set_total",
-            "value": 0
-        },
-        "condition": {
-            "type": "origins:on_block",
-            "block_condition": {
-                "type": "origins:fluid",
-                "fluid_condition": {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:water"
-                }
-            }
-        }
-    },
-
-    "on_water": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_timer",
-            "change": -1,
-            "operation": "add"
-        },
-        "condition": {
-            "type": "origins:on_block",
-            "block_condition": {
-                "type": "origins:fluid",
-                "fluid_condition": {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:water"
-                }
-            }
-        }
-    },
-
-    "timer_recharge": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_timer",
-            "change": 3,
-            "operation": "add"
-        },
-        "condition": {
-            "type": "origins:fluid_height",
-            "fluid": "minecraft:water",
-            "comparison": "<=",
-            "compare_to": 0.0
-        }
+        "resource": "*:*_timer",
+        "comparison": "<",
+        "compare_to": 180
+      }
     }
+  },
+
+  "walk_on_fluid": {
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:water",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "_": "Allow swimming if already submerged in water.",
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "<=",
+          "compare_to": 0.4
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_timer",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+
+  "no_jumping": {
+    "type": "origins:modify_jump",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:fluid",
+        "fluid_condition": {
+          "type": "origins:in_tag",
+          "tag": "minecraft:water"
+        }
+      }
+    }
+  },
+
+  "on_water": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_timer",
+      "change": -1,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:fluid",
+        "fluid_condition": {
+          "type": "origins:in_tag",
+          "tag": "minecraft:water"
+        }
+      }
+    }
+  },
+
+  "timer_recharge": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_timer",
+      "change": 3,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": "<=",
+      "compare_to": 0.0
+    }
+  }
 }

@@ -1,16 +1,18 @@
 {
-    "hidden": true,
+  "hidden": true,
 
-    "type": "origins:prevent_entity_render",
+  "type": "origins:prevent_entity_render",
 
-    "entity_condition": {
-        "type": "origins:and",
-        "conditions": [
-            { "type": "origins:living" },
-            {
-                "type": "origins:power",
-                "power": "*:wiz/imaginary_meat"
-            }
-        ]
-    }
+  "entity_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:living"
+      },
+      {
+        "type": "origins:power",
+        "power": "*:wiz/imaginary_meat"
+      }
+    ]
+  }
 }

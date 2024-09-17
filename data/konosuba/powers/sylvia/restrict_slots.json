@@ -1,32 +1,32 @@
 {
-    "type": "shappoli:modify_trinket_slots",
-    "hidden": true,
+  "type": "shappoli:modify_trinket_slots",
+  "hidden": true,
 
-    "modifiers": [
-        {
-            "slot": "chimeraorigin/core",
-            "operation": "addition",
-            "value": -1
-        },
-        {
-            "slot": "chimeraorigin/active_primary",
-            "operation": "addition",
-            "value": -1
-        },
-        {
-            "slot": "chimeraorigin/active_secondary",
-            "operation": "addition",
-            "value": -1
-        },
-        {
-            "slot": "chimeraorigin/passive_primary",
-            "operation": "addition",
-            "value": -1
-        },
-        {
-            "slot": "chimeraorigin/passive_secondary",
-            "operation": "addition",
-            "value": -1
-        }
-    ]
+  "modifiers": [
+    {
+      "slot": "chimeraorigin/core",
+      "operation": "addition",
+      "value": -1
+    },
+    {
+      "slot": "chimeraorigin/active_primary",
+      "operation": "addition",
+      "value": -1
+    },
+    {
+      "slot": "chimeraorigin/active_secondary",
+      "operation": "addition",
+      "value": -1
+    },
+    {
+      "slot": "chimeraorigin/passive_primary",
+      "operation": "addition",
+      "value": -1
+    },
+    {
+      "slot": "chimeraorigin/passive_secondary",
+      "operation": "addition",
+      "value": -1
+    }
+  ]
 }

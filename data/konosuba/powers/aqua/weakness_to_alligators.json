@@ -1,15 +1,15 @@
 {
-    "type": "origins:modify_damage_taken",
+  "type": "origins:modify_damage_taken",
 
-    "modifier": {
-        "operation": "multiply_base_additive",
-        "value": 0.5
-    },
-    "bientity_condition": {
-        "type": "origins:actor_condition",
-        "condition": {
-            "type": "origins:in_tag",
-            "tag": "konosuba:aqua_weakness"
-        }
+  "modifier": {
+    "operation": "multiply_base_additive",
+    "value": 0.5
+  },
+  "bientity_condition": {
+    "type": "origins:actor_condition",
+    "condition": {
+      "type": "origins:in_tag",
+      "tag": "konosuba:aqua_weakness"
     }
+  }
 }

@@ -1,32 +1,38 @@
 {
-    "hidden": true,
+  "hidden": true,
 
-    "_": "in 1.21+ better use action_on_item_pickup with item modifier instead",
+  "_": "in 1.21+ better use action_on_item_pickup with item modifier instead",
 
-    "type": "origins:action_over_time",
-    "interval": 5,
-    "condition": {
-        "type": "origins:inventory",
-        "item_condition": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": { "item": "minecraft:bucket" }
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": { "item": "minecraft:glass_bottle" }
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": { "item": "minecraft:lava_bucket" }
-                }
-            ]
+  "type": "origins:action_over_time",
+  "interval": 5,
+  "condition": {
+    "type": "origins:inventory",
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:bucket"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:glass_bottle"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lava_bucket"
+          }
         }
-    },
-    "entity_action": {
-        "type": "origins:execute_command",
-        "command": "function konosuba:origins/aqua/fill_bottles"
+      ]
     }
+  },
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "function konosuba:origins/aqua/fill_bottles"
+  }
 }

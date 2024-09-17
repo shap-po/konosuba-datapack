@@ -1,44 +1,46 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "prevent_interact": {
-        "type": "origins:prevent_entity_collision",
+  "prevent_interact": {
+    "type": "origins:prevent_entity_collision",
 
-        "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    { "type": "origins:living" },
-                    {
-                        "type": "origins:power",
-                        "power": "*:wiz/meat_craving"
-                    }
-                ],
-                "inverted": true
-            }
-        }
-    },
-
-    "prevent_being_used": {
-        "type": "origins:prevent_being_used"
-    },
-
-    "death_on_damage": {
-        "type": "origins:action_when_damage_taken",
-        "cooldown": 1,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/wiz/meat_craving/despawn"
-        }
-    },
-
-    "despawn": {
-        "type": "origins:action_over_time",
-        "interval": 20,
-        "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/wiz/meat_craving/try_despawn"
-        }
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:living"
+          },
+          {
+            "type": "origins:power",
+            "power": "*:wiz/meat_craving"
+          }
+        ],
+        "inverted": true
+      }
     }
+  },
+
+  "prevent_being_used": {
+    "type": "origins:prevent_being_used"
+  },
+
+  "death_on_damage": {
+    "type": "origins:action_when_damage_taken",
+    "cooldown": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/wiz/meat_craving/despawn"
+    }
+  },
+
+  "despawn": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/wiz/meat_craving/try_despawn"
+    }
+  }
 }

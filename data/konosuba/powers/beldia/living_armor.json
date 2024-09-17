@@ -1,211 +1,246 @@
 {
-    "type": "origins:multiple",
+  "type": "origins:multiple",
 
-    "kit": {
-        "type": "origins:action_on_callback",
-        "execute_chosen_when_orb": true,
+  "kit": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
 
-        "entity_action_gained": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/beldia/set_armor"
-        },
-        "entity_action_respawned": {
-            "type": "origins:execute_command",
-            "command": "function konosuba:origins/beldia/set_armor"
-        }
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/beldia/set_armor"
     },
-
-    "keep_after_death": {
-        "type": "origins:keep_inventory",
-        "_": "36-39 are armor slots",
-        "slots": [36, 37, 38, 39]
-    },
-
-    "check_equipped": {
-        "type": "origins:action_over_time",
-        "interval": 10,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effect": {
-                            "effect": "minecraft:blindness",
-                            "duration": 40,
-                            "show_icon": false,
-                            "show_particles": false
-                        }
-                    },
-                    "condition": { "type": "origins:inventory", "slot": "armor.head", "comparison": "==", "compare_to": 0 }
-                },
-                {
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effects": [
-                            {
-                                "effect": "minecraft:weakness",
-                                "duration": 40,
-                                "show_icon": false,
-                                "show_particles": false
-                            },
-                            {
-                                "effect": "minecraft:mining_fatigue",
-                                "duration": 40,
-                                "show_icon": false,
-                                "show_particles": false
-                            }
-                        ]
-                    },
-                    "condition": { "type": "origins:inventory", "slot": "armor.chest", "comparison": "==", "compare_to": 0 }
-                },
-
-                {
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effect": {
-                            "effect": "minecraft:slowness",
-                            "duration": 40,
-                            "show_icon": false,
-                            "show_particles": false
-                        }
-                    },
-                    "condition": { "type": "origins:inventory", "slot": "armor.legs", "comparison": "==", "compare_to": 0 }
-                },
-                {
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effect": {
-                            "effect": "minecraft:slowness",
-                            "duration": 40,
-                            "show_icon": false,
-                            "show_particles": false
-                        }
-                    },
-                    "condition": { "type": "origins:inventory", "slot": "armor.feet", "comparison": "==", "compare_to": 0 }
-                },
-                {
-                    "_": "Greater slowness if no legs or feet armor equipped",
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effect": {
-                            "effect": "minecraft:slowness",
-                            "duration": 40,
-                            "show_icon": false,
-                            "show_particles": false,
-                            "amplifier": 1
-                        }
-                    },
-                    "condition": { "type": "origins:inventory", "slots": ["armor.legs", "armor.feet"], "comparison": "==", "compare_to": 0 }
-                },
-
-                {
-                    "type": "origins:if_else",
-                    "if_action": {
-                        "type": "origins:apply_effect",
-                        "effects": [
-                            {
-                                "effect": "minecraft:invisibility",
-                                "duration": 40,
-                                "show_icon": false,
-                                "show_particles": false
-                            },
-                            {
-                                "_": "Add some speed to make up for the slowness",
-                                "effect": "minecraft:speed",
-                                "duration": 40,
-                                "show_icon": false,
-                                "show_particles": false,
-                                "amplifier": 1
-                            }
-                        ]
-                    },
-                    "condition": {
-                        "type": "origins:inventory",
-                        "slots": ["armor.head", "armor.chest", "armor.legs", "armor.feet"],
-                        "comparison": "==",
-                        "compare_to": 0
-                    }
-                }
-            ]
-        }
-    },
-
-    "restriction": {
-        "type": "origins:restrict_armor",
-        "head": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:nbt",
-                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "konosuba:beldia_can_wear"
-                    }
-                }
-            ],
-            "inverted": true
-        },
-        "chest": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:nbt",
-                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "konosuba:beldia_can_wear"
-                    }
-                }
-            ],
-            "inverted": true
-        },
-        "legs": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:nbt",
-                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "konosuba:beldia_can_wear"
-                    }
-                }
-            ],
-            "inverted": true
-        },
-        "feet": {
-            "type": "origins:or",
-            "conditions": [
-                {
-                    "type": "origins:nbt",
-                    "nbt": "{Konosuba:{BeldiaArmor:1b}}"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "konosuba:beldia_can_wear"
-                    }
-                }
-            ],
-            "inverted": true
-        }
-    },
-
-    "transparency": {
-        "type": "origins:model_color",
-        "alpha": 0.8
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function konosuba:origins/beldia/set_armor"
     }
+  },
+
+  "keep_after_death": {
+    "type": "origins:keep_inventory",
+    "_": "36-39 are armor slots",
+    "slots": [
+      36, 37, 38, 39
+    ]
+  },
+
+  "check_equipped": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:blindness",
+              "duration": 40,
+              "show_icon": false,
+              "show_particles": false
+            }
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slot": "armor.head",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:weakness",
+                "duration": 40,
+                "show_icon": false,
+                "show_particles": false
+              },
+              {
+                "effect": "minecraft:mining_fatigue",
+                "duration": 40,
+                "show_icon": false,
+                "show_particles": false
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slot": "armor.chest",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:slowness",
+              "duration": 40,
+              "show_icon": false,
+              "show_particles": false
+            }
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slot": "armor.legs",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:slowness",
+              "duration": 40,
+              "show_icon": false,
+              "show_particles": false
+            }
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slot": "armor.feet",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+        {
+          "_": "Greater slowness if no legs or feet armor equipped",
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:slowness",
+              "duration": 40,
+              "show_icon": false,
+              "show_particles": false,
+              "amplifier": 1
+            }
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slots": [
+              "armor.legs",
+              "armor.feet"
+            ],
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:invisibility",
+                "duration": 40,
+                "show_icon": false,
+                "show_particles": false
+              },
+              {
+                "_": "Add some speed to make up for the slowness",
+                "effect": "minecraft:speed",
+                "duration": 40,
+                "show_icon": false,
+                "show_particles": false,
+                "amplifier": 1
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:inventory",
+            "slots": [
+              "armor.head",
+              "armor.chest",
+              "armor.legs",
+              "armor.feet"
+            ],
+            "comparison": "==",
+            "compare_to": 0
+          }
+        }
+      ]
+    }
+  },
+
+  "restriction": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:nbt",
+          "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "konosuba:beldia_can_wear"
+          }
+        }
+      ],
+      "inverted": true
+    },
+    "chest": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:nbt",
+          "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "konosuba:beldia_can_wear"
+          }
+        }
+      ],
+      "inverted": true
+    },
+    "legs": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:nbt",
+          "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "konosuba:beldia_can_wear"
+          }
+        }
+      ],
+      "inverted": true
+    },
+    "feet": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:nbt",
+          "nbt": "{Konosuba:{BeldiaArmor:1b}}"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "konosuba:beldia_can_wear"
+          }
+        }
+      ],
+      "inverted": true
+    }
+  },
+
+  "transparency": {
+    "type": "origins:model_color",
+    "alpha": 0.8
+  }
 }
