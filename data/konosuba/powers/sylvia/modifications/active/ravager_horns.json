@@ -45,13 +45,13 @@
                         "type": "origins:add_velocity",
                         "space": "local_horizontal_normalized",
                         "client": false,
-                        "z": 1.5
+                        "z": 1.75
                     },
                     "else_action": {
                         "type": "origins:add_velocity",
                         "space": "local_horizontal_normalized",
                         "client": false,
-                        "z": 0.3
+                        "z": 0.35
                     }
                 }
             ]
@@ -112,5 +112,14 @@
         "replace": {
             "minecraft:entities/ravager": "konosuba:sylvia/ravager_horns"
         }
-    }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+            "text": {
+                "translate": "badge.konosuba.sylvia.modifications.ravager_horns.0"
+            }
+        }
+    ]
 }

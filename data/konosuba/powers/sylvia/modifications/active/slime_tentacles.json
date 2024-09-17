@@ -98,5 +98,14 @@
                 "nbt": "{Size: 3}"
             }
         }
-    }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+            "text": {
+                "translate": "badge.konosuba.sylvia.modifications.slime_tentacles.0"
+            }
+        }
+    ]
 }

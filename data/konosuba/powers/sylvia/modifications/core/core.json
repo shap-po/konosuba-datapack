@@ -1,6 +1,12 @@
 {
+    "badges": [
+        {
+            "type": "origins:sprite",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/sun_icon.png"
+        }
+    ],
+
     "type": "origins:multiple",
-    "hidden": true,
 
     "equipped": {
         "_": "ID of the equipped trinket. Should reduce lag by checking the trinket in a single place.",

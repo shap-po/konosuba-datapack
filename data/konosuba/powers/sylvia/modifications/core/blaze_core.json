@@ -116,5 +116,14 @@
             "minecraft:entities/blaze": "konosuba:sylvia/blaze_core",
             "friendsandfoes:entities/wildfire": "konosuba:sylvia/blaze_core_wildfire"
         }
-    }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+            "text": {
+                "translate": "badge.konosuba.sylvia.modifications.blaze_core.0"
+            }
+        }
+    ]
 }

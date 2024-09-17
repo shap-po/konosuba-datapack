@@ -51,33 +51,6 @@ This resulted in adding doChomusukeSpawn gamerule to stop the cruelty.
 -   **Can be carried**: Other players can carry you around.
 -   **Weak body**: Too weak to wear netherite armor.
 
-### Sylvia
-
-**Impact: Low**
-
--   **Body modifications**: You have 3 extra slots for body modifications, that only you can craft and use.
--   **[Undead](#Undead)**
--   **Weak body**: Too weak to wear netherite armor.
-
-Modifications:
-
--   **Adrenalin gland**: Movement speed boost after taking damage.
--   **Axolotl axillary gills**: Extends water breathing time.
--   **Cactus hair**: Thorns instead of hair.
--   **Elephant skin**: Boost your health.
--   **Feline paws**: Fall without injury.
--   **Fireproof hide**: Resistant to lava.
--   **Guardian tail(s)**: Increases agility in water.
--   **Gerridae gliders**: Run on water.
--   **Insect mandibles**: Faster food consumption.
--   **Mega palms**: Increased knockback.
--   **Mole arms**: Dig faster.
--   **Owl eyes**: See in the dark.
--   **Rabbit muscles**: Faster sprinting.
--   **Slime secretion**: Cling to the ground.
--   **Villager nose**: Discount on trades.
--   **Viper metabolism**: Cuts bad effects duration in half.
-
 ### Aqua
 
 **Impact: Medium**
@@ -158,6 +131,39 @@ Spells:
 -   **Skaters**: Turn water under your feet into ice. Also makes you faster.
 -   **Night vision**: Cast night vision on yourself or others.
 
+### Sylvia
+
+**Impact: Low**
+
+-   **Weakling**: You have two less hearts than other players.
+-   **Carnivore**: You can eat meat.
+-   **[Undead](#Undead)**
+-   **Weak body**: Too weak to wear netherite armor.
+-   **Body modifications**: You have 5 extra slots for body modifications, that only you can obtain and use. Each time you unequip a modification, it gets damaged.
+    -   **Core** (1 slot):
+        -   **Chimera Prime core**: Removes penalty from switching modifications. Reduces the cooldown before a modification can be used after equipping.
+        -   **Blaze core**: Grants fire resistance, lava vision, faster movement in lava, and makes you always on fire. Water will hurt.
+        -   **Dragon heart**: Grants 6 extra hearts and better health regeneration.
+        -   **Prismarine core**: Grants water breathing, better water vision, faster movement in water, and removes block breaking slowdown in water.
+        -   **Omnivore stomach**: Allows eating all food types. Including the ones that only mobs can eat.
+        -   **Silverfish stomach**: Allows eating any block, which grants a random effect. Most of the effects are negative.
+    -   **Active** (2 slots):
+        -   **Mage killer**: Temporarily disables all magic-based abilities in a radius around.
+        -   **Ravager horns**: Charge at the target, dealing damage and knocking them back.
+        -   **Slime tentacles**: Pull/push entities.
+        -   **Squid tentacles**: Release ink cloud, blinding and slowing down entities.
+        -   **Warden vocal cords**: Warden's sound wave attack.
+        -   **Llama glands**: Spits at the targets like a llama.
+    -   **Passive** (2 slots):
+        -   **Allay larynx**: Villager trading discounts.
+        -   **Cave Spider fangs**: A chance to poison the target on hit.
+        -   **Creeper skin**: Slowly become invisible when standing still.
+        -   **Dragon scales**: Damage resistance.
+        -   **Horse muscles**: Faster movement speed.
+        -   **Ocelot paws**: Less fall damage.
+        -   **Phantom eyes**: Night vision.
+        -   **Warden claws**: Faster block breaking.
+
 ## Traits
 
 ### Undead
@@ -183,6 +189,7 @@ Spells:
 -   [Fabric](https://fabricmc.net/)
 -   [Origins](https://modrinth.com/mod/origins)
 -   [Apugli](https://modrinth.com/mod/apugli)
+-   [Shappoli](https://modrinth.com/mod/shappoli)
 -   [Resourcepack](https://github.com/shap-po/konosuba-resourcepack) without this pack, all text translations will be missing.
 
 ### Origin-specific
@@ -192,6 +199,7 @@ Spells:
 -   [Pehkui](https://modrinth.com/mod/pehkui) (for [Hans](#Hans) and [Megumin's cat](#Megumin))
 -   [Waystones](https://modrinth.com/mod/waystones) (for [Wiz](#Wiz)) Note that all recipes are disabled.
 -   [Walkers](https://modrinth.com/mod/walkers) (for [Vanir](#Vanir))
+-   [Chimera Origin](https://github.com/shap-po/chimera-origin) (for [Sylvia](#Sylvia))
 
 ### Optional
 
@@ -277,6 +285,7 @@ This section explains how to configure the custom gamerules in the datapack. Use
         ```
 
 1. **Lives Enabled**
+
     - **Description**: Whether [Lives](#Life-system) are enabled.
     - **Default**: Enabled (`1`)
     - **Command**:

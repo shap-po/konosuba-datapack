@@ -7,31 +7,31 @@
 
         "konosuba:sylvia/modifications/modifications",
 
+        "konosuba:sylvia/modifications/active/active",
+        "konosuba:sylvia/modifications/active/ravager_horns",
+        "konosuba:sylvia/modifications/active/warden_vocal_cords",
+        "konosuba:sylvia/modifications/active/slime_tentacles",
+        "konosuba:sylvia/modifications/active/squid_tentacles",
+        "konosuba:sylvia/modifications/active/mage_killer",
+        "konosuba:sylvia/modifications/active/llama_glands",
+
         "konosuba:sylvia/modifications/core/core",
         "konosuba:sylvia/modifications/core/chimera_prime_core",
-        "konosuba:sylvia/modifications/core/dragon_heart",
         "konosuba:sylvia/modifications/core/blaze_core",
+        "konosuba:sylvia/modifications/core/dragon_heart",
         "konosuba:sylvia/modifications/core/prismarine_core",
         "konosuba:sylvia/modifications/core/omnivore_stomach",
         "konosuba:sylvia/modifications/core/silverfish_stomach",
 
-        "konosuba:sylvia/modifications/active/active",
-        "konosuba:sylvia/modifications/active/mage_killer",
-        "konosuba:sylvia/modifications/active/slime_tentacles",
-        "konosuba:sylvia/modifications/active/squid_tentacles",
-        "konosuba:sylvia/modifications/active/warden_vocal_cords",
-        "konosuba:sylvia/modifications/active/ravager_horns",
-        "konosuba:sylvia/modifications/active/llama_glands",
-
         "konosuba:sylvia/modifications/passive/passive",
+        "konosuba:sylvia/modifications/passive/allay_larynx",
+        "konosuba:sylvia/modifications/passive/cave_spider_fangs",
         "konosuba:sylvia/modifications/passive/creeper_skin",
         "konosuba:sylvia/modifications/passive/dragon_scales",
-        "konosuba:sylvia/modifications/passive/cave_spider_fangs",
+        "konosuba:sylvia/modifications/passive/horse_muscles",
         "konosuba:sylvia/modifications/passive/ocelot_paws",
-        "konosuba:sylvia/modifications/passive/allay_larynx",
         "konosuba:sylvia/modifications/passive/phantom_eyes",
         "konosuba:sylvia/modifications/passive/warden_claws",
-        "konosuba:sylvia/modifications/passive/horse_muscles",
 
         "konosuba:undead",
 
@@ -40,6 +40,6 @@
         "konosuba:beldia/unique_armor",
         "konosuba:lives"
     ],
-    "impact": 1,
+    "impact": 3,
     "order": 3
 }

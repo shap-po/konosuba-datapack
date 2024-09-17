@@ -72,5 +72,14 @@
         },
 
         "action_result": "success"
-    }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/pickaxe.png",
+            "text": {
+                "translate": "badge.konosuba.sylvia.modifications.dragon_scales.0"
+            }
+        }
+    ]
 }

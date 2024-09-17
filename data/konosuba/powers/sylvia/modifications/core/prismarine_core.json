@@ -74,5 +74,14 @@
         "replace": {
             "minecraft:entities/elder_guardian": "konosuba:sylvia/prismarine_core"
         }
-    }
+    },
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+            "text": {
+                "translate": "badge.konosuba.sylvia.modifications.prismarine_core.0"
+            }
+        }
+    ]
 }
