@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/M/",
+    "///"
+  ],
+  "key": {
+    "/": {
+      "tag": "minecraft:wool"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite_fragment"
+    }
+  },
+  "result": {
+    "item": "scarecrowsterritory:primitive_scarecrow"
+  }
+}

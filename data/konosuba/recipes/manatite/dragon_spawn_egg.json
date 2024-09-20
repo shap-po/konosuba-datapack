@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "   ",
+    "OWH",
+    " E "
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "W": {
+      "item": "minecraft:elytra"
+    },
+    "H": {
+      "item": "minecraft:dragon_head"
+    },
+    "E": {
+      "item": "minecraft:dragon_egg"
+    }
+  },
+  "result": {
+    "item": "minecraft:ender_dragon_spawn_egg"
+  }
+}

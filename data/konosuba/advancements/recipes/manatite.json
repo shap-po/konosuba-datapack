@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "true": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "konosuba:manatite/bedrock",
+      "konosuba:manatite/chunk_loader",
+      "konosuba:manatite/chunk_loader_transmute/advanced_to_basic",
+      "konosuba:manatite/chunk_loader_transmute/basic_to_advanced",
+      "konosuba:manatite/chunk_loader_transmute/basic_to_single",
+      "konosuba:manatite/chunk_loader_transmute/single_to_basic",
+      "konosuba:manatite/command_block",
+      "konosuba:manatite/dragon_egg",
+      "konosuba:manatite/dragon_spawn_egg",
+      "konosuba:manatite/end_portal_frame",
+      "konosuba:manatite/explorerscompass",
+      "konosuba:manatite/light",
+      "konosuba:manatite/manatite",
+      "konosuba:manatite/manatite_fragment",
+      "konosuba:manatite/manatite_pixel",
+      "konosuba:manatite/mimic",
+      "konosuba:manatite/naturescompass",
+      "konosuba:manatite/scarecrow",
+      "konosuba:manatite/torch",
+      "konosuba:manatite/torch_transmute/amethyst_to_diamond",
+      "konosuba:manatite/torch_transmute/diamond_to_emerald",
+      "konosuba:manatite/torch_transmute/emerald_to_amethyst",
+      "konosuba:manatite/wand"
+    ]
+  }
+}

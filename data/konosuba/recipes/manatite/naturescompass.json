@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "/C/",
+    "CMC",
+    "/C/"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:oak_log"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite_fragment"
+    }
+  },
+  "result": {
+    "item": "naturescompass:naturescompass"
+  }
+}

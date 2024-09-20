@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chunk_loader_transmute",
+  "category": "equipment",
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "chunkloaders:single_chunk_loader"
+    }
+  },
+  "result": {
+    "item": "chunkloaders:basic_chunk_loader"
+  }
+}

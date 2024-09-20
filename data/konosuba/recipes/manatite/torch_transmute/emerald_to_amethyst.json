@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "torch_transmute",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "magnumtorch:emerald_magnum_torch"
+    }
+  ],
+  "result": {
+    "item": "magnumtorch:amethyst_magnum_torch"
+  }
+}

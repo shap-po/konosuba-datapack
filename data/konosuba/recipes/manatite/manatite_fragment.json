@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "konosubaadditions:manatite"
+    }
+  ],
+  "result": {
+    "item": "konosubaadditions:manatite_fragment",
+    "count": 2
+  }
+}

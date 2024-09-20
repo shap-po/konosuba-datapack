@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/M/",
+    "///"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite_fragment"
+    }
+  },
+  "result": {
+    "item": "minecraft:light",
+    "count": 63
+  }
+}

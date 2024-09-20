@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/M/",
+    "/S/"
+  ],
+  "key": {
+    "/": {
+      "tag": "minecraft:beds"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite_fragment"
+    }
+  },
+  "result": {
+    "item": "minecraft:bedrock"
+  }
+}

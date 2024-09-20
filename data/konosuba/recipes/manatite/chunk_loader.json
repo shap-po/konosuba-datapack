@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/M/",
+    "///"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:piston"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite_fragment"
+    }
+  },
+  "result": {
+    "item": "chunkloaders:basic_chunk_loader"
+  }
+}

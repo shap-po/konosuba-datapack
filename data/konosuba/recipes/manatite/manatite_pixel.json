@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/A/",
+    "///"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:netherite_block"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "konosubaadditions:manatite_fragment_6"
+  }
+}

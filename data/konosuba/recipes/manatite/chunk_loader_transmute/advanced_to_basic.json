@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chunk_loader_transmute",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "chunkloaders:advanced_chunk_loader"
+    }
+  ],
+  "result": {
+    "item": "chunkloaders:basic_chunk_loader",
+    "count": 2
+  }
+}

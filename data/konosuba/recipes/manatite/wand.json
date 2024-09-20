@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "category": "equipment",
+  "pattern": [
+    "///",
+    "/M/",
+    "///"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "M": {
+      "item": "konosubaadditions:manatite"
+    }
+  },
+  "result": {
+    "item": "wands:diamond_wand"
+  }
+}
