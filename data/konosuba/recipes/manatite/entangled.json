@@ -9,14 +9,13 @@
   ],
   "key": {
     "/": {
-      "tag": "minecraft:wool"
+      "item": "minecraft:hopper"
     },
     "M": {
       "item": "konosubaadditions:manatite_fragment"
     }
   },
   "result": {
-    "item": "scarecrowsterritory:primitive_scarecrow",
-    "count": 2
+    "item": "entangled:block"
   }
 }
