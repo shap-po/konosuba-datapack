@@ -16,6 +16,7 @@
     }
   },
   "result": {
-    "item": "entangled:block"
+    "item": "entangled:block",
+    "count": 8
   }
 }
