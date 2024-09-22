@@ -2,6 +2,7 @@
   "values": [
     "minecraft:golden_apple",
     "minecraft:enchanted_golden_apple",
-    "minecraft:chorus_fruit"
+    "minecraft:chorus_fruit",
+    "#origins:ignore_diet"
   ]
 }
